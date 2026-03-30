@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "dgSpecHash": "OJpLCJPZMjU=",
+  "success": true,
+  "projectFilePath": "C:\\CypresNET\\Proyecto\\CypresNET_2\\CypresNET_2.vbproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\google.protobuf\\3.32.0\\google.protobuf.3.32.0.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\k4os.compression.lz4\\1.3.8\\k4os.compression.lz4.1.3.8.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.8\\k4os.compression.lz4.streams.1.3.8.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\microsoft.winforms.designer.sdk\\1.6.0\\microsoft.winforms.designer.sdk.1.6.0.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\mysql.data\\9.6.0\\mysql.data.9.6.0.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\mysqlconnector\\2.5.0\\mysqlconnector.2.5.0.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\syncfusion.grid.windows\\33.1.45\\syncfusion.grid.windows.33.1.45.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\syncfusion.licensing\\33.1.45\\syncfusion.licensing.33.1.45.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\syncfusion.shared.base\\33.1.45\\syncfusion.shared.base.33.1.45.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\syncfusion.shared.windows\\33.1.45\\syncfusion.shared.windows.33.1.45.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\system.composition\\6.0.0\\system.composition.6.0.0.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\system.composition.attributedmodel\\6.0.0\\system.composition.attributedmodel.6.0.0.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\system.composition.convention\\6.0.0\\system.composition.convention.6.0.0.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\system.composition.hosting\\6.0.0\\system.composition.hosting.6.0.0.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\system.composition.runtime\\6.0.0\\system.composition.runtime.6.0.0.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\system.composition.typedparts\\6.0.0\\system.composition.typedparts.6.0.0.nupkg.sha512",
+    "C:\\Users\\carlos.laprida\\.nuget\\packages\\zstdsharp.port\\0.8.6\\zstdsharp.port.0.8.6.nupkg.sha512"
+  ],
+  "logs": []
+}
