@@ -3,22 +3,22 @@ Public Class frmComitente
 
     Public IdComitente As Integer = 0
     Public ComitenteEditado As Comitente
-
+    Public ComitenteRepositorio As New ComitenteRepositorio()
     Private cadena As String =
         "Server=35.199.107.210;Port=3306;Database=laprida_cypres;Uid=claprida;Pwd=lapridac;"
 
     Private Sub frmComitente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'If IdComitente > 0 Then
+        If IdComitente > 0 Then
 
-        '    Dim c As Comitente = ObtenerComitentePorId(IdComitente)
-        '    CargarComitente(c)
+            Dim c As Comitente = ComitenteRepositorio.ObtenerComitentePorId(IdComitente)
+            CargarComitente(c)
 
-        'Else
+        Else
 
-        '    txtSigla.Focus()
+            txtSigla.Focus()
 
-        'End If
+        End If
 
     End Sub
     Private Sub CargarComitente(c As Comitente)
@@ -35,30 +35,30 @@ Public Class frmComitente
     End Sub
 
 
-    'Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-    '    Dim c As New Comitente
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim c As New Comitente
 
-    '    c.Id = IdComitente
-    '    c.Sigla = txtSigla.Text.Trim()
-    '    c.Nombre = txtComitente.Text.Trim()
-    '    c.Direccion = txtDireccion.Text.Trim()
-    '    c.localidad = txtLocalidad.Text.Trim()
-    '    c.cpostal = txtCPostal.Text.Trim()
+        c.Id = IdComitente
+        c.Sigla = txtSigla.Text.Trim()
+        c.Nombre = txtComitente.Text.Trim()
+        c.Direccion = txtDireccion.Text.Trim()
+        c.Localidad = txtLocalidad.Text.Trim()
+        c.CPostal = txtCPostal.Text.Trim()
 
-    '    Try
+        Try
 
-    '        GuardarComitente(c)
+            ComitenteRepositorio.GuardarComitente(c)
 
-    '        ComitenteEditado = c
+            ComitenteEditado = c
 
-    '        Me.DialogResult = DialogResult.OK
-    '        Me.Close()
+            Me.DialogResult = DialogResult.OK
+            Me.Close()
 
-    '    Catch ex As Exception
-    '        MessageBox.Show("Error al guardar: " & ex.Message)
-    '    End Try
+        Catch ex As Exception
+            MessageBox.Show("Error al guardar: " & ex.Message)
+        End Try
 
-    'End Sub
+    End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
