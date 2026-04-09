@@ -1,7 +1,10 @@
 ﻿Imports System.Data
 Imports MySql.Data.MySqlClient
 
-Public Module m_Comitentes
+Public Class ComitenteRepositorio
+
+    'LA CADENA SE OBTIENE DEL MÓDULO DE CONEXIÓN A CORREGIR!
+    Private ReadOnly _cadena As String = m_Conexion.Cadena
 
     Public Function ObtenerComitentes() As DataTable
 
@@ -20,30 +23,16 @@ Public Module m_Comitentes
         End Using
 
         Return dt
-
     End Function
-    Public Class Comitente
 
-        Public Property Id As Integer
-        Public Property Sigla As String
-        Public Property Nombre As String
-        Public Property Direccion As String
-        Public Property Localidad As String
-        Public Property CPostal As String
-    End Class
     Public Function ObtenerComitentePorId(id As Integer) As Comitente
-
         Dim c As Comitente = Nothing
-
         Dim sql As String = "SELECT * FROM s_comitentes WHERE id_comitente = @id"
 
         Using cn As New MySqlConnection(Cadena)
             Using cmd As New MySqlCommand(sql, cn)
-
                 cmd.Parameters.AddWithValue("@id", id)
-
                 cn.Open()
-
                 Using dr As MySqlDataReader = cmd.ExecuteReader()
                     If dr.Read() Then
                         c = New Comitente
@@ -55,13 +44,11 @@ Public Module m_Comitentes
                         c.CPostal = dr("c_postal").ToString()
                     End If
                 End Using
-
             End Using
         End Using
-
         Return c
-
     End Function
+
     Public Sub GuardarComitente(c As Comitente)
 
         Using cn As New MySqlConnection(Cadena)
@@ -128,4 +115,5 @@ Public Module m_Comitentes
         End Using
 
     End Sub
-End Module
+
+End Class

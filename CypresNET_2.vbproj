@@ -48,4 +48,9 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="My Project\NewFolder\" />
+    <Folder Include="Modulos\" />
+  </ItemGroup>
+
 </Project>
