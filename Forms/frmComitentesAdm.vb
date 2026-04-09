@@ -150,11 +150,15 @@ Public Class frmComitentesAdm
     End Function
     Private Sub CargarFilaComitente(row As Integer, c As Comitente)
 
+        grid.RowHeights(row) = 30
         grid(row, 1).Text = c.Id.ToString()
+        grid(row, 1).VerticalAlignment = GridVerticalAlignment.Middle
         grid(row, 2).Text = c.Sigla
+        grid(row, 2).VerticalAlignment = GridVerticalAlignment.Middle
         grid(row, 3).Text = c.Nombre
+        grid(row, 3).VerticalAlignment = GridVerticalAlignment.Middle
         grid(row, 4).Text = c.Direccion
-
+        grid(row, 4).VerticalAlignment = GridVerticalAlignment.Middle
         PintarFila(row)
 
     End Sub
