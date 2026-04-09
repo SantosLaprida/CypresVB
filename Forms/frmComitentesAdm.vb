@@ -3,10 +3,16 @@ Imports System.Data
 Imports MySql.Data.MySqlClient
 Imports TuProyecto
 Public Class frmComitentesAdm
+
+
     Private dtComitentes As New DataTable
     Private ReadOnly comitenteRepositorio As New ComitenteRepositorio()
+
     Dim cadena As String =
         "Server=35.199.107.210;Port=3306;Database=laprida_cypres;Uid=claprida;Pwd=lapridac;"
+
+
+
     Private grid As New GridControl()
     Private filaSeleccionada As Integer = 0
 
@@ -41,7 +47,7 @@ Public Class frmComitentesAdm
     End Sub
     Private Sub Cargar_Comitentes()
 
-        dtComitentes = ComitenteRepositorio.ObtenerComitentes()
+        dtComitentes = comitenteRepositorio.ObtenerComitentes()
         CargarGridDesdeDataTable(dtComitentes)
 
     End Sub
