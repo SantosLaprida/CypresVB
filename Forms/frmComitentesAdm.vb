@@ -6,6 +6,7 @@ Public Class frmComitentesAdm
 
 
     Private dtComitentes As New DataTable
+    Private listaComitentes As List(Of Comitente)
     Private ReadOnly comitenteRepositorio As New ComitenteRepositorio()
     Private ReadOnly paisRepositorio As New PaisRepositorio()
 
@@ -47,9 +48,8 @@ Public Class frmComitentesAdm
     End Sub
     Private Sub Cargar_Comitentes()
 
-        dtComitentes = comitenteRepositorio.ObtenerComitentes()
-        CargarGridDesdeDataTable(dtComitentes)
-
+        listaComitentes = comitenteRepositorio.ObtenerComitentes()
+        CargarGrid(listaComitentes)
     End Sub
 
     Private Sub InicializarComboBoxPaises()
@@ -67,36 +67,27 @@ Public Class frmComitentesAdm
         ComboBoxPais.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
 
-    Private Sub CargarGridDesdeDataTable(dt As DataTable)
-
-        'Dim dt As DataTable = ObtenerComitentes()
-
+    Private Sub CargarGrid(lista As List(Of Comitente))
         grid.RowCount = 1
         filaSeleccionada = 0
-
         Dim fila As Integer = 0
 
-        For Each dr As DataRow In dt.Rows
-
+        For Each c As Comitente In lista
             fila += 1
-
             If fila > grid.RowCount Then
                 grid.RowCount = fila
             End If
 
             grid.RowHeights(fila) = 30
-
-            grid(fila, 1).Text = dr("id_comitente").ToString()
+            grid(fila, 1).Text = c.Id.ToString()
             grid(fila, 1).VerticalAlignment = GridVerticalAlignment.Middle
-            grid(fila, 2).Text = dr("sigla").ToString()
+            grid(fila, 2).Text = c.Sigla
             grid(fila, 2).VerticalAlignment = GridVerticalAlignment.Middle
-            grid(fila, 3).Text = dr("comitente").ToString()
+            grid(fila, 3).Text = c.Nombre
             grid(fila, 3).VerticalAlignment = GridVerticalAlignment.Middle
-            grid(fila, 4).Text = dr("direccion").ToString()
+            grid(fila, 4).Text = c.Direccion
             grid(fila, 4).VerticalAlignment = GridVerticalAlignment.Middle
-
             PintarFila(fila)
-
         Next
 
     End Sub
@@ -257,28 +248,20 @@ Public Class frmComitentesAdm
         FiltrarComitentes(txtBuscar.Text)
     End Sub
     Private Sub FiltrarComitentes(texto As String)
-
-        If dtComitentes Is Nothing OrElse dtComitentes.Rows.Count = 0 Then Exit Sub
+        If listaComitentes Is Nothing OrElse listaComitentes.Count = 0 Then Exit Sub
 
         If texto.Trim = "" Then
-            CargarGridDesdeDataTable(dtComitentes)
+            CargarGrid(listaComitentes)
             Exit Sub
         End If
 
-        Dim textoBuscado As String = texto.Trim().Replace("'", "''")
+        Dim textoBuscado As String = texto.Trim().ToLower()
 
-        Dim filas() As DataRow = dtComitentes.Select(
-            "sigla LIKE '%" & textoBuscado & "%' OR comitente LIKE '%" & textoBuscado & "%'",
-            "comitente ASC"
-        )
+        Dim filtrada As List(Of Comitente) = listaComitentes.Where(Function(c)
+                                                                       Return c.Sigla.ToLower().Contains(textoBuscado) OrElse
+               c.Nombre.ToLower().Contains(textoBuscado)
+                                                                   End Function).ToList()
 
-        Dim dtFiltrado As DataTable = dtComitentes.Clone()
-
-        For Each dr As DataRow In filas
-            dtFiltrado.ImportRow(dr)
-        Next
-
-        CargarGridDesdeDataTable(dtFiltrado)
-
+        CargarGrid(filtrada)
     End Sub
 End Class
