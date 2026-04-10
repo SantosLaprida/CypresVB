@@ -3,8 +3,12 @@ Public Class frmComitente
 
     Public IdComitente As Integer = 0
     Public ComitenteEditado As Comitente
+<<<<<<< HEAD
     Public ComitenteRepositiorio As New ComitenteRepositorio()
 
+=======
+    Public ComitenteRepositorio As New ComitenteRepositorio()
+>>>>>>> 90de2d613c7de7b40a4365b2741eff155b4fde26
     Private cadena As String =
         "Server=35.199.107.210;Port=3306;Database=laprida_cypres;Uid=claprida;Pwd=lapridac;"
 
@@ -12,7 +16,11 @@ Public Class frmComitente
 
         If IdComitente > 0 Then
 
+<<<<<<< HEAD
             Dim c As Comitente = ComitenteRepositiorio.ObtenerComitentePorId(IdComitente)
+=======
+            Dim c As Comitente = ComitenteRepositorio.ObtenerComitentePorId(IdComitente)
+>>>>>>> 90de2d613c7de7b40a4365b2741eff155b4fde26
             CargarComitente(c)
 
         Else
@@ -48,7 +56,11 @@ Public Class frmComitente
 
         Try
 
+<<<<<<< HEAD
             ComitenteRepositiorio.GuardarComitente(c)
+=======
+            ComitenteRepositorio.GuardarComitente(c)
+>>>>>>> 90de2d613c7de7b40a4365b2741eff155b4fde26
 
             ComitenteEditado = c
 
