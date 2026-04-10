@@ -7,11 +7,10 @@ Public Class frmComitentesAdm
 
     Private dtComitentes As New DataTable
     Private ReadOnly comitenteRepositorio As New ComitenteRepositorio()
+    Private ReadOnly paisRepositorio As New PaisRepositorio()
 
     Dim cadena As String =
         "Server=35.199.107.210;Port=3306;Database=laprida_cypres;Uid=claprida;Pwd=lapridac;"
-
-
 
     Private grid As New GridControl()
     Private filaSeleccionada As Integer = 0
@@ -20,6 +19,7 @@ Public Class frmComitentesAdm
         AddHandler grid.DoubleClick, AddressOf grid_DoubleClick
         InicializarGrid()
         Cargar_Comitentes()
+        InicializarComboBoxPaises()
 
     End Sub
     Private Sub InicializarGrid()
@@ -50,6 +50,21 @@ Public Class frmComitentesAdm
         dtComitentes = comitenteRepositorio.ObtenerComitentes()
         CargarGridDesdeDataTable(dtComitentes)
 
+    End Sub
+
+    Private Sub InicializarComboBoxPaises()
+        Dim dtPaises As DataTable = paisRepositorio.ObtenerPaises()
+        Dim drPlaceholder As DataRow = dtPaises.NewRow()
+        drPlaceholder("id_pais") = 0
+        drPlaceholder("descripcion") = "..."
+        dtPaises.Rows.InsertAt(drPlaceholder, 0)
+
+        ComboBoxPais.DisplayMember = "descripcion"
+        ComboBoxPais.ValueMember = "id_pais"
+        ComboBoxPais.DataSource = dtPaises
+        ComboBoxPais.SelectedIndex = 0
+        ComboBoxPais.Font = New Font(ComboBoxPais.Font, FontStyle.Bold)
+        ComboBoxPais.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
 
     Private Sub CargarGridDesdeDataTable(dt As DataTable)

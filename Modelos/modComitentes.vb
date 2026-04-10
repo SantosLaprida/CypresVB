@@ -10,6 +10,8 @@ Public Class Comitente
     Public Property Direccion As String
     Public Property Localidad As String
     Public Property CPostal As String
+    Public Property Pais As Integer
+
 
     'AGREGAR CAMPOS DE LA TABLA COMITENTES
 

@@ -11,7 +11,7 @@ Public Class ComitenteRepositorio
         Dim dt As New DataTable
 
         Using cn As New MySqlConnection(Cadena)
-            Using cmd As New MySqlCommand("SELECT id_comitente, sigla, comitente, direccion FROM s_comitentes ORDER BY comitente", cn)
+            Using cmd As New MySqlCommand("SELECT id_comitente, sigla, comitente, direccion, pais FROM s_comitentes ORDER BY comitente", cn)
 
                 cn.Open()
 
