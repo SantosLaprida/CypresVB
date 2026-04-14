@@ -28,21 +28,27 @@ Public Class frmComitentesAdm
 
         'Tamaño y ubicacion de la grilla
         grid.Top = 83
-        grid.Height = 300
-        grid.Width = 750
+        grid.Height = 400
+        grid.Width = 1250
         grid.RowCount = 0
-        grid.ColCount = 4
+        grid.ColCount = 7
 
         grid.ColWidths(1) = 0 'ID
         grid.ColWidths(2) = 80 'sigla
         grid.ColWidths(3) = 300 'comitente
         grid.ColWidths(4) = 315 'direccion
+        grid.ColWidths(5) = 300 'localidad
+        grid.ColWidths(6) = 80 'c.postal
+        grid.ColWidths(7) = 300 'Telefono
         Me.Controls.Add(grid)
         'Encabezado
         grid.RowHeights(0) = 35
         grid(0, 2).Text = "Sigla"
         grid(0, 3).Text = "Comitente"
         grid(0, 4).Text = "Direccion"
+        grid(0, 5).Text = "Localidad"
+        grid(0, 6).Text = "C. Postal"
+        grid(0, 7).Text = "Telefono"
     End Sub
     Private Sub Cargar_Comitentes(Optional idPais As Integer = 0)
 
@@ -67,7 +73,7 @@ Public Class frmComitentesAdm
 
     Private Sub CargarGrid(lista As List(Of Comitente))
 
-        grid.RowCount = 1
+        grid.RowCount = 0
         filaSeleccionada = 0
         Dim fila As Integer = 0
 
@@ -77,15 +83,23 @@ Public Class frmComitentesAdm
                 grid.RowCount = fila
             End If
 
-            grid.RowHeights(fila) = 30
+            grid.RowHeights(fila) = 25
             grid(fila, 1).Text = c.Id.ToString()
             grid(fila, 1).VerticalAlignment = GridVerticalAlignment.Middle
-            grid(fila, 2).Text = c.Sigla
+            grid(fila, 2).HorizontalAlignment = GridHorizontalAlignment.Center
             grid(fila, 2).VerticalAlignment = GridVerticalAlignment.Middle
+            grid(fila, 2).Text = c.Sigla
             grid(fila, 3).Text = c.Nombre
             grid(fila, 3).VerticalAlignment = GridVerticalAlignment.Middle
             grid(fila, 4).Text = c.Direccion
             grid(fila, 4).VerticalAlignment = GridVerticalAlignment.Middle
+            grid(fila, 5).Text = c.Localidad
+            grid(fila, 5).VerticalAlignment = GridVerticalAlignment.Middle
+            grid(fila, 6).VerticalAlignment = GridVerticalAlignment.Middle
+            grid(fila, 6).HorizontalAlignment = GridHorizontalAlignment.Center
+            grid(fila, 6).Text = c.CPostal
+            grid(fila, 7).VerticalAlignment = GridVerticalAlignment.Middle
+            grid(fila, 7).Text = c.telefono
             PintarFila(fila)
         Next
 
@@ -129,11 +143,6 @@ Public Class frmComitentesAdm
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         Dim row = grid.CurrentCell.RowIndex
         EliminarFilaGrid(grid, row)
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim row As Integer = grid.CurrentCell.RowIndex
-        grid.Rows.InsertRange(row, 1)
     End Sub
 
     Private Function BuscarPosicionComitente(nombre As String, Optional filaExcluir As Integer = 0) As Integer
@@ -265,7 +274,6 @@ Public Class frmComitentesAdm
     End Sub
 
     Private Sub ComboBoxPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPais.SelectedIndexChanged
-
         Cargar_Comitentes(ComboBoxPais.SelectedValue)
     End Sub
 End Class

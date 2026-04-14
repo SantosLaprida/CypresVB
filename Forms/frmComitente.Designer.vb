@@ -38,25 +38,33 @@ Partial Class frmComitente
         txtTipo = New TextBox()
         Label7 = New Label()
         lbl_Id = New Label()
+        Label8 = New Label()
+        ComboBoxPais = New ComboBox()
+        txtTelefono = New TextBox()
+        Label9 = New Label()
+        txtMail = New TextBox()
+        Label10 = New Label()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(365, 58)
+        Label1.Location = New Point(364, 58)
         Label1.Name = "Label1"
         Label1.Size = New Size(21, 15)
         Label1.TabIndex = 0
         Label1.Text = "ID:"
+        Label1.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(351, 84)
+        Label2.Location = New Point(350, 84)
         Label2.Name = "Label2"
         Label2.Size = New Size(35, 15)
         Label2.TabIndex = 2
         Label2.Text = "Sigla:"
+        Label2.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' txtSigla
         ' 
@@ -77,11 +85,12 @@ Partial Class frmComitente
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(320, 110)
+        Label3.Location = New Point(319, 110)
         Label3.Name = "Label3"
         Label3.Size = New Size(66, 15)
         Label3.TabIndex = 4
         Label3.Text = "Comitente:"
+        Label3.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' txtDireccion
         ' 
@@ -94,11 +103,12 @@ Partial Class frmComitente
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(320, 139)
+        Label4.Location = New Point(325, 139)
         Label4.Name = "Label4"
         Label4.Size = New Size(60, 15)
         Label4.TabIndex = 6
         Label4.Text = "Direccion:"
+        Label4.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' txtLocalidad
         ' 
@@ -111,11 +121,12 @@ Partial Class frmComitente
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(320, 168)
+        Label5.Location = New Point(324, 168)
         Label5.Name = "Label5"
         Label5.Size = New Size(61, 15)
         Label5.TabIndex = 8
         Label5.Text = "Localidad:"
+        Label5.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' txtCPostal
         ' 
@@ -128,33 +139,34 @@ Partial Class frmComitente
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(324, 200)
+        Label6.Location = New Point(329, 200)
         Label6.Name = "Label6"
         Label6.Size = New Size(56, 15)
         Label6.TabIndex = 10
         Label6.Text = "C. Postal:"
+        Label6.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' btnGuardar
         ' 
-        btnGuardar.Location = New Point(412, 273)
+        btnGuardar.Location = New Point(418, 374)
         btnGuardar.Name = "btnGuardar"
-        btnGuardar.Size = New Size(85, 23)
+        btnGuardar.Size = New Size(85, 26)
         btnGuardar.TabIndex = 12
         btnGuardar.Text = "Guardar"
         btnGuardar.UseVisualStyleBackColor = True
         ' 
         ' btnCancelar
         ' 
-        btnCancelar.Location = New Point(518, 273)
+        btnCancelar.Location = New Point(524, 374)
         btnCancelar.Name = "btnCancelar"
-        btnCancelar.Size = New Size(85, 23)
+        btnCancelar.Size = New Size(85, 26)
         btnCancelar.TabIndex = 13
         btnCancelar.Text = "Cancelar"
         btnCancelar.UseVisualStyleBackColor = True
         ' 
         ' txtTipo
         ' 
-        txtTipo.Location = New Point(403, 226)
+        txtTipo.Location = New Point(403, 326)
         txtTipo.MaxLength = 10
         txtTipo.Name = "txtTipo"
         txtTipo.Size = New Size(47, 23)
@@ -163,11 +175,12 @@ Partial Class frmComitente
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(365, 234)
+        Label7.Location = New Point(352, 334)
         Label7.Name = "Label7"
         Label7.Size = New Size(33, 15)
         Label7.TabIndex = 14
         Label7.Text = "Tipo:"
+        Label7.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' lbl_Id
         ' 
@@ -181,11 +194,73 @@ Partial Class frmComitente
         lbl_Id.Text = "lbl_id"
         lbl_Id.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Location = New Point(354, 297)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(31, 15)
+        Label8.TabIndex = 17
+        Label8.Text = "Pais:"
+        Label8.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' ComboBoxPais
+        ' 
+        ComboBoxPais.FormattingEnabled = True
+        ComboBoxPais.Location = New Point(403, 297)
+        ComboBoxPais.Name = "ComboBoxPais"
+        ComboBoxPais.Size = New Size(128, 23)
+        ComboBoxPais.TabIndex = 18
+        ' 
+        ' txtTelefono
+        ' 
+        txtTelefono.Location = New Point(403, 226)
+        txtTelefono.MaxLength = 50
+        txtTelefono.Name = "txtTelefono"
+        txtTelefono.Size = New Size(358, 23)
+        txtTelefono.TabIndex = 20
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.ImageAlign = ContentAlignment.MiddleRight
+        Label9.Location = New Point(330, 226)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(55, 15)
+        Label9.TabIndex = 19
+        Label9.Text = "Telefono:"
+        Label9.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' txtMail
+        ' 
+        txtMail.Location = New Point(403, 255)
+        txtMail.MaxLength = 50
+        txtMail.Name = "txtMail"
+        txtMail.Size = New Size(358, 23)
+        txtMail.TabIndex = 22
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.ImageAlign = ContentAlignment.MiddleRight
+        Label10.Location = New Point(350, 255)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(33, 15)
+        Label10.TabIndex = 21
+        Label10.Text = "Mail:"
+        Label10.TextAlign = ContentAlignment.MiddleRight
+        ' 
         ' frmComitente
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(txtMail)
+        Controls.Add(Label10)
+        Controls.Add(txtTelefono)
+        Controls.Add(Label9)
+        Controls.Add(ComboBoxPais)
+        Controls.Add(Label8)
         Controls.Add(lbl_Id)
         Controls.Add(txtTipo)
         Controls.Add(Label7)
@@ -224,4 +299,10 @@ Partial Class frmComitente
     Friend WithEvents txtTipo As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents lbl_Id As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents ComboBoxPais As ComboBox
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtMail As TextBox
+    Friend WithEvents Label10 As Label
 End Class

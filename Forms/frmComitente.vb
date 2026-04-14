@@ -32,6 +32,7 @@ Public Class frmComitente
         txtDireccion.Text = c.Direccion
         txtLocalidad.Text = c.Localidad
         txtCPostal.Text = c.CPostal
+        txtTelefono.Text = c.telefono
 
     End Sub
 
