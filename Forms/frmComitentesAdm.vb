@@ -4,8 +4,6 @@ Imports MySql.Data.MySqlClient
 Imports TuProyecto
 Public Class frmComitentesAdm
 
-
-    Private dtComitentes As New DataTable
     Private listaComitentes As List(Of Comitente)
     Private ReadOnly comitenteRepositorio As New ComitenteRepositorio()
     Private ReadOnly paisRepositorio As New PaisRepositorio()
@@ -46,9 +44,9 @@ Public Class frmComitentesAdm
         grid(0, 3).Text = "Comitente"
         grid(0, 4).Text = "Direccion"
     End Sub
-    Private Sub Cargar_Comitentes()
+    Private Sub Cargar_Comitentes(Optional idPais As Integer = 0)
 
-        listaComitentes = comitenteRepositorio.ObtenerComitentes()
+        listaComitentes = comitenteRepositorio.ObtenerComitentes(idPais)
         CargarGrid(listaComitentes)
     End Sub
 
@@ -68,6 +66,7 @@ Public Class frmComitentesAdm
     End Sub
 
     Private Sub CargarGrid(lista As List(Of Comitente))
+
         grid.RowCount = 1
         filaSeleccionada = 0
         Dim fila As Integer = 0
@@ -263,5 +262,10 @@ Public Class frmComitentesAdm
                                                                    End Function).ToList()
 
         CargarGrid(filtrada)
+    End Sub
+
+    Private Sub ComboBoxPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPais.SelectedIndexChanged
+
+        Cargar_Comitentes(ComboBoxPais.SelectedValue)
     End Sub
 End Class

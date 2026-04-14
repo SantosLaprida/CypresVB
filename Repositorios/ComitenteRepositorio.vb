@@ -6,10 +6,16 @@ Public Class ComitenteRepositorio
     'LA CADENA SE OBTIENE DEL MÓDULO DE CONEXIÓN A CORREGIR!
     Private ReadOnly _cadena As String = m_Conexion.Cadena
 
-    Public Function ObtenerComitentes() As List(Of Comitente)
+    Public Function ObtenerComitentes(id As Integer) As List(Of Comitente)
         Dim lista As New List(Of Comitente)
+        Dim sql As String = "SELECT * FROM s_comitentes"
+        If id > 0 Then
+            sql = sql & " WHERE id_pais = " & id
+        End If
+        sql = sql & " ORDER BY comitente"
+
         Using cn As New MySqlConnection(_cadena)
-            Using cmd As New MySqlCommand("SELECT * FROM s_comitentes ORDER BY comitente", cn)
+            Using cmd As New MySqlCommand(sql, cn)
                 cn.Open()
                 Using dr As MySqlDataReader = cmd.ExecuteReader()
                     While dr.Read()
@@ -27,6 +33,8 @@ Public Class ComitenteRepositorio
         End Using
         Return lista
     End Function
+
+
 
     Public Function ObtenerComitentePorId(id As Integer) As Comitente
         Dim c As Comitente = Nothing
