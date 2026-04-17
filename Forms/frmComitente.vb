@@ -3,41 +3,69 @@ Public Class frmComitente
 
     Public IdComitente As Integer = 0
     Public ComitenteEditado As Comitente
-    Public ComitenteRepositiorio As New ComitenteRepositorio()
-
-    Private cadena As String =
-        "Server=35.199.107.210;Port=3306;Database=laprida_cypres;Uid=claprida;Pwd=lapridac;"
+    Public comitenteRepositiorio As New ComitenteRepositorio()
+    Public paisRepositorio As New PaisRepositorio()
 
     Private Sub frmComitente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If IdComitente > 0 Then
+        InicializarComboBoxPaises()
 
-            Dim c As Comitente = ComitenteRepositiorio.ObtenerComitentePorId(IdComitente)
+        If IdComitente > 0 Then
+            Me.Text = "Editar Comitente"
+            Dim c As Comitente = comitenteRepositiorio.ObtenerComitentePorId(IdComitente)
             CargarComitente(c)
 
         Else
-
+            Me.Text = "Nuevo Comitente"
             txtSigla.Focus()
 
         End If
 
     End Sub
     Private Sub CargarComitente(c As Comitente)
+        '      Public Property Id As Integer
+        'Public Property Sigla As String
+        'Public Property Nombre As String
+        'Public Property Direccion As String
+        'Public Property Localidad As String
+        'Public Property CPostal As String
+        'Public Property Pais As Integer
+        'Public Property telefono As String
 
         If c Is Nothing Then Exit Sub
 
-        lbl_Id.Text = c.Id.ToString()
+        'lbl_Id.Text = c.Id.ToString()
         txtSigla.Text = c.Sigla
         txtComitente.Text = c.Nombre
         txtDireccion.Text = c.Direccion
         txtLocalidad.Text = c.Localidad
         txtCPostal.Text = c.CPostal
         txtTelefono.Text = c.telefono
+        If c.Pais > 0 Then
+            ComboBoxPais.SelectedValue = c.Pais
+        End If
+        txtMail.Text = c.Email
 
+    End Sub
+
+    Private Sub InicializarComboBoxPaises()
+        Dim dtPaises As DataTable = paisRepositorio.ObtenerPaises()
+        Dim drPlaceholder As DataRow = dtPaises.NewRow()
+        drPlaceholder("id_pais") = 0
+        drPlaceholder("descripcion") = "..."
+        dtPaises.Rows.InsertAt(drPlaceholder, 0)
+
+        ComboBoxPais.DisplayMember = "descripcion"
+        ComboBoxPais.ValueMember = "id_pais"
+        ComboBoxPais.DataSource = dtPaises
+        ComboBoxPais.SelectedIndex = 0
+        ComboBoxPais.Font = New Font(ComboBoxPais.Font, FontStyle.Bold)
+        ComboBoxPais.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
 
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+
         Dim c As New Comitente
 
         c.Id = IdComitente
@@ -46,10 +74,17 @@ Public Class frmComitente
         c.Direccion = txtDireccion.Text.Trim()
         c.Localidad = txtLocalidad.Text.Trim()
         c.CPostal = txtCPostal.Text.Trim()
+        c.telefono = txtTelefono.Text.Trim()
+
+        If ComboBoxPais.SelectedValue IsNot Nothing Then
+            c.Pais = Convert.ToInt32(ComboBoxPais.SelectedValue)
+        Else
+            c.Pais = 0
+        End If
 
         Try
 
-            ComitenteRepositiorio.GuardarComitente(c)
+            comitenteRepositiorio.GuardarComitente(c)
 
             ComitenteEditado = c
 

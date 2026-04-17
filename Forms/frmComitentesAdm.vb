@@ -8,9 +8,6 @@ Public Class frmComitentesAdm
     Private ReadOnly comitenteRepositorio As New ComitenteRepositorio()
     Private ReadOnly paisRepositorio As New PaisRepositorio()
 
-    Dim cadena As String =
-        "Server=35.199.107.210;Port=3306;Database=laprida_cypres;Uid=claprida;Pwd=lapridac;"
-
     Private grid As New GridControl()
     Private filaSeleccionada As Integer = 0
 

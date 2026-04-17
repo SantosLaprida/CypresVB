@@ -27,6 +27,7 @@ Public Class ComitenteRepositorio
                         c.Localidad = dr("localidad").ToString()
                         c.CPostal = dr("c_postal").ToString()
                         c.telefono = dr("telefono").ToString()
+                        c.Pais = Convert.ToInt32(dr("id_pais"))
                         lista.Add(c)
                     End While
                 End Using
@@ -55,6 +56,8 @@ Public Class ComitenteRepositorio
                         c.Localidad = dr("localidad").ToString()
                         c.CPostal = dr("c_postal").ToString()
                         c.telefono = dr("telefono").ToString()
+                        c.Pais = Convert.ToInt32(dr("id_pais"))
+                        c.Email = dr("email").ToString()
                     End If
                 End Using
             End Using
@@ -80,8 +83,10 @@ Public Class ComitenteRepositorio
                         End Using
 
                         Dim sqlInsert As String =
-                            "INSERT INTO s_comitentes (id_comitente, sigla, comitente, direccion, localidad, c_postal) " &
-                            "VALUES (@id, @sigla, @comitente, @direccion, @localidad, @c_postal,@c.telefono)"
+                            "INSERT INTO s_comitentes 
+                            (id_comitente, sigla, comitente, direccion, localidad, c_postal, telefono, id_pais)
+                            VALUES 
+                            (@id, @sigla, @comitente, @direccion, @localidad, @c_postal, @telefono, @pais)"
 
                         Using cmd As New MySqlCommand(sqlInsert, cn, tran)
                             cmd.Parameters.AddWithValue("@id", c.Id)
@@ -91,6 +96,7 @@ Public Class ComitenteRepositorio
                             cmd.Parameters.AddWithValue("@localidad", c.Localidad)
                             cmd.Parameters.AddWithValue("@c_postal", c.CPostal)
                             cmd.Parameters.AddWithValue("@telefono", c.telefono)
+                            cmd.Parameters.AddWithValue("@pais", c.Pais)
                             cmd.ExecuteNonQuery()
                         End Using
 
@@ -102,8 +108,9 @@ Public Class ComitenteRepositorio
                             "comitente = @comitente, " &
                             "direccion = @direccion, " &
                             "localidad = @localidad, " &
-                            "c_postal = @c_postal " &
-                            "telefono = @telefono " &
+                            "c_postal = @c_postal, " &
+                            "telefono = @telefono, " &
+                            "id_pais = @pais " &
                             "WHERE id_comitente = @id"
 
                         Using cmd As New MySqlCommand(sqlUpdate, cn, tran)
@@ -114,6 +121,8 @@ Public Class ComitenteRepositorio
                             cmd.Parameters.AddWithValue("@localidad", c.Localidad)
                             cmd.Parameters.AddWithValue("@c_postal", c.CPostal)
                             cmd.Parameters.AddWithValue("@telefono", c.telefono)
+                            cmd.Parameters.AddWithValue("@email", c.Email)
+                            cmd.Parameters.AddWithValue("@pais", c.Pais)
                             cmd.ExecuteNonQuery()
                         End Using
 

@@ -13,6 +13,8 @@ Public Class Comitente
     Public Property Pais As Integer
     Public Property telefono As String
 
+    Public Property Email As String
+
 
     'AGREGAR CAMPOS DE LA TABLA COMITENTES
 
