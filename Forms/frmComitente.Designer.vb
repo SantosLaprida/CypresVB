@@ -34,234 +34,264 @@ Partial Class frmComitente
         Label6 = New Label()
         btnGuardar = New Button()
         btnCancelar = New Button()
-        txtTipo = New TextBox()
-        Label7 = New Label()
         Label8 = New Label()
         ComboBoxPais = New ComboBox()
         txtTelefono = New TextBox()
         Label9 = New Label()
         txtMail = New TextBox()
         Label10 = New Label()
+        rad_publico = New RadioButton()
+        rad_privado = New RadioButton()
         SuspendLayout()
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(138, 84)
+        Label2.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
+        Label2.Location = New Point(81, 24)
         Label2.Margin = New Padding(5, 0, 5, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(63, 28)
+        Label2.Size = New Size(35, 13)
         Label2.TabIndex = 2
         Label2.Text = "Sigla:"
         Label2.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' txtSigla
         ' 
-        txtSigla.Location = New Point(229, 79)
-        txtSigla.Margin = New Padding(5, 5, 5, 5)
+        txtSigla.Font = New Font("Microsoft Sans Serif", 8.25F)
+        txtSigla.Location = New Point(146, 23)
+        txtSigla.Margin = New Padding(5)
         txtSigla.MaxLength = 10
         txtSigla.Name = "txtSigla"
-        txtSigla.Size = New Size(103, 34)
+        txtSigla.Size = New Size(103, 20)
         txtSigla.TabIndex = 3
         ' 
         ' txtComitente
         ' 
-        txtComitente.Location = New Point(229, 132)
-        txtComitente.Margin = New Padding(5, 5, 5, 5)
+        txtComitente.Font = New Font("Microsoft Sans Serif", 8.25F)
+        txtComitente.Location = New Point(146, 54)
+        txtComitente.Margin = New Padding(5)
         txtComitente.MaxLength = 50
         txtComitente.Name = "txtComitente"
-        txtComitente.Size = New Size(611, 34)
+        txtComitente.Size = New Size(394, 20)
         txtComitente.TabIndex = 5
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(85, 132)
+        Label3.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
+        Label3.Location = New Point(52, 54)
         Label3.Margin = New Padding(5, 0, 5, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(115, 28)
+        Label3.Size = New Size(64, 13)
         Label3.TabIndex = 4
         Label3.Text = "Comitente:"
         Label3.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' txtDireccion
         ' 
-        txtDireccion.Location = New Point(229, 187)
-        txtDireccion.Margin = New Padding(5, 5, 5, 5)
+        txtDireccion.Font = New Font("Microsoft Sans Serif", 8.25F)
+        txtDireccion.Location = New Point(147, 85)
+        txtDireccion.Margin = New Padding(5)
         txtDireccion.MaxLength = 50
         txtDireccion.Name = "txtDireccion"
-        txtDireccion.Size = New Size(611, 34)
+        txtDireccion.Size = New Size(394, 20)
         txtDireccion.TabIndex = 7
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(95, 187)
+        Label4.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
+        Label4.Location = New Point(58, 88)
         Label4.Margin = New Padding(5, 0, 5, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(107, 28)
+        Label4.Size = New Size(58, 13)
         Label4.TabIndex = 6
         Label4.Text = "Direccion:"
         Label4.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' txtLocalidad
         ' 
-        txtLocalidad.Location = New Point(229, 241)
-        txtLocalidad.Margin = New Padding(5, 5, 5, 5)
+        txtLocalidad.Font = New Font("Microsoft Sans Serif", 8.25F)
+        txtLocalidad.Location = New Point(146, 119)
+        txtLocalidad.Margin = New Padding(5)
         txtLocalidad.MaxLength = 50
         txtLocalidad.Name = "txtLocalidad"
-        txtLocalidad.Size = New Size(611, 34)
+        txtLocalidad.Size = New Size(394, 20)
         txtLocalidad.TabIndex = 9
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(93, 241)
+        Label5.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
+        Label5.Location = New Point(56, 120)
         Label5.Margin = New Padding(5, 0, 5, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(107, 28)
+        Label5.Size = New Size(60, 13)
         Label5.TabIndex = 8
         Label5.Text = "Localidad:"
         Label5.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' txtCPostal
         ' 
-        txtCPostal.Location = New Point(229, 295)
-        txtCPostal.Margin = New Padding(5, 5, 5, 5)
+        txtCPostal.Font = New Font("Microsoft Sans Serif", 8.25F)
+        txtCPostal.Location = New Point(146, 151)
+        txtCPostal.Margin = New Padding(5)
         txtCPostal.MaxLength = 15
         txtCPostal.Name = "txtCPostal"
-        txtCPostal.Size = New Size(169, 34)
+        txtCPostal.Size = New Size(110, 20)
         txtCPostal.TabIndex = 11
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(102, 300)
+        Label6.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
+        Label6.Location = New Point(61, 152)
         Label6.Margin = New Padding(5, 0, 5, 0)
         Label6.Name = "Label6"
-        Label6.Size = New Size(97, 28)
+        Label6.Size = New Size(55, 13)
         Label6.TabIndex = 10
         Label6.Text = "C. Postal:"
         Label6.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' btnGuardar
         ' 
-        btnGuardar.BackColor = SystemColors.Info
-        btnGuardar.Location = New Point(229, 679)
-        btnGuardar.Margin = New Padding(5, 5, 5, 5)
+        btnGuardar.BackColor = SystemColors.HotTrack
+        btnGuardar.Cursor = Cursors.Hand
+        btnGuardar.FlatAppearance.BorderColor = Color.FromArgb(CByte(0), CByte(0), CByte(192))
+        btnGuardar.FlatAppearance.BorderSize = 0
+        btnGuardar.FlatStyle = FlatStyle.Flat
+        btnGuardar.Font = New Font("Segoe UI", 8.25F)
+        btnGuardar.ForeColor = Color.White
+        btnGuardar.Location = New Point(146, 321)
+        btnGuardar.Margin = New Padding(5)
         btnGuardar.Name = "btnGuardar"
-        btnGuardar.Size = New Size(145, 48)
+        btnGuardar.Size = New Size(90, 27)
         btnGuardar.TabIndex = 12
         btnGuardar.Text = "Guardar"
         btnGuardar.UseVisualStyleBackColor = False
         ' 
         ' btnCancelar
         ' 
-        btnCancelar.BackColor = SystemColors.Info
-        btnCancelar.Location = New Point(547, 679)
-        btnCancelar.Margin = New Padding(5, 5, 5, 5)
+        btnCancelar.BackColor = SystemColors.HotTrack
+        btnCancelar.FlatAppearance.BorderSize = 0
+        btnCancelar.FlatStyle = FlatStyle.Flat
+        btnCancelar.Font = New Font("Segoe UI", 8.25F)
+        btnCancelar.ForeColor = Color.White
+        btnCancelar.Location = New Point(277, 321)
+        btnCancelar.Margin = New Padding(5)
         btnCancelar.Name = "btnCancelar"
-        btnCancelar.Size = New Size(145, 48)
+        btnCancelar.Size = New Size(90, 27)
         btnCancelar.TabIndex = 13
         btnCancelar.Text = "Cancelar"
         btnCancelar.UseVisualStyleBackColor = False
         ' 
-        ' txtTipo
-        ' 
-        txtTipo.Location = New Point(229, 536)
-        txtTipo.Margin = New Padding(5, 5, 5, 5)
-        txtTipo.MaxLength = 10
-        txtTipo.Name = "txtTipo"
-        txtTipo.Size = New Size(77, 34)
-        txtTipo.TabIndex = 15
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Location = New Point(147, 536)
-        Label7.Margin = New Padding(5, 0, 5, 0)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(59, 28)
-        Label7.TabIndex = 14
-        Label7.Text = "Tipo:"
-        Label7.TextAlign = ContentAlignment.MiddleRight
-        ' 
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(147, 469)
+        Label8.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
+        Label8.Location = New Point(85, 247)
         Label8.Margin = New Padding(5, 0, 5, 0)
         Label8.Name = "Label8"
-        Label8.Size = New Size(55, 28)
+        Label8.Size = New Size(31, 13)
         Label8.TabIndex = 17
         Label8.Text = "Pais:"
         Label8.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' ComboBoxPais
         ' 
+        ComboBoxPais.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(229, 466)
-        ComboBoxPais.Margin = New Padding(5, 5, 5, 5)
+        ComboBoxPais.Location = New Point(147, 245)
+        ComboBoxPais.Margin = New Padding(5)
         ComboBoxPais.Name = "ComboBoxPais"
-        ComboBoxPais.Size = New Size(217, 36)
+        ComboBoxPais.Size = New Size(166, 21)
         ComboBoxPais.TabIndex = 18
         ' 
         ' txtTelefono
         ' 
-        txtTelefono.Location = New Point(229, 349)
-        txtTelefono.Margin = New Padding(5, 5, 5, 5)
+        txtTelefono.Font = New Font("Microsoft Sans Serif", 8.25F)
+        txtTelefono.Location = New Point(146, 183)
+        txtTelefono.Margin = New Padding(5)
         txtTelefono.MaxLength = 50
         txtTelefono.Name = "txtTelefono"
-        txtTelefono.Size = New Size(611, 34)
+        txtTelefono.Size = New Size(394, 20)
         txtTelefono.TabIndex = 20
         ' 
         ' Label9
         ' 
         Label9.AutoSize = True
+        Label9.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
         Label9.ImageAlign = ContentAlignment.MiddleRight
-        Label9.Location = New Point(103, 349)
+        Label9.Location = New Point(61, 184)
         Label9.Margin = New Padding(5, 0, 5, 0)
         Label9.Name = "Label9"
-        Label9.Size = New Size(99, 28)
+        Label9.Size = New Size(55, 13)
         Label9.TabIndex = 19
         Label9.Text = "Telefono:"
         Label9.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' txtMail
         ' 
-        txtMail.Location = New Point(229, 403)
-        txtMail.Margin = New Padding(5, 5, 5, 5)
+        txtMail.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtMail.Location = New Point(146, 213)
+        txtMail.Margin = New Padding(5)
         txtMail.MaxLength = 50
         txtMail.Name = "txtMail"
-        txtMail.Size = New Size(611, 34)
+        txtMail.Size = New Size(394, 22)
         txtMail.TabIndex = 22
         ' 
         ' Label10
         ' 
         Label10.AutoSize = True
+        Label10.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
         Label10.ImageAlign = ContentAlignment.MiddleRight
-        Label10.Location = New Point(138, 403)
+        Label10.Location = New Point(78, 219)
         Label10.Margin = New Padding(5, 0, 5, 0)
         Label10.Name = "Label10"
-        Label10.Size = New Size(69, 28)
+        Label10.Size = New Size(38, 13)
         Label10.TabIndex = 21
         Label10.Text = "Email:"
         Label10.TextAlign = ContentAlignment.MiddleRight
         ' 
+        ' rad_publico
+        ' 
+        rad_publico.AutoSize = True
+        rad_publico.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        rad_publico.Location = New Point(147, 274)
+        rad_publico.Name = "rad_publico"
+        rad_publico.Size = New Size(63, 17)
+        rad_publico.TabIndex = 23
+        rad_publico.TabStop = True
+        rad_publico.Text = "Publico"
+        rad_publico.UseVisualStyleBackColor = True
+        ' 
+        ' rad_privado
+        ' 
+        rad_privado.AutoSize = True
+        rad_privado.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        rad_privado.Location = New Point(250, 274)
+        rad_privado.Name = "rad_privado"
+        rad_privado.Size = New Size(63, 17)
+        rad_privado.TabIndex = 24
+        rad_privado.TabStop = True
+        rad_privado.Text = "Privado"
+        rad_privado.UseVisualStyleBackColor = True
+        ' 
         ' frmComitente
         ' 
-        AutoScaleDimensions = New SizeF(12F, 28F)
+        AutoScaleDimensions = New SizeF(8F, 17F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.InactiveCaption
-        ClientSize = New Size(933, 840)
+        ClientSize = New Size(1067, 413)
+        Controls.Add(rad_privado)
+        Controls.Add(rad_publico)
         Controls.Add(txtMail)
         Controls.Add(Label10)
         Controls.Add(txtTelefono)
         Controls.Add(Label9)
         Controls.Add(ComboBoxPais)
         Controls.Add(Label8)
-        Controls.Add(txtTipo)
-        Controls.Add(Label7)
         Controls.Add(btnCancelar)
         Controls.Add(btnGuardar)
         Controls.Add(txtCPostal)
@@ -275,7 +305,10 @@ Partial Class frmComitente
         Controls.Add(txtSigla)
         Controls.Add(Label2)
         Font = New Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Margin = New Padding(5, 5, 5, 5)
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        Margin = New Padding(5)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "frmComitente"
         Text = "Comitente - Editar"
         ResumeLayout(False)
@@ -293,12 +326,12 @@ Partial Class frmComitente
     Friend WithEvents Label6 As Label
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents txtTipo As TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents ComboBoxPais As ComboBox
     Friend WithEvents txtTelefono As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtMail As TextBox
     Friend WithEvents Label10 As Label
+    Friend WithEvents rad_publico As RadioButton
+    Friend WithEvents rad_privado As RadioButton
 End Class

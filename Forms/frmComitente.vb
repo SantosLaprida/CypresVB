@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Drawing.Drawing2D
 Public Class frmComitente
 
     Public IdComitente As Integer = 0
@@ -20,7 +21,8 @@ Public Class frmComitente
             txtSigla.Focus()
 
         End If
-
+        RedondearBoton(btnGuardar, 10)
+        'RedondearBoton(btnCancelar, 20)
     End Sub
     Private Sub CargarComitente(c As Comitente)
         '      Public Property Id As Integer
@@ -43,6 +45,12 @@ Public Class frmComitente
         txtTelefono.Text = c.telefono
         If c.Pais > 0 Then
             ComboBoxPais.SelectedValue = c.Pais
+        End If
+        If c.tipo = PUBLICO Then
+            rad_publico.Checked = True
+        End If
+        If c.tipo = PRIVADO Then
+            rad_privado.Checked = True
         End If
         txtMail.Text = c.Email
 
@@ -81,7 +89,12 @@ Public Class frmComitente
         Else
             c.Pais = 0
         End If
-
+        If rad_publico.Checked = True Then
+            c.tipo = PUBLICO
+        End If
+        If rad_privado.Checked = True Then
+            c.tipo = PRIVADO
+        End If
         Try
 
             comitenteRepositiorio.GuardarComitente(c)
@@ -100,6 +113,19 @@ Public Class frmComitente
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
     End Sub
+    Private Sub RedondearBoton(btn As Button, radio As Integer)
 
+        Dim path As New GraphicsPath()
+
+        path.StartFigure()
+        path.AddArc(0, 0, radio, radio, 180, 90)
+        path.AddArc(btn.Width - radio, 0, radio, radio, 270, 90)
+        path.AddArc(btn.Width - radio, btn.Height - radio, radio, radio, 0, 90)
+        path.AddArc(0, btn.Height - radio, radio, radio, 90, 90)
+        path.CloseFigure()
+
+        btn.Region = New Region(path)
+
+    End Sub
 
 End Class

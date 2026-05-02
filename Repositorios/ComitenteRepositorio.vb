@@ -28,6 +28,7 @@ Public Class ComitenteRepositorio
                         c.CPostal = dr("c_postal").ToString()
                         c.telefono = dr("telefono").ToString()
                         c.Pais = Convert.ToInt32(dr("id_pais"))
+                        c.tipo = Convert.ToInt32(dr("tipo"))
                         lista.Add(c)
                     End While
                 End Using
@@ -58,6 +59,7 @@ Public Class ComitenteRepositorio
                         c.telefono = dr("telefono").ToString()
                         c.Pais = Convert.ToInt32(dr("id_pais"))
                         c.Email = dr("email").ToString()
+                        c.tipo = Convert.ToInt32(dr("tipo"))
                     End If
                 End Using
             End Using

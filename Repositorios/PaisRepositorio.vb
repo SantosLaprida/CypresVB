@@ -18,5 +18,24 @@ Public Class PaisRepositorio
 
         Return dt
     End Function
+    'Public Function ObtenerPaisPorId(id As Integer) As modPaises
+    '    Dim c As modPaises = Nothing
+    '    Dim sql As String = "SELECT * FROM s_paises WHERE id_pais = @id"
 
+    '    Using cn As New MySqlConnection(Cadena)
+    '        Using cmd As New MySqlCommand(sql, cn)
+    '            cmd.Parameters.AddWithValue("@id", id)
+    '            cn.Open()
+    '            Using dr As MySqlDataReader = cmd.ExecuteReader()
+    '                If dr.Read() Then
+    '                    c = New modPaises
+    '                    c.Id = Convert.ToInt32(dr("id_pais"))
+    '                    c.descripcion = dr("descripcion").ToString()
+    '                    c.activo = Convert.ToInt32(dr("activo"))
+    '                End If
+    '            End Using
+    '        End Using
+    '    End Using
+    '    Return c
+    'End Function
 End Class

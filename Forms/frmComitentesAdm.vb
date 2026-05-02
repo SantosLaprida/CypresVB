@@ -1,7 +1,7 @@
 ﻿Imports Syncfusion.Windows.Forms.Grid
 Imports System.Data
 Imports MySql.Data.MySqlClient
-Imports TuProyecto
+'Imports TuProyecto
 Public Class frmComitentesAdm
 
     Private listaComitentes As List(Of Comitente)
@@ -272,5 +272,9 @@ Public Class frmComitentesAdm
 
     Private Sub ComboBoxPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPais.SelectedIndexChanged
         Cargar_Comitentes(ComboBoxPais.SelectedValue)
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 End Class
