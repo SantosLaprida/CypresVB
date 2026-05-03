@@ -54,10 +54,8 @@ Public Class frmPaises
         ' Si pasa validación → guardar
         GuardarPais(c)
 
-        'c.Descripcion = txt_pais.Text
-        'c.Activo = 0
-        'PaisValidar(c)
         InicializarListaPaises()
+        txt_pais.Text = ""
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -80,5 +78,7 @@ Public Class frmPaises
         GuardarPais(c)
 
         InicializarListaPaises()
+        txt_pais.Text = ""
+
     End Sub
 End Class
