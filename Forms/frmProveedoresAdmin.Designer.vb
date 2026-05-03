@@ -1,8 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmComitentesAdm
+Partial Class frmProveedoresAdmin
     Inherits System.Windows.Forms.Form
 
-    'Form reemplaza a Dispose para limpiar la lista de componentes.
+    'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -14,15 +14,15 @@ Partial Class frmComitentesAdm
         End Try
     End Sub
 
-    'Requerido por el Diseñador de Windows Forms
+    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-    'Se puede modificar usando el Diseñador de Windows Forms.  
-    'No lo modifique con el editor de código.
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmComitentesAdm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProveedoresAdmin))
         ToolStrip1 = New ToolStrip()
         NuevoToolStripButton = New ToolStripButton()
         AbrirToolStripButton = New ToolStripButton()
@@ -35,13 +35,7 @@ Partial Class frmComitentesAdm
         toolStripSeparator1 = New ToolStripSeparator()
         AyudaToolStripButton = New ToolStripButton()
         Panel1 = New Panel()
-        Label2 = New Label()
-        ComboBoxPais = New ComboBox()
-        Label1 = New Label()
-        txtBuscar = New TextBox()
-        Button1 = New Button()
         ToolStrip1.SuspendLayout()
-        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' ToolStrip1
@@ -52,8 +46,8 @@ Partial Class frmComitentesAdm
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
         ToolStrip1.Padding = New Padding(0, 0, 3, 0)
-        ToolStrip1.Size = New Size(1978, 29)
-        ToolStrip1.TabIndex = 0
+        ToolStrip1.Size = New Size(2018, 29)
+        ToolStrip1.TabIndex = 1
         ToolStrip1.Text = "ToolStrip1"
         ' 
         ' NuevoToolStripButton
@@ -141,77 +135,24 @@ Partial Class frmComitentesAdm
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.ActiveCaption
-        Panel1.Controls.Add(Label2)
-        Panel1.Controls.Add(ComboBoxPais)
-        Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(txtBuscar)
-        Panel1.Controls.Add(Button1)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 29)
         Panel1.Margin = New Padding(4, 5, 4, 5)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1978, 87)
-        Panel1.TabIndex = 4
+        Panel1.Size = New Size(2018, 87)
+        Panel1.TabIndex = 5
         ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(457, 33)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(46, 25)
-        Label2.TabIndex = 7
-        Label2.Text = "Pais:"
-        ' 
-        ' ComboBoxPais
-        ' 
-        ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(506, 30)
-        ComboBoxPais.Name = "ComboBoxPais"
-        ComboBoxPais.Size = New Size(137, 33)
-        ComboBoxPais.TabIndex = 6
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(897, 32)
-        Label1.Margin = New Padding(4, 0, 4, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(98, 25)
-        Label1.TabIndex = 5
-        Label1.Text = "Comitente:"
-        ' 
-        ' txtBuscar
-        ' 
-        txtBuscar.Location = New Point(1000, 25)
-        txtBuscar.Margin = New Padding(4, 5, 4, 5)
-        txtBuscar.Name = "txtBuscar"
-        txtBuscar.Size = New Size(341, 31)
-        txtBuscar.TabIndex = 4
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(4, 25)
-        Button1.Margin = New Padding(4, 5, 4, 5)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(107, 38)
-        Button1.TabIndex = 2
-        Button1.Text = "Button1"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' frmComitentesAdm
+        ' frmProveedoresAdmin
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1978, 748)
+        ClientSize = New Size(2018, 905)
         Controls.Add(Panel1)
         Controls.Add(ToolStrip1)
-        Margin = New Padding(4, 5, 4, 5)
-        Name = "frmComitentesAdm"
-        Text = "Form2"
+        Name = "frmProveedoresAdmin"
+        Text = "Proveedores"
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -228,9 +169,4 @@ Partial Class frmComitentesAdm
     Friend WithEvents toolStripSeparator1 As ToolStripSeparator
     Friend WithEvents AyudaToolStripButton As ToolStripButton
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txtBuscar As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Label2 As Label
-    Friend WithEvents ComboBoxPais As ComboBox
 End Class

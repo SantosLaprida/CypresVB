@@ -3,12 +3,17 @@ Public Class frm_Main
     Private Sub frm_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RedondearBoton(btnCcomitentes, 5)
         RedondearBoton(btnPaises, 5)
+        RedondearBoton(btnProveedores, 5)
     End Sub
     Private Sub btnPaises_Click(sender As Object, e As EventArgs) Handles btnPaises.Click
         frmPaises.ShowDialog()
     End Sub
     Private Sub btnComitentes_Click(sender As Object, e As EventArgs) Handles btnCcomitentes.Click
         frmComitentesAdm.Show()
+    End Sub
+
+    Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
+        frmProveedoresAdmin.Show()
     End Sub
     Private Sub RedondearBoton(btn As Button, radio As Integer)
 

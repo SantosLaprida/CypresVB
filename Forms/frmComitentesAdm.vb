@@ -26,7 +26,7 @@ Public Class frmComitentesAdm
         'Tamaño y ubicacion de la grilla
         grid.Top = 83
         grid.Height = 400
-        grid.Width = 1250
+        grid.Width = 1800
         grid.RowCount = 0
         grid.ColCount = 7
 
