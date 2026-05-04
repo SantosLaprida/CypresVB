@@ -33,10 +33,10 @@ Partial Class frm_Main
         btnCcomitentes.BackColor = SystemColors.HotTrack
         btnCcomitentes.FlatAppearance.BorderSize = 0
         btnCcomitentes.FlatStyle = FlatStyle.Flat
-        btnCcomitentes.Location = New Point(553, 180)
-        btnCcomitentes.Margin = New Padding(4, 5, 4, 5)
+        btnCcomitentes.Location = New Point(444, 281)
+        btnCcomitentes.Margin = New Padding(6, 8, 6, 8)
         btnCcomitentes.Name = "btnCcomitentes"
-        btnCcomitentes.Size = New Size(194, 53)
+        btnCcomitentes.Size = New Size(223, 53)
         btnCcomitentes.TabIndex = 0
         btnCcomitentes.Text = "Comitentes"
         btnCcomitentes.UseVisualStyleBackColor = False
@@ -46,10 +46,10 @@ Partial Class frm_Main
         btnPaises.BackColor = SystemColors.HotTrack
         btnPaises.FlatAppearance.BorderSize = 0
         btnPaises.FlatStyle = FlatStyle.Flat
-        btnPaises.Location = New Point(553, 95)
-        btnPaises.Margin = New Padding(4, 5, 4, 5)
+        btnPaises.Location = New Point(444, 419)
+        btnPaises.Margin = New Padding(6, 8, 6, 8)
         btnPaises.Name = "btnPaises"
-        btnPaises.Size = New Size(194, 53)
+        btnPaises.Size = New Size(223, 53)
         btnPaises.TabIndex = 1
         btnPaises.Text = "Paises"
         btnPaises.UseVisualStyleBackColor = False
@@ -59,10 +59,10 @@ Partial Class frm_Main
         btnProveedores.BackColor = SystemColors.HotTrack
         btnProveedores.FlatAppearance.BorderSize = 0
         btnProveedores.FlatStyle = FlatStyle.Flat
-        btnProveedores.Location = New Point(553, 273)
-        btnProveedores.Margin = New Padding(4, 5, 4, 5)
+        btnProveedores.Location = New Point(444, 350)
+        btnProveedores.Margin = New Padding(6, 8, 6, 8)
         btnProveedores.Name = "btnProveedores"
-        btnProveedores.Size = New Size(194, 53)
+        btnProveedores.Size = New Size(223, 53)
         btnProveedores.TabIndex = 2
         btnProveedores.Text = "Proveedores"
         btnProveedores.UseVisualStyleBackColor = False
@@ -72,9 +72,10 @@ Partial Class frm_Main
         btnRubros.BackColor = SystemColors.HotTrack
         btnRubros.FlatAppearance.BorderSize = 0
         btnRubros.FlatStyle = FlatStyle.Flat
-        btnRubros.Location = New Point(387, 158)
+        btnRubros.Location = New Point(444, 215)
+        btnRubros.Margin = New Padding(4, 5, 4, 5)
         btnRubros.Name = "btnRubros"
-        btnRubros.Size = New Size(136, 32)
+        btnRubros.Size = New Size(223, 53)
         btnRubros.TabIndex = 2
         btnRubros.Text = "Rubros"
         btnRubros.UseVisualStyleBackColor = False
@@ -82,16 +83,14 @@ Partial Class frm_Main
         ' frm_Main
         ' 
         AutoScaleDimensions = New SizeF(10.0F, 25.0F)
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1143, 750)
         Controls.Add(btnProveedores)
-        ClientSize = New Size(800, 450)
         Controls.Add(btnRubros)
         Controls.Add(btnPaises)
         Controls.Add(btnCcomitentes)
         ForeColor = SystemColors.ButtonHighlight
-        Margin = New Padding(4, 5, 4, 5)
+        Margin = New Padding(6, 8, 6, 8)
         Name = "frm_Main"
         Text = "Main"
         ResumeLayout(False)

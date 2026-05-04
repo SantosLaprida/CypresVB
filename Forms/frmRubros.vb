@@ -79,8 +79,13 @@ Public Class frmRubros
     Private Sub btnModificarRubro_Click(sender As Object, e As EventArgs) Handles btnModificarRubro.Click
         Dim c As New Rubros
         c = rubroRepositorio.ObtenerRubroPorId(lstRubros.SelectedValue)
-        c.descripcion = txt_rubro.Text.Trim
+        If lstRubros.SelectedValue Is Nothing OrElse Convert.ToInt32(lstRubros.SelectedValue) = 0 Then
+            MessageBox.Show("Seleccione un rubro válido.")
+            Exit Sub
+        End If
 
+
+        c.descripcion = txt_rubro.Text.Trim
         If c.descripcion = "" Then
             MessageBox.Show("Ingrese una descripción.")
             Exit Sub
@@ -99,7 +104,7 @@ Public Class frmRubros
         txt_rubro.Text = ""
     End Sub
     Private Sub InicializarListaSubrubros(id As Integer)
-        Dim dtSubrubros As DataTable = SubrubroRepositorio.ObtenerSubrubros(id)
+        Dim dtSubrubros As DataTable = subrubroRepositorio.ObtenerSubrubros(id)
         Dim drPlaceholder As DataRow = dtSubrubros.NewRow()
         'drPlaceholder("id_subrubro") = 0
         'drPlaceholder("descripcion") = "..."
