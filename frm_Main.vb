@@ -29,4 +29,8 @@ Public Class frm_Main
         btn.Region = New Region(path)
 
     End Sub
+
+    Private Sub btnRubros_Click(sender As Object, e As EventArgs) Handles btnRubros.Click
+        frmRubros.ShowDialog()
+    End Sub
 End Class

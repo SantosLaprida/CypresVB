@@ -25,6 +25,7 @@ Partial Class frm_Main
         btnCcomitentes = New Button()
         btnPaises = New Button()
         btnProveedores = New Button()
+        btnRubros = New Button()
         SuspendLayout()
         ' 
         ' btnCcomitentes
@@ -66,12 +67,27 @@ Partial Class frm_Main
         btnProveedores.Text = "Proveedores"
         btnProveedores.UseVisualStyleBackColor = False
         ' 
+        ' btnRubros
+        ' 
+        btnRubros.BackColor = SystemColors.HotTrack
+        btnRubros.FlatAppearance.BorderSize = 0
+        btnRubros.FlatStyle = FlatStyle.Flat
+        btnRubros.Location = New Point(387, 158)
+        btnRubros.Name = "btnRubros"
+        btnRubros.Size = New Size(136, 32)
+        btnRubros.TabIndex = 2
+        btnRubros.Text = "Rubros"
+        btnRubros.UseVisualStyleBackColor = False
+        ' 
         ' frm_Main
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1143, 750)
         Controls.Add(btnProveedores)
+        ClientSize = New Size(800, 450)
+        Controls.Add(btnRubros)
         Controls.Add(btnPaises)
         Controls.Add(btnCcomitentes)
         ForeColor = SystemColors.ButtonHighlight
@@ -84,4 +100,5 @@ Partial Class frm_Main
     Friend WithEvents btnCcomitentes As Button
     Friend WithEvents btnPaises As Button
     Friend WithEvents btnProveedores As Button
+    Friend WithEvents btnRubros As Button
 End Class

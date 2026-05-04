@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmComitentesAdm
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmComitentesAdm
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmComitentesAdm))
         ToolStrip1 = New ToolStrip()
@@ -51,8 +51,8 @@ Partial Class frmComitentesAdm
         ToolStrip1.Items.AddRange(New ToolStripItem() {NuevoToolStripButton, AbrirToolStripButton, GuardarToolStripButton, ImprimirToolStripButton, toolStripSeparator, CortarToolStripButton, CopiarToolStripButton, PegarToolStripButton, toolStripSeparator1, AyudaToolStripButton})
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
-        ToolStrip1.Padding = New Padding(0, 0, 3, 0)
-        ToolStrip1.Size = New Size(1978, 29)
+        ToolStrip1.Padding = New Padding(0, 0, 2, 0)
+        ToolStrip1.Size = New Size(959, 27)
         ToolStrip1.TabIndex = 0
         ToolStrip1.Text = "ToolStrip1"
         ' 
@@ -62,7 +62,7 @@ Partial Class frmComitentesAdm
         NuevoToolStripButton.Image = CType(resources.GetObject("NuevoToolStripButton.Image"), Image)
         NuevoToolStripButton.ImageTransparentColor = Color.Magenta
         NuevoToolStripButton.Name = "NuevoToolStripButton"
-        NuevoToolStripButton.Size = New Size(34, 24)
+        NuevoToolStripButton.Size = New Size(23, 24)
         NuevoToolStripButton.Text = "&Nuevo"
         ' 
         ' AbrirToolStripButton
@@ -71,7 +71,7 @@ Partial Class frmComitentesAdm
         AbrirToolStripButton.Image = CType(resources.GetObject("AbrirToolStripButton.Image"), Image)
         AbrirToolStripButton.ImageTransparentColor = Color.Magenta
         AbrirToolStripButton.Name = "AbrirToolStripButton"
-        AbrirToolStripButton.Size = New Size(34, 24)
+        AbrirToolStripButton.Size = New Size(23, 24)
         AbrirToolStripButton.Text = "&Abrir"
         ' 
         ' GuardarToolStripButton
@@ -80,7 +80,7 @@ Partial Class frmComitentesAdm
         GuardarToolStripButton.Image = CType(resources.GetObject("GuardarToolStripButton.Image"), Image)
         GuardarToolStripButton.ImageTransparentColor = Color.Magenta
         GuardarToolStripButton.Name = "GuardarToolStripButton"
-        GuardarToolStripButton.Size = New Size(34, 24)
+        GuardarToolStripButton.Size = New Size(23, 24)
         GuardarToolStripButton.Text = "&Guardar"
         ' 
         ' ImprimirToolStripButton
@@ -89,13 +89,13 @@ Partial Class frmComitentesAdm
         ImprimirToolStripButton.Image = CType(resources.GetObject("ImprimirToolStripButton.Image"), Image)
         ImprimirToolStripButton.ImageTransparentColor = Color.Magenta
         ImprimirToolStripButton.Name = "ImprimirToolStripButton"
-        ImprimirToolStripButton.Size = New Size(34, 24)
+        ImprimirToolStripButton.Size = New Size(23, 24)
         ImprimirToolStripButton.Text = "&Imprimir"
         ' 
         ' toolStripSeparator
         ' 
         toolStripSeparator.Name = "toolStripSeparator"
-        toolStripSeparator.Size = New Size(6, 29)
+        toolStripSeparator.Size = New Size(6, 27)
         ' 
         ' CortarToolStripButton
         ' 
@@ -103,7 +103,7 @@ Partial Class frmComitentesAdm
         CortarToolStripButton.Image = CType(resources.GetObject("CortarToolStripButton.Image"), Image)
         CortarToolStripButton.ImageTransparentColor = Color.Magenta
         CortarToolStripButton.Name = "CortarToolStripButton"
-        CortarToolStripButton.Size = New Size(34, 24)
+        CortarToolStripButton.Size = New Size(23, 24)
         CortarToolStripButton.Text = "&Cortar"
         ' 
         ' CopiarToolStripButton
@@ -112,7 +112,7 @@ Partial Class frmComitentesAdm
         CopiarToolStripButton.Image = CType(resources.GetObject("CopiarToolStripButton.Image"), Image)
         CopiarToolStripButton.ImageTransparentColor = Color.Magenta
         CopiarToolStripButton.Name = "CopiarToolStripButton"
-        CopiarToolStripButton.Size = New Size(34, 24)
+        CopiarToolStripButton.Size = New Size(23, 24)
         CopiarToolStripButton.Text = "&Copiar"
         ' 
         ' PegarToolStripButton
@@ -121,13 +121,13 @@ Partial Class frmComitentesAdm
         PegarToolStripButton.Image = CType(resources.GetObject("PegarToolStripButton.Image"), Image)
         PegarToolStripButton.ImageTransparentColor = Color.Magenta
         PegarToolStripButton.Name = "PegarToolStripButton"
-        PegarToolStripButton.Size = New Size(34, 24)
+        PegarToolStripButton.Size = New Size(23, 24)
         PegarToolStripButton.Text = "&Pegar"
         ' 
         ' toolStripSeparator1
         ' 
         toolStripSeparator1.Name = "toolStripSeparator1"
-        toolStripSeparator1.Size = New Size(6, 29)
+        toolStripSeparator1.Size = New Size(6, 27)
         ' 
         ' AyudaToolStripButton
         ' 
@@ -135,7 +135,7 @@ Partial Class frmComitentesAdm
         AyudaToolStripButton.Image = CType(resources.GetObject("AyudaToolStripButton.Image"), Image)
         AyudaToolStripButton.ImageTransparentColor = Color.Magenta
         AyudaToolStripButton.Name = "AyudaToolStripButton"
-        AyudaToolStripButton.Size = New Size(34, 24)
+        AyudaToolStripButton.Size = New Size(23, 24)
         AyudaToolStripButton.Text = "&Ayuda"
         ' 
         ' Panel1
@@ -146,66 +146,62 @@ Partial Class frmComitentesAdm
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(txtBuscar)
         Panel1.Controls.Add(Button1)
-        Panel1.Dock = DockStyle.Top
-        Panel1.Location = New Point(0, 29)
-        Panel1.Margin = New Padding(4, 5, 4, 5)
+        Panel1.Location = New Point(0, 30)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1978, 87)
+        Panel1.Size = New Size(1400, 52)
         Panel1.TabIndex = 4
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(457, 33)
+        Label2.Location = New Point(320, 20)
+        Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(46, 25)
+        Label2.Size = New Size(31, 15)
         Label2.TabIndex = 7
         Label2.Text = "Pais:"
         ' 
         ' ComboBoxPais
         ' 
         ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(506, 30)
+        ComboBoxPais.Location = New Point(354, 18)
+        ComboBoxPais.Margin = New Padding(2, 2, 2, 2)
         ComboBoxPais.Name = "ComboBoxPais"
-        ComboBoxPais.Size = New Size(137, 33)
+        ComboBoxPais.Size = New Size(97, 23)
         ComboBoxPais.TabIndex = 6
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(897, 32)
-        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Location = New Point(628, 19)
         Label1.Name = "Label1"
-        Label1.Size = New Size(98, 25)
+        Label1.Size = New Size(66, 15)
         Label1.TabIndex = 5
         Label1.Text = "Comitente:"
         ' 
         ' txtBuscar
         ' 
-        txtBuscar.Location = New Point(1000, 25)
-        txtBuscar.Margin = New Padding(4, 5, 4, 5)
+        txtBuscar.Location = New Point(700, 15)
         txtBuscar.Name = "txtBuscar"
-        txtBuscar.Size = New Size(341, 31)
+        txtBuscar.Size = New Size(240, 23)
         txtBuscar.TabIndex = 4
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(4, 25)
-        Button1.Margin = New Padding(4, 5, 4, 5)
+        Button1.Location = New Point(3, 15)
         Button1.Name = "Button1"
-        Button1.Size = New Size(107, 38)
+        Button1.Size = New Size(75, 23)
         Button1.TabIndex = 2
         Button1.Text = "Button1"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' frmComitentesAdm
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1978, 748)
+        ClientSize = New Size(959, 449)
         Controls.Add(Panel1)
         Controls.Add(ToolStrip1)
-        Margin = New Padding(4, 5, 4, 5)
         Name = "frmComitentesAdm"
         Text = "Form2"
         ToolStrip1.ResumeLayout(False)

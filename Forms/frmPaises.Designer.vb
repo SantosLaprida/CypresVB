@@ -89,12 +89,15 @@ Partial Class frmPaises
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(192), CByte(192), CByte(255))
         ClientSize = New Size(345, 395)
         Controls.Add(Label5)
         Controls.Add(btnModificar)
         Controls.Add(btnAgregar)
         Controls.Add(txt_pais)
         Controls.Add(lstPaises)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "frmPaises"
         Text = "Paises"
         ResumeLayout(False)
