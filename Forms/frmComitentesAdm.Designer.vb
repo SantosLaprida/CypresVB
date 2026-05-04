@@ -197,7 +197,7 @@ Partial Class frmComitentesAdm
         ' 
         ' frmComitentesAdm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(959, 449)
         Controls.Add(Panel1)
