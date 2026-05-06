@@ -9,7 +9,7 @@ Public Class frmComitente
 
     Private Sub frmComitente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        InicializarComboBoxPaises()
+        PaisesLlenarCombo(ComboBoxPais, True)
 
         If IdComitente > 0 Then
             Me.Text = "Editar Comitente"
@@ -55,22 +55,6 @@ Public Class frmComitente
         txtMail.Text = c.Email
 
     End Sub
-
-    Private Sub InicializarComboBoxPaises()
-        Dim dtPaises As DataTable = paisRepositorio.ObtenerPaises()
-        Dim drPlaceholder As DataRow = dtPaises.NewRow()
-        drPlaceholder("id_pais") = 0
-        drPlaceholder("descripcion") = "..."
-        dtPaises.Rows.InsertAt(drPlaceholder, 0)
-
-        ComboBoxPais.DisplayMember = "descripcion"
-        ComboBoxPais.ValueMember = "id_pais"
-        ComboBoxPais.DataSource = dtPaises
-        ComboBoxPais.SelectedIndex = 0
-        ComboBoxPais.Font = New Font(ComboBoxPais.Font, FontStyle.Bold)
-        ComboBoxPais.DropDownStyle = ComboBoxStyle.DropDownList
-    End Sub
-
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 

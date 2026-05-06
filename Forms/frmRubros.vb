@@ -9,7 +9,8 @@ Public Class frmRubros
 
     Private Sub frmRubros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargando = True
-        InicializarListaRubros()
+        RubrosLlenarLista(lstRubros, True)
+        'InicializarListaRubros()
         lstRubros.SelectedIndex = -1
         txt_rubro.Text = ""
     End Sub
@@ -34,11 +35,10 @@ Public Class frmRubros
         If c IsNot Nothing Then
             lblRubro.Text = c.descripcion
             id = c.Id
-            InicializarListaSubrubros(c.Id)
-
+            SubrubrosLlenarLista(id, lstSubrubros, False)
         Else
             lblRubro.Text = ""
-            lstSubrubros.DataSource=Nothing
+            lstSubrubros.DataSource = Nothing
         End If
     End Sub
     Private Sub lstRubros_DoubleClick(sender As Object, e As EventArgs) Handles lstRubros.DoubleClick
@@ -103,17 +103,38 @@ Public Class frmRubros
         InicializarListaRubros()
         txt_rubro.Text = ""
     End Sub
-    Private Sub InicializarListaSubrubros(id As Integer)
-        Dim dtSubrubros As DataTable = subrubroRepositorio.ObtenerSubrubros(id)
-        Dim drPlaceholder As DataRow = dtSubrubros.NewRow()
-        'drPlaceholder("id_subrubro") = 0
-        'drPlaceholder("descripcion") = "..."
-        'dtSubrubros.Rows.InsertAt(drPlaceholder, 0)
+    Private Sub lstSubrubros_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSubrubros.SelectedIndexChanged
+        Dim c As Rubros
+        Dim id As Integer
+        c = subrubroRepositorio.ObtenerSubrubroPorId(lstSubrubros.SelectedValue)
+        If c IsNot Nothing Then
+            txtSubrubro.Text = c.descripcion
+            id = c.Id
+        Else
+            txtSubrubro.Text = ""
+            lstSubrubros.DataSource = Nothing
+        End If
+    End Sub
+    Private Sub btnAgregarSubrubro_Click(sender As Object, e As EventArgs) Handles btnAgregarSubrubro.Click
+        Dim c As New Subrubros
+        c.id_subrubro = 0
+        c.descripcion = txtSubrubro.Text.Trim
+        c.id_rubro = lstRubros.SelectedItem.id
+        If c.descripcion = "" Then
+            MessageBox.Show("Ingrese una descripción.")
+            Exit Sub
+        End If
 
-        lstSubrubros.DisplayMember = "descripcion"
-        lstSubrubros.ValueMember = "id_subrubro"
-        lstSubrubros.DataSource = dtSubrubros
-        'lstSubrubros.SelectedIndex = 0
-        lstSubrubros.Font = New Font(lstSubrubros.Font, FontStyle.Bold)
+        'If rubroRepositorio.ExisteRubro(c.descripcion, c.Id) Then
+        '    MessageBox.Show("Ya existe un rubro con esa descripción.")
+        '    txt_rubro.Focus()
+        '    Exit Sub
+        'End If
+
+        ' Si pasa validación → guardar
+        'rubroRepositorio.GuardarRubro(c)
+
+        'InicializarListaRubros()
+        'txt_rubro.Text = ""
     End Sub
 End Class

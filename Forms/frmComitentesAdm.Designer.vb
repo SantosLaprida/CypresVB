@@ -165,7 +165,7 @@ Partial Class frmComitentesAdm
         ' 
         ComboBoxPais.FormattingEnabled = True
         ComboBoxPais.Location = New Point(354, 18)
-        ComboBoxPais.Margin = New Padding(2, 2, 2, 2)
+        ComboBoxPais.Margin = New Padding(2)
         ComboBoxPais.Name = "ComboBoxPais"
         ComboBoxPais.Size = New Size(97, 23)
         ComboBoxPais.TabIndex = 6
@@ -197,7 +197,7 @@ Partial Class frmComitentesAdm
         ' 
         ' frmComitentesAdm
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(959, 449)
         Controls.Add(Panel1)
