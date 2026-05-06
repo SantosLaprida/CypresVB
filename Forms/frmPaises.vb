@@ -6,22 +6,10 @@ Public Class frmPaises
     'Public paisRepositorio As New PaisRepositorio()
     Private Sub frmPaises_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargando = True
-        InicializarListaPaises()
+        PaisesLlenarLista(lstPaises, False)
+        lstPaises.Font = New Font(lstPaises.Font, FontStyle.Bold)
         lstPaises.SelectedIndex = -1
         txt_pais.Text = ""
-    End Sub
-    Private Sub InicializarListaPaises()
-        Dim dtPaises As DataTable = paisRepositorio.ObtenerPaises()
-        Dim drPlaceholder As DataRow = dtPaises.NewRow()
-        'drPlaceholder("id_pais") = 0
-        'drPlaceholder("descripcion") = "..."
-        'dtPaises.Rows.InsertAt(drPlaceholder, 0)
-
-        lstPaises.DisplayMember = "descripcion"
-        lstPaises.ValueMember = "id_pais"
-        lstPaises.DataSource = dtPaises
-        lstPaises.SelectedIndex = 0
-        lstPaises.Font = New Font(lstPaises.Font, FontStyle.Bold)
     End Sub
     Private Sub lstPaises_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPaises.SelectedIndexChanged
         Dim c As modPaises
@@ -54,7 +42,7 @@ Public Class frmPaises
         ' Si pasa validación → guardar
         GuardarPais(c)
 
-        InicializarListaPaises()
+        PaisesLlenarLista(lstPaises, False)
         txt_pais.Text = ""
     End Sub
 
@@ -77,7 +65,7 @@ Public Class frmPaises
         ' Si pasa validación → guardar
         GuardarPais(c)
 
-        InicializarListaPaises()
+        PaisesLlenarLista(lstPaises, False)
         txt_pais.Text = ""
 
     End Sub

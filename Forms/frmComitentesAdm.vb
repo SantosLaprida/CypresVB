@@ -15,8 +15,7 @@ Public Class frmComitentesAdm
         AddHandler grid.DoubleClick, AddressOf grid_DoubleClick
         InicializarGrid()
         Cargar_Comitentes()
-        InicializarComboBoxPaises()
-
+        PaisesLlenarCombo(ComboBoxPais, True)
     End Sub
     Private Sub InicializarGrid()
         grid.Dock = DockStyle.None
@@ -51,21 +50,6 @@ Public Class frmComitentesAdm
 
         listaComitentes = comitenteRepositorio.ObtenerComitentes(idPais)
         CargarGrid(listaComitentes)
-    End Sub
-
-    Private Sub InicializarComboBoxPaises()
-        Dim dtPaises As DataTable = paisRepositorio.ObtenerPaises()
-        Dim drPlaceholder As DataRow = dtPaises.NewRow()
-        drPlaceholder("id_pais") = 0
-        drPlaceholder("descripcion") = "..."
-        dtPaises.Rows.InsertAt(drPlaceholder, 0)
-
-        ComboBoxPais.DisplayMember = "descripcion"
-        ComboBoxPais.ValueMember = "id_pais"
-        ComboBoxPais.DataSource = dtPaises
-        ComboBoxPais.SelectedIndex = 0
-        ComboBoxPais.Font = New Font(ComboBoxPais.Font, FontStyle.Bold)
-        ComboBoxPais.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
 
     Private Sub CargarGrid(lista As List(Of Comitente))
@@ -275,6 +259,10 @@ Public Class frmComitentesAdm
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 End Class

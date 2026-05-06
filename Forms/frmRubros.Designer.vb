@@ -32,10 +32,10 @@ Partial Class frmRubros
         Label2 = New Label()
         txt_rubro = New TextBox()
         GroupBox3 = New GroupBox()
+        lblRubro = New Label()
         btnAgregarSubrubro = New Button()
         Label3 = New Label()
-        TextBox1 = New TextBox()
-        lblRubro = New Label()
+        txtSubrubro = New TextBox()
         GroupBox2.SuspendLayout()
         GroupBox3.SuspendLayout()
         SuspendLayout()
@@ -150,13 +150,24 @@ Partial Class frmRubros
         GroupBox3.Controls.Add(lblRubro)
         GroupBox3.Controls.Add(btnAgregarSubrubro)
         GroupBox3.Controls.Add(Label3)
-        GroupBox3.Controls.Add(TextBox1)
+        GroupBox3.Controls.Add(txtSubrubro)
         GroupBox3.Location = New Point(480, 152)
         GroupBox3.Name = "GroupBox3"
         GroupBox3.Size = New Size(287, 172)
         GroupBox3.TabIndex = 19
         GroupBox3.TabStop = False
         GroupBox3.Text = "Subrubros"
+        ' 
+        ' lblRubro
+        ' 
+        lblRubro.BackColor = Color.White
+        lblRubro.BorderStyle = BorderStyle.FixedSingle
+        lblRubro.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblRubro.Location = New Point(32, 30)
+        lblRubro.Name = "lblRubro"
+        lblRubro.Size = New Size(221, 20)
+        lblRubro.TabIndex = 23
+        lblRubro.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' btnAgregarSubrubro
         ' 
@@ -184,25 +195,14 @@ Partial Class frmRubros
         Label3.Text = "Descripcion"
         Label3.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' TextBox1
+        ' txtSubrubro
         ' 
-        TextBox1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        TextBox1.Location = New Point(31, 94)
-        TextBox1.MaxLength = 50
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(227, 23)
-        TextBox1.TabIndex = 19
-        ' 
-        ' lblRubro
-        ' 
-        lblRubro.BackColor = Color.White
-        lblRubro.BorderStyle = BorderStyle.FixedSingle
-        lblRubro.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblRubro.Location = New Point(32, 30)
-        lblRubro.Name = "lblRubro"
-        lblRubro.Size = New Size(221, 20)
-        lblRubro.TabIndex = 23
-        lblRubro.TextAlign = ContentAlignment.MiddleLeft
+        txtSubrubro.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtSubrubro.Location = New Point(31, 94)
+        txtSubrubro.MaxLength = 50
+        txtSubrubro.Name = "txtSubrubro"
+        txtSubrubro.Size = New Size(227, 23)
+        txtSubrubro.TabIndex = 19
         ' 
         ' frmRubros
         ' 
@@ -236,7 +236,7 @@ Partial Class frmRubros
     Friend WithEvents txt_rubro As TextBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtSubrubro As TextBox
     Friend WithEvents btnAgregarRubro As Button
     Friend WithEvents btnModificarRubro As Button
     Friend WithEvents btnAgregarSubrubro As Button

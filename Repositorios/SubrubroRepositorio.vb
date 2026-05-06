@@ -68,7 +68,7 @@ Public Class SubrubroRepositorio
         End Using
 
     End Function
-    Public Sub GuardarRubro(c As Rubros)
+    Public Sub GuardarSubrubro(c As Subrubros)
 
         Using cn As New MySqlConnection(Cadena)
             cn.Open()
@@ -77,22 +77,23 @@ Public Class SubrubroRepositorio
 
                 Try
 
-                    If c.Id = 0 Then
+                    If c.id_subrubro = 0 Then
 
-                        Dim sqlId As String = "SELECT IFNULL(MAX(id_rubro),0) + 1 FROM s_rubros FOR UPDATE"
+                        Dim sqlId As String = "SELECT IFNULL(MAX(id_subrubro),0) + 1 FROM s_subrubros FOR UPDATE"
 
                         Using cmdId As New MySqlCommand(sqlId, cn, tran)
-                            c.Id = Convert.ToInt32(cmdId.ExecuteScalar())
+                            c.id_subrubro = Convert.ToInt32(cmdId.ExecuteScalar())
                         End Using
 
                         Dim sqlInsert As String =
-                            "INSERT INTO s_rubros 
-                            (id_rubro, descripcion)
+                            "INSERT INTO s_subrubros 
+                            (id_subrubro, id_rubro, descripcion)
                             VALUES 
-                            (@id, @descripcion)"
+                            (@id_subrubro, @id_rubro, @descripcion)"
 
                         Using cmd As New MySqlCommand(sqlInsert, cn, tran)
-                            cmd.Parameters.AddWithValue("@id", c.Id)
+                            cmd.Parameters.AddWithValue("@id_subrubro", c.id_subrubro)
+                            cmd.Parameters.AddWithValue("@id_rubro", c.id_rubro)
                             cmd.Parameters.AddWithValue("@Descripcion", c.descripcion)
                             cmd.ExecuteNonQuery()
                         End Using
@@ -100,12 +101,13 @@ Public Class SubrubroRepositorio
                     Else
 
                         Dim sqlUpdate As String =
-                            "UPDATE s_rubros SET " &
+                            "UPDATE s_subrubros SET " &
+                            "id_rubro = @id_rubro " &
                             "Descripcion = @Descripcion " &
-                            "WHERE id_rubro = @id"
+                            "WHERE id_subrubro = @id"
 
                         Using cmd As New MySqlCommand(sqlUpdate, cn, tran)
-                            cmd.Parameters.AddWithValue("@id", c.Id)
+                            cmd.Parameters.AddWithValue("@id", c.id_rubro)
                             cmd.Parameters.AddWithValue("@Descripcion", c.descripcion)
                             cmd.ExecuteNonQuery()
                         End Using
