@@ -10,9 +10,10 @@ Public Class frmRubros
     Private Sub frmRubros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargando = True
         RubrosLlenarLista(lstRubros, True)
-        'InicializarListaRubros()
         lstRubros.SelectedIndex = -1
         txt_rubro.Text = ""
+        txtSubrubro.Enabled = False
+        btnAgregarSubrubro.Enabled = False
     End Sub
     Private Sub InicializarListaRubros()
         Dim dtRubros As DataTable = rubroRepositorio.ObtenerRubros()
@@ -36,6 +37,9 @@ Public Class frmRubros
             lblRubro.Text = c.descripcion
             id = c.Id
             SubrubrosLlenarLista(id, lstSubrubros, False)
+            txtSubrubro.Enabled = True
+            txtSubrubro.Select()
+            btnAgregarSubrubro.Enabled = True
         Else
             lblRubro.Text = ""
             lstSubrubros.DataSource = Nothing
@@ -119,6 +123,7 @@ Public Class frmRubros
         Dim c As New Subrubros
         c.id_subrubro = 0
         c.descripcion = txtSubrubro.Text.Trim
+<<<<<<< HEAD
         c.id_rubro = Convert.ToInt32(lstRubros.SelectedValue)
 
         If Convert.ToInt32(lstRubros.SelectedValue) = 0 Then
@@ -126,6 +131,9 @@ Public Class frmRubros
             Exit Sub
         End If
 
+=======
+        c.id_rubro = lstRubros.SelectedValue
+>>>>>>> detalles
         If c.descripcion = "" Then
             MessageBox.Show("Ingrese una descripción.")
             Exit Sub
