@@ -35,7 +35,9 @@ Partial Class frmProveedoresAdmin
         toolStripSeparator1 = New ToolStripSeparator()
         AyudaToolStripButton = New ToolStripButton()
         Panel1 = New Panel()
+        btnColumnas = New Button()
         ToolStrip1.SuspendLayout()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' ToolStrip1
@@ -135,12 +137,24 @@ Partial Class frmProveedoresAdmin
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.ActiveCaption
+        Panel1.Controls.Add(btnColumnas)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 29)
         Panel1.Margin = New Padding(4, 5, 4, 5)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(2018, 87)
         Panel1.TabIndex = 5
+        ' 
+        ' btnColumnas
+        ' 
+        btnColumnas.FlatAppearance.BorderSize = 0
+        btnColumnas.FlatStyle = FlatStyle.Flat
+        btnColumnas.Image = CType(resources.GetObject("btnColumnas.Image"), Image)
+        btnColumnas.Location = New Point(1213, 25)
+        btnColumnas.Name = "btnColumnas"
+        btnColumnas.Size = New Size(32, 32)
+        btnColumnas.TabIndex = 0
+        btnColumnas.UseVisualStyleBackColor = True
         ' 
         ' frmProveedoresAdmin
         ' 
@@ -153,6 +167,7 @@ Partial Class frmProveedoresAdmin
         Text = "Proveedores"
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
+        Panel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -169,4 +184,5 @@ Partial Class frmProveedoresAdmin
     Friend WithEvents toolStripSeparator1 As ToolStripSeparator
     Friend WithEvents AyudaToolStripButton As ToolStripButton
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnColumnas As Button
 End Class
