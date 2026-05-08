@@ -123,23 +123,22 @@ Public Class frmRubros
         Dim c As New Subrubros
         c.id_subrubro = 0
         c.descripcion = txtSubrubro.Text.Trim
-<<<<<<< HEAD
-        c.id_rubro = Convert.ToInt32(lstRubros.SelectedValue)
-
-        If Convert.ToInt32(lstRubros.SelectedValue) = 0 Then
-            MessageBox.Show("Seleccione un rubro válido.")
-            Exit Sub
-        End If
-
-=======
         c.id_rubro = lstRubros.SelectedValue
->>>>>>> detalles
         If c.descripcion = "" Then
             MessageBox.Show("Ingrese una descripción.")
             Exit Sub
         End If
 
-        subrubroRepositorio.GuardarSubrubro(c)
-        txtSubrubro.Text = ""
+        'If rubroRepositorio.ExisteRubro(c.descripcion, c.Id) Then
+        '    MessageBox.Show("Ya existe un rubro con esa descripción.")
+        '    txt_rubro.Focus()
+        '    Exit Sub
+        'End If
+
+        ' Si pasa validación → guardar
+        'rubroRepositorio.GuardarRubro(c)
+
+        'InicializarListaRubros()
+        'txt_rubro.Text = ""
     End Sub
 End Class
