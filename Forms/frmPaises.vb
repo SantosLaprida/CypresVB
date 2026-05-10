@@ -14,7 +14,7 @@ Public Class frmPaises
     Private Sub lstPaises_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPaises.SelectedIndexChanged
         Dim c As modPaises
 
-        c = mPaises.ObtenerPaisPorId(lstPaises.SelectedValue)
+        c = paisRepositorio.ObtenerPaisPorId(lstPaises.SelectedValue)
 
         If c IsNot Nothing Then
             txt_pais.Text = c.Descripcion
@@ -33,14 +33,14 @@ Public Class frmPaises
             Exit Sub
         End If
 
-        If mPaises.ExistePais(c.Descripcion, c.Id) Then
+        If paisRepositorio.ExistePais(c.Descripcion, c.Id) Then
             MessageBox.Show("Ya existe un país con esa descripción.")
             txt_pais.Focus()
             Exit Sub
         End If
 
         ' Si pasa validación → guardar
-        GuardarPais(c)
+        paisRepositorio.GuardarPais(c)
 
         PaisesLlenarLista(lstPaises, False)
         txt_pais.Text = ""
@@ -48,7 +48,7 @@ Public Class frmPaises
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim c As New modPaises
-        c = mPaises.ObtenerPaisPorId(lstPaises.SelectedValue)
+        c = paisRepositorio.ObtenerPaisPorId(lstPaises.SelectedValue)
         c.Descripcion = txt_pais.Text.Trim()
 
         If c.Descripcion = "" Then
@@ -56,14 +56,14 @@ Public Class frmPaises
             Exit Sub
         End If
 
-        If mPaises.ExistePais(c.Descripcion, c.Id) Then
+        If paisRepositorio.ExistePais(c.Descripcion, c.Id) Then
             MessageBox.Show("Ya existe un país con esa descripción.")
             txt_pais.Focus()
             Exit Sub
         End If
 
         ' Si pasa validación → guardar
-        GuardarPais(c)
+        paisRepositorio.GuardarPais(c)
 
         PaisesLlenarLista(lstPaises, False)
         txt_pais.Text = ""

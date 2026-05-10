@@ -30,7 +30,7 @@ Module mRubros
         iList.DisplayMember = "descripcion"
         iList.ValueMember = "id_subrubro"
         iList.DataSource = dtSubrubros
-        'iList.SelectedIndex = 0
+
         'lstSubrubros.Font = New Font(lstSubrubros.Font, FontStyle.Bold)
     End Sub
 End Module
