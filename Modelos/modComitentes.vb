@@ -3,7 +3,8 @@ Imports MySql.Data.MySqlClient
 
 
 Public Class Comitente
-
+    Public Const PUBLICO = 1
+    Public Const PRIVADO = 2
     Public Property Id As Integer
     Public Property Sigla As String
     Public Property Nombre As String

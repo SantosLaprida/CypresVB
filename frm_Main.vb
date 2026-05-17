@@ -35,4 +35,8 @@ Public Class frm_Main
     Private Sub btnRubros_Click(sender As Object, e As EventArgs) Handles btnRubros.Click
         frmRubros.ShowDialog()
     End Sub
+
+    Private Sub btnProyectoTipo_Click(sender As Object, e As EventArgs) Handles btnProyectoTipo.Click
+        frmProyectoTipo.ShowDialog()
+    End Sub
 End Class

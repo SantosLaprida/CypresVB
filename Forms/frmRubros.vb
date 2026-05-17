@@ -38,7 +38,7 @@ Public Class frmRubros
             id = c.Id
             SubrubrosLlenarLista(id, lstSubrubros, False)
             txtSubrubro.Enabled = True
-            txtSubrubro.Select()
+
             btnAgregarSubrubro.Enabled = True
         Else
             lblRubro.Text = ""
@@ -107,7 +107,7 @@ Public Class frmRubros
         InicializarListaRubros()
         txt_rubro.Text = ""
     End Sub
-    Private Sub lstSubrubros_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSubrubros.SelectedIndexChanged
+    Private Sub lstSubrubros_Click(sender As Object, e As EventArgs) Handles lstSubrubros.Click
         Dim c As Rubros
         Dim id As Integer
         c = subrubroRepositorio.ObtenerSubrubroPorId(lstSubrubros.SelectedValue)
@@ -123,22 +123,44 @@ Public Class frmRubros
         Dim c As New Subrubros
         c.id_subrubro = 0
         c.descripcion = txtSubrubro.Text.Trim
-        c.id_rubro = lstRubros.SelectedValue
+        c.id_rubro = Convert.ToInt32(lstRubros.SelectedValue)
+
+        If Convert.ToInt32(lstRubros.SelectedValue) = 0 Then
+            MessageBox.Show("Seleccione un rubro válido.")
+            Exit Sub
+        End If
+
         If c.descripcion = "" Then
             MessageBox.Show("Ingrese una descripción.")
             Exit Sub
         End If
 
-        'If rubroRepositorio.ExisteRubro(c.descripcion, c.Id) Then
-        '    MessageBox.Show("Ya existe un rubro con esa descripción.")
-        '    txt_rubro.Focus()
-        '    Exit Sub
-        'End If
+        subrubroRepositorio.GuardarSubrubro(c)
+        txtSubrubro.Text = ""
+        SubrubrosLlenarLista(c.id_rubro, lstSubrubros, False)
+    End Sub
+    Private Sub btnModificarSubrubro_Click_1(sender As Object, e As EventArgs) Handles btnModificarSubrubro.Click
+        Dim c As New Subrubros
+        Dim A As Integer
+        'c = subrubroRepositorio.ObtenerSubrubroPorId(lstRubros.SelectedValue)
+        If lstRubros.SelectedValue Is Nothing OrElse Convert.ToInt32(lstRubros.SelectedValue) = 0 Then
+            MessageBox.Show("Seleccione un rubro válido.")
+            Exit Sub
+        End If
+
+        c.id_subrubro = Convert.ToInt32(lstSubrubros.SelectedValue)
+        c.id_rubro = Convert.ToInt32(lstRubros.SelectedValue)
+        c.descripcion = txtSubrubro.Text.Trim
+        If c.descripcion = "" Then
+            MessageBox.Show("Ingrese una descripción.")
+            Exit Sub
+        End If
 
         ' Si pasa validación → guardar
-        'rubroRepositorio.GuardarRubro(c)
+        subrubroRepositorio.GuardarSubrubro(c)
 
-        'InicializarListaRubros()
-        'txt_rubro.Text = ""
+        SubrubrosLlenarLista(c.id_rubro, lstSubrubros, False)
+        txtSubrubro.Text = ""
     End Sub
+
 End Class

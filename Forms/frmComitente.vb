@@ -46,10 +46,10 @@ Public Class frmComitente
         If c.Pais > 0 Then
             ComboBoxPais.SelectedValue = c.Pais
         End If
-        If c.tipo = PUBLICO Then
+        If c.tipo = 1 Then
             rad_publico.Checked = True
         End If
-        If c.tipo = PRIVADO Then
+        If c.tipo = 2 Then
             rad_privado.Checked = True
         End If
         txtMail.Text = c.Email
@@ -74,10 +74,10 @@ Public Class frmComitente
             c.Pais = 0
         End If
         If rad_publico.Checked = True Then
-            c.tipo = PUBLICO
+            c.tipo = 1
         End If
         If rad_privado.Checked = True Then
-            c.tipo = PRIVADO
+            c.tipo = 2
         End If
         Try
 

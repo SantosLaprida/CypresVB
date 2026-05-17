@@ -102,12 +102,13 @@ Public Class SubrubroRepositorio
 
                         Dim sqlUpdate As String =
                             "UPDATE s_subrubros SET " &
-                            "id_rubro = @id_rubro " &
+                            "id_rubro = @id_rubro, " &
                             "Descripcion = @Descripcion " &
-                            "WHERE id_subrubro = @id"
+                            "WHERE id_subrubro = @id_subrubro"
 
                         Using cmd As New MySqlCommand(sqlUpdate, cn, tran)
-                            cmd.Parameters.AddWithValue("@id", c.id_rubro)
+                            cmd.Parameters.AddWithValue("@id_subrubro", c.id_subrubro)
+                            cmd.Parameters.AddWithValue("@id_rubro", c.id_rubro)
                             cmd.Parameters.AddWithValue("@Descripcion", c.descripcion)
                             cmd.ExecuteNonQuery()
                         End Using

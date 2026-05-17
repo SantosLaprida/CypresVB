@@ -32,6 +32,7 @@ Partial Class frmRubros
         Label2 = New Label()
         txt_rubro = New TextBox()
         GroupBox3 = New GroupBox()
+        btnModificarSubrubro = New Button()
         lblRubro = New Label()
         btnAgregarSubrubro = New Button()
         Label3 = New Label()
@@ -147,6 +148,7 @@ Partial Class frmRubros
         ' 
         ' GroupBox3
         ' 
+        GroupBox3.Controls.Add(btnModificarSubrubro)
         GroupBox3.Controls.Add(lblRubro)
         GroupBox3.Controls.Add(btnAgregarSubrubro)
         GroupBox3.Controls.Add(Label3)
@@ -157,6 +159,19 @@ Partial Class frmRubros
         GroupBox3.TabIndex = 19
         GroupBox3.TabStop = False
         GroupBox3.Text = "Subrubros"
+        ' 
+        ' btnModificarSubrubro
+        ' 
+        btnModificarSubrubro.BackColor = SystemColors.HotTrack
+        btnModificarSubrubro.FlatStyle = FlatStyle.Flat
+        btnModificarSubrubro.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnModificarSubrubro.ForeColor = Color.White
+        btnModificarSubrubro.Location = New Point(184, 123)
+        btnModificarSubrubro.Name = "btnModificarSubrubro"
+        btnModificarSubrubro.Size = New Size(75, 29)
+        btnModificarSubrubro.TabIndex = 24
+        btnModificarSubrubro.Text = "Modificar "
+        btnModificarSubrubro.UseVisualStyleBackColor = False
         ' 
         ' lblRubro
         ' 
@@ -197,7 +212,7 @@ Partial Class frmRubros
         ' 
         ' txtSubrubro
         ' 
-        txtSubrubro.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtSubrubro.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         txtSubrubro.Location = New Point(31, 94)
         txtSubrubro.MaxLength = 50
         txtSubrubro.Name = "txtSubrubro"
@@ -241,4 +256,5 @@ Partial Class frmRubros
     Friend WithEvents btnModificarRubro As Button
     Friend WithEvents btnAgregarSubrubro As Button
     Friend WithEvents lblRubro As Label
+    Friend WithEvents btnModificarSubrubro As Button
 End Class

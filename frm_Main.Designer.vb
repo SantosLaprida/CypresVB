@@ -26,6 +26,7 @@ Partial Class frm_Main
         btnPaises = New Button()
         btnProveedores = New Button()
         btnRubros = New Button()
+        btnProyectoTipo = New Button()
         SuspendLayout()
         ' 
         ' btnCcomitentes
@@ -33,10 +34,10 @@ Partial Class frm_Main
         btnCcomitentes.BackColor = SystemColors.HotTrack
         btnCcomitentes.FlatAppearance.BorderSize = 0
         btnCcomitentes.FlatStyle = FlatStyle.Flat
-        btnCcomitentes.Location = New Point(444, 281)
-        btnCcomitentes.Margin = New Padding(6, 8, 6, 8)
+        btnCcomitentes.Location = New Point(311, 169)
+        btnCcomitentes.Margin = New Padding(4, 5, 4, 5)
         btnCcomitentes.Name = "btnCcomitentes"
-        btnCcomitentes.Size = New Size(223, 53)
+        btnCcomitentes.Size = New Size(156, 32)
         btnCcomitentes.TabIndex = 0
         btnCcomitentes.Text = "Comitentes"
         btnCcomitentes.UseVisualStyleBackColor = False
@@ -46,10 +47,10 @@ Partial Class frm_Main
         btnPaises.BackColor = SystemColors.HotTrack
         btnPaises.FlatAppearance.BorderSize = 0
         btnPaises.FlatStyle = FlatStyle.Flat
-        btnPaises.Location = New Point(444, 419)
-        btnPaises.Margin = New Padding(6, 8, 6, 8)
+        btnPaises.Location = New Point(311, 251)
+        btnPaises.Margin = New Padding(4, 5, 4, 5)
         btnPaises.Name = "btnPaises"
-        btnPaises.Size = New Size(223, 53)
+        btnPaises.Size = New Size(156, 32)
         btnPaises.TabIndex = 1
         btnPaises.Text = "Paises"
         btnPaises.UseVisualStyleBackColor = False
@@ -59,10 +60,10 @@ Partial Class frm_Main
         btnProveedores.BackColor = SystemColors.HotTrack
         btnProveedores.FlatAppearance.BorderSize = 0
         btnProveedores.FlatStyle = FlatStyle.Flat
-        btnProveedores.Location = New Point(444, 350)
-        btnProveedores.Margin = New Padding(6, 8, 6, 8)
+        btnProveedores.Location = New Point(311, 210)
+        btnProveedores.Margin = New Padding(4, 5, 4, 5)
         btnProveedores.Name = "btnProveedores"
-        btnProveedores.Size = New Size(223, 53)
+        btnProveedores.Size = New Size(156, 32)
         btnProveedores.TabIndex = 2
         btnProveedores.Text = "Proveedores"
         btnProveedores.UseVisualStyleBackColor = False
@@ -72,25 +73,38 @@ Partial Class frm_Main
         btnRubros.BackColor = SystemColors.HotTrack
         btnRubros.FlatAppearance.BorderSize = 0
         btnRubros.FlatStyle = FlatStyle.Flat
-        btnRubros.Location = New Point(444, 215)
-        btnRubros.Margin = New Padding(4, 5, 4, 5)
+        btnRubros.Location = New Point(311, 129)
         btnRubros.Name = "btnRubros"
-        btnRubros.Size = New Size(223, 53)
+        btnRubros.Size = New Size(156, 32)
         btnRubros.TabIndex = 2
         btnRubros.Text = "Rubros"
         btnRubros.UseVisualStyleBackColor = False
         ' 
+        ' btnProyectoTipo
+        ' 
+        btnProyectoTipo.BackColor = SystemColors.HotTrack
+        btnProyectoTipo.FlatAppearance.BorderSize = 0
+        btnProyectoTipo.FlatStyle = FlatStyle.Flat
+        btnProyectoTipo.Location = New Point(311, 293)
+        btnProyectoTipo.Margin = New Padding(4, 5, 4, 5)
+        btnProyectoTipo.Name = "btnProyectoTipo"
+        btnProyectoTipo.Size = New Size(156, 32)
+        btnProyectoTipo.TabIndex = 3
+        btnProyectoTipo.Text = "Tipos de Proyectos"
+        btnProyectoTipo.UseVisualStyleBackColor = False
+        ' 
         ' frm_Main
         ' 
-        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1143, 750)
+        ClientSize = New Size(800, 449)
+        Controls.Add(btnProyectoTipo)
         Controls.Add(btnProveedores)
         Controls.Add(btnRubros)
         Controls.Add(btnPaises)
         Controls.Add(btnCcomitentes)
         ForeColor = SystemColors.ButtonHighlight
-        Margin = New Padding(6, 8, 6, 8)
+        Margin = New Padding(4, 5, 4, 5)
         Name = "frm_Main"
         Text = "Main"
         ResumeLayout(False)
@@ -100,4 +114,5 @@ Partial Class frm_Main
     Friend WithEvents btnPaises As Button
     Friend WithEvents btnProveedores As Button
     Friend WithEvents btnRubros As Button
+    Friend WithEvents btnProyectoTipo As Button
 End Class
