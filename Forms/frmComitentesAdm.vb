@@ -37,7 +37,14 @@ Public Class frmComitentesAdm
         grid.ColWidths(6) = 80 'c.postal
         grid.ColWidths(7) = 300 'Telefono
         Me.Controls.Add(grid)
-        'Encabezado
+
+        Dim totalWidth As Integer = 0
+        For col As Integer = 1 To grid.ColCount
+            totalWidth += grid.ColWidths(col)
+
+        Next
+        grid.Width = totalWidth
+
         grid.RowHeights(0) = 35
         grid(0, 2).Text = "Sigla"
         grid(0, 3).Text = "Comitente"
@@ -45,6 +52,8 @@ Public Class frmComitentesAdm
         grid(0, 5).Text = "Localidad"
         grid(0, 6).Text = "C. Postal"
         grid(0, 7).Text = "Telefono"
+
+        Me.ClientSize = New Size(grid.Width, Me.ClientSize.Height)
     End Sub
     Private Sub Cargar_Comitentes(Optional idPais As Integer = 0)
 
@@ -258,11 +267,13 @@ Public Class frmComitentesAdm
         Cargar_Comitentes(ComboBoxPais.SelectedValue)
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnColumnas_Click(sender As Object, e As EventArgs) Handles btnColumnas.Click
+        Dim fixedColumns As New List(Of String) From {"Sigla", "Comitente"}
+        Dim f As New frmColumnas(Me.grid, fixedColumns)
+        Dim loc As Point = btnColumnas.PointToScreen(New Point(0, btnColumnas.Height))
+        f.Location = loc
+        f.Show(Me)
 
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
 End Class

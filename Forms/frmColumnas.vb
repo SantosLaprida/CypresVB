@@ -15,6 +15,10 @@ Public Class frmColumnas
         Me.checkBoxColumnas.Left = checkBoxColumnas.Left + 10
         Me.checkBoxMostrarTodo.Left = checkBoxColumnas.Left
         Me.checkBoxMostrarTodo.Checked = True
+        Me.ShowInTaskbar = False
+        Me.FormBorderStyle = FormBorderStyle.FixedSingle
+        Me.ControlBox = False
+        Me.Text = ""
 
     End Sub
 
@@ -73,6 +77,10 @@ Public Class frmColumnas
 
     Private Sub checkBoxColumnas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles checkBoxColumnas.SelectedIndexChanged
         checkBoxColumnas.ClearSelected()
+    End Sub
+
+    Private Sub frmColumnas_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
+        Me.Close()
     End Sub
 
 End Class

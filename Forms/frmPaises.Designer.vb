@@ -27,24 +27,27 @@ Partial Class frmPaises
         btnAgregar = New Button()
         btnModificar = New Button()
         Label5 = New Label()
+        btnEliminar = New Button()
         SuspendLayout()
         ' 
         ' lstPaises
         ' 
         lstPaises.BorderStyle = BorderStyle.FixedSingle
         lstPaises.FormattingEnabled = True
-        lstPaises.Location = New Point(49, 31)
+        lstPaises.Location = New Point(70, 52)
+        lstPaises.Margin = New Padding(4, 5, 4, 5)
         lstPaises.Name = "lstPaises"
-        lstPaises.Size = New Size(226, 227)
+        lstPaises.Size = New Size(322, 377)
         lstPaises.TabIndex = 0
         ' 
         ' txt_pais
         ' 
         txt_pais.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txt_pais.Location = New Point(49, 275)
+        txt_pais.Location = New Point(70, 458)
+        txt_pais.Margin = New Padding(4, 5, 4, 5)
         txt_pais.MaxLength = 50
         txt_pais.Name = "txt_pais"
-        txt_pais.Size = New Size(226, 23)
+        txt_pais.Size = New Size(321, 31)
         txt_pais.TabIndex = 1
         ' 
         ' btnAgregar
@@ -53,9 +56,10 @@ Partial Class frmPaises
         btnAgregar.FlatAppearance.BorderSize = 0
         btnAgregar.FlatStyle = FlatStyle.Flat
         btnAgregar.ForeColor = Color.White
-        btnAgregar.Location = New Point(49, 317)
+        btnAgregar.Location = New Point(70, 528)
+        btnAgregar.Margin = New Padding(4, 5, 4, 5)
         btnAgregar.Name = "btnAgregar"
-        btnAgregar.Size = New Size(69, 29)
+        btnAgregar.Size = New Size(99, 48)
         btnAgregar.TabIndex = 2
         btnAgregar.Text = "Agregar"
         btnAgregar.UseVisualStyleBackColor = False
@@ -66,9 +70,10 @@ Partial Class frmPaises
         btnModificar.FlatAppearance.BorderSize = 0
         btnModificar.FlatStyle = FlatStyle.Flat
         btnModificar.ForeColor = Color.White
-        btnModificar.Location = New Point(124, 317)
+        btnModificar.Location = New Point(177, 528)
+        btnModificar.Margin = New Padding(4, 5, 4, 5)
         btnModificar.Name = "btnModificar"
-        btnModificar.Size = New Size(69, 29)
+        btnModificar.Size = New Size(99, 48)
         btnModificar.TabIndex = 3
         btnModificar.Text = "Modificar"
         btnModificar.UseVisualStyleBackColor = False
@@ -76,26 +81,42 @@ Partial Class frmPaises
         ' Label5
         ' 
         Label5.BackColor = SystemColors.ActiveCaption
-        Label5.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
-        Label5.Location = New Point(49, 9)
-        Label5.Margin = New Padding(5, 0, 5, 0)
+        Label5.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.Location = New Point(70, 15)
+        Label5.Margin = New Padding(7, 0, 7, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(226, 19)
+        Label5.Size = New Size(323, 32)
         Label5.TabIndex = 9
         Label5.Text = "Paises"
         Label5.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' btnEliminar
+        ' 
+        btnEliminar.BackColor = SystemColors.HotTrack
+        btnEliminar.FlatAppearance.BorderSize = 0
+        btnEliminar.FlatStyle = FlatStyle.Flat
+        btnEliminar.ForeColor = Color.White
+        btnEliminar.Location = New Point(284, 528)
+        btnEliminar.Margin = New Padding(4, 5, 4, 5)
+        btnEliminar.Name = "btnEliminar"
+        btnEliminar.Size = New Size(99, 48)
+        btnEliminar.TabIndex = 10
+        btnEliminar.Text = "Eliminar"
+        btnEliminar.UseVisualStyleBackColor = False
+        ' 
         ' frmPaises
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(192), CByte(192), CByte(255))
-        ClientSize = New Size(345, 395)
+        ClientSize = New Size(493, 658)
+        Controls.Add(btnEliminar)
         Controls.Add(Label5)
         Controls.Add(btnModificar)
         Controls.Add(btnAgregar)
         Controls.Add(txt_pais)
         Controls.Add(lstPaises)
+        Margin = New Padding(4, 5, 4, 5)
         MaximizeBox = False
         MinimizeBox = False
         Name = "frmPaises"
@@ -109,4 +130,5 @@ Partial Class frmPaises
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents Label5 As Label
+    Friend WithEvents btnEliminar As Button
 End Class

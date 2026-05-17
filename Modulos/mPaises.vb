@@ -121,8 +121,20 @@ Public Module mPaises
         End Using
 
     End Sub
+
+    Public Sub EliminarPais(id As Integer)
+        Dim sql As String = "DELETE FROM s_paises WHERE id_pais = @id"
+        Using cn As New MySqlConnection(Cadena)
+            Using cmd As New MySqlCommand(sql, cn)
+                cmd.Parameters.AddWithValue("@id", id)
+                cn.Open()
+                cmd.ExecuteNonQuery()
+            End Using
+        End Using
+    End Sub
+
     Public Sub PaisesLlenarLista(iList As Object, IncluirTodos As Boolean)
-        Dim dtPaises As DataTable = PaisRepositorio.ObtenerPaises()
+        Dim dtPaises As DataTable = paisRepositorio.ObtenerPaises()
         Dim drPlaceholder As DataRow = dtPaises.NewRow()
         If IncluirTodos = True Then
             drPlaceholder("id_pais") = 0

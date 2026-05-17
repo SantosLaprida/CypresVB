@@ -69,4 +69,10 @@ Public Class frmPaises
         txt_pais.Text = ""
 
     End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim c As New modPaises
+
+
+    End Sub
 End Class
