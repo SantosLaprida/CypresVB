@@ -140,8 +140,8 @@ Public Class frmProveedoresAdmin
     End Sub
 
     Private Sub btnColumnas_Click(sender As Object, e As EventArgs) Handles btnColumnas.Click
-        Dim f As New frmColumnas(Me.grid)
-
+        Dim fixedColumns As New List(Of String) From {"Nombre", "Dirección"}
+        Dim f As New frmColumnas(Me.grid, fixedColumns)
         Dim loc As Point = btnColumnas.PointToScreen(New Point(0, btnColumnas.Height))
         f.Location = loc
         f.Show(Me)

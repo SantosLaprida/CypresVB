@@ -1,6 +1,8 @@
 ﻿Imports System.Drawing.Drawing2D
+Imports Syncfusion.Licensing
 Public Class frm_Main
     Private Sub frm_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JHaF5cWWdCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdlWXpeeHRURWdZUUVwXUVWYEo=")
         RedondearBoton(btnCcomitentes, 5)
         RedondearBoton(btnPaises, 5)
         RedondearBoton(btnProveedores, 5)

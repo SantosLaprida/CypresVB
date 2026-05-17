@@ -150,7 +150,7 @@ Partial Class frmProveedoresAdmin
         btnColumnas.FlatAppearance.BorderSize = 0
         btnColumnas.FlatStyle = FlatStyle.Flat
         btnColumnas.Image = CType(resources.GetObject("btnColumnas.Image"), Image)
-        btnColumnas.Location = New Point(1213, 25)
+        btnColumnas.Location = New Point(1367, 25)
         btnColumnas.Name = "btnColumnas"
         btnColumnas.Size = New Size(32, 32)
         btnColumnas.TabIndex = 0
