@@ -123,15 +123,12 @@ Public Class frmRubros
         Dim c As New Subrubros
         c.id_subrubro = 0
         c.descripcion = txtSubrubro.Text.Trim
-
         c.id_rubro = Convert.ToInt32(lstRubros.SelectedValue)
 
         If Convert.ToInt32(lstRubros.SelectedValue) = 0 Then
             MessageBox.Show("Seleccione un rubro válido.")
             Exit Sub
         End If
-
-        c.id_rubro = lstRubros.SelectedValue
 
         If c.descripcion = "" Then
             MessageBox.Show("Ingrese una descripción.")
