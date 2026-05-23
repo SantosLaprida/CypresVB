@@ -22,6 +22,7 @@ Partial Class frmComitentesAdm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmComitentesAdm))
         ToolStrip1 = New ToolStrip()
         NuevoToolStripButton = New ToolStripButton()
@@ -29,31 +30,29 @@ Partial Class frmComitentesAdm
         GuardarToolStripButton = New ToolStripButton()
         ImprimirToolStripButton = New ToolStripButton()
         toolStripSeparator = New ToolStripSeparator()
-        CortarToolStripButton = New ToolStripButton()
-        CopiarToolStripButton = New ToolStripButton()
-        PegarToolStripButton = New ToolStripButton()
         toolStripSeparator1 = New ToolStripSeparator()
-        AyudaToolStripButton = New ToolStripButton()
         Panel1 = New Panel()
+        btnColumnas = New Button()
         Label2 = New Label()
         ComboBoxPais = New ComboBox()
         Label1 = New Label()
         txtBuscar = New TextBox()
-        Button1 = New Button()
-        btnColumnas = New Button()
+        SfToolTip1 = New Syncfusion.Windows.Forms.SfToolTip(components)
+        GridControl1 = New Syncfusion.Windows.Forms.Grid.GridControl()
         ToolStrip1.SuspendLayout()
         Panel1.SuspendLayout()
+        CType(GridControl1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' ToolStrip1
         ' 
         ToolStrip1.BackColor = SystemColors.ActiveCaption
-        ToolStrip1.ImageScalingSize = New Size(16, 20)
-        ToolStrip1.Items.AddRange(New ToolStripItem() {NuevoToolStripButton, AbrirToolStripButton, GuardarToolStripButton, ImprimirToolStripButton, toolStripSeparator, CortarToolStripButton, CopiarToolStripButton, PegarToolStripButton, toolStripSeparator1, AyudaToolStripButton})
+        ToolStrip1.ImageScalingSize = New Size(24, 24)
+        ToolStrip1.Items.AddRange(New ToolStripItem() {NuevoToolStripButton, AbrirToolStripButton, GuardarToolStripButton, ImprimirToolStripButton, toolStripSeparator, toolStripSeparator1})
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
         ToolStrip1.Padding = New Padding(0, 0, 3, 0)
-        ToolStrip1.Size = New Size(1558, 29)
+        ToolStrip1.Size = New Size(1558, 33)
         ToolStrip1.TabIndex = 0
         ToolStrip1.Text = "ToolStrip1"
         ' 
@@ -63,7 +62,8 @@ Partial Class frmComitentesAdm
         NuevoToolStripButton.Image = CType(resources.GetObject("NuevoToolStripButton.Image"), Image)
         NuevoToolStripButton.ImageTransparentColor = Color.Magenta
         NuevoToolStripButton.Name = "NuevoToolStripButton"
-        NuevoToolStripButton.Size = New Size(34, 24)
+        NuevoToolStripButton.Padding = New Padding(5, 0, 5, 0)
+        NuevoToolStripButton.Size = New Size(38, 28)
         NuevoToolStripButton.Text = "&Nuevo"
         ' 
         ' AbrirToolStripButton
@@ -72,7 +72,8 @@ Partial Class frmComitentesAdm
         AbrirToolStripButton.Image = CType(resources.GetObject("AbrirToolStripButton.Image"), Image)
         AbrirToolStripButton.ImageTransparentColor = Color.Magenta
         AbrirToolStripButton.Name = "AbrirToolStripButton"
-        AbrirToolStripButton.Size = New Size(34, 24)
+        AbrirToolStripButton.Padding = New Padding(5, 0, 5, 0)
+        AbrirToolStripButton.Size = New Size(38, 28)
         AbrirToolStripButton.Text = "&Abrir"
         ' 
         ' GuardarToolStripButton
@@ -81,7 +82,8 @@ Partial Class frmComitentesAdm
         GuardarToolStripButton.Image = CType(resources.GetObject("GuardarToolStripButton.Image"), Image)
         GuardarToolStripButton.ImageTransparentColor = Color.Magenta
         GuardarToolStripButton.Name = "GuardarToolStripButton"
-        GuardarToolStripButton.Size = New Size(34, 24)
+        GuardarToolStripButton.Padding = New Padding(5, 0, 5, 0)
+        GuardarToolStripButton.Size = New Size(38, 28)
         GuardarToolStripButton.Text = "&Guardar"
         ' 
         ' ImprimirToolStripButton
@@ -90,133 +92,134 @@ Partial Class frmComitentesAdm
         ImprimirToolStripButton.Image = CType(resources.GetObject("ImprimirToolStripButton.Image"), Image)
         ImprimirToolStripButton.ImageTransparentColor = Color.Magenta
         ImprimirToolStripButton.Name = "ImprimirToolStripButton"
-        ImprimirToolStripButton.Size = New Size(34, 24)
+        ImprimirToolStripButton.Padding = New Padding(5, 0, 5, 0)
+        ImprimirToolStripButton.Size = New Size(38, 28)
         ImprimirToolStripButton.Text = "&Imprimir"
         ' 
         ' toolStripSeparator
         ' 
         toolStripSeparator.Name = "toolStripSeparator"
-        toolStripSeparator.Size = New Size(6, 29)
-        ' 
-        ' CortarToolStripButton
-        ' 
-        CortarToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image
-        CortarToolStripButton.Image = CType(resources.GetObject("CortarToolStripButton.Image"), Image)
-        CortarToolStripButton.ImageTransparentColor = Color.Magenta
-        CortarToolStripButton.Name = "CortarToolStripButton"
-        CortarToolStripButton.Size = New Size(34, 24)
-        CortarToolStripButton.Text = "&Cortar"
-        ' 
-        ' CopiarToolStripButton
-        ' 
-        CopiarToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image
-        CopiarToolStripButton.Image = CType(resources.GetObject("CopiarToolStripButton.Image"), Image)
-        CopiarToolStripButton.ImageTransparentColor = Color.Magenta
-        CopiarToolStripButton.Name = "CopiarToolStripButton"
-        CopiarToolStripButton.Size = New Size(34, 24)
-        CopiarToolStripButton.Text = "&Copiar"
-        ' 
-        ' PegarToolStripButton
-        ' 
-        PegarToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image
-        PegarToolStripButton.Image = CType(resources.GetObject("PegarToolStripButton.Image"), Image)
-        PegarToolStripButton.ImageTransparentColor = Color.Magenta
-        PegarToolStripButton.Name = "PegarToolStripButton"
-        PegarToolStripButton.Size = New Size(34, 24)
-        PegarToolStripButton.Text = "&Pegar"
+        toolStripSeparator.Size = New Size(6, 33)
         ' 
         ' toolStripSeparator1
         ' 
         toolStripSeparator1.Name = "toolStripSeparator1"
-        toolStripSeparator1.Size = New Size(6, 29)
-        ' 
-        ' AyudaToolStripButton
-        ' 
-        AyudaToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image
-        AyudaToolStripButton.Image = CType(resources.GetObject("AyudaToolStripButton.Image"), Image)
-        AyudaToolStripButton.ImageTransparentColor = Color.Magenta
-        AyudaToolStripButton.Name = "AyudaToolStripButton"
-        AyudaToolStripButton.Size = New Size(34, 24)
-        AyudaToolStripButton.Text = "&Ayuda"
+        toolStripSeparator1.Size = New Size(6, 33)
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.ActiveCaption
+        Panel1.Controls.Add(GridControl1)
         Panel1.Controls.Add(btnColumnas)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(ComboBoxPais)
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(txtBuscar)
-        Panel1.Controls.Add(Button1)
-        Panel1.Location = New Point(0, 50)
+        Panel1.Dock = DockStyle.Top
+        Panel1.Location = New Point(0, 33)
         Panel1.Margin = New Padding(4, 5, 4, 5)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(2000, 87)
+        Panel1.Size = New Size(1558, 100)
         Panel1.TabIndex = 4
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(457, 33)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(46, 25)
-        Label2.TabIndex = 7
-        Label2.Text = "Pais:"
-        ' 
-        ' ComboBoxPais
-        ' 
-        ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(506, 30)
-        ComboBoxPais.Name = "ComboBoxPais"
-        ComboBoxPais.Size = New Size(137, 33)
-        ComboBoxPais.TabIndex = 6
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(897, 32)
-        Label1.Margin = New Padding(4, 0, 4, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(98, 25)
-        Label1.TabIndex = 5
-        Label1.Text = "Comitente:"
-        ' 
-        ' txtBuscar
-        ' 
-        txtBuscar.Location = New Point(1000, 25)
-        txtBuscar.Margin = New Padding(4, 5, 4, 5)
-        txtBuscar.Name = "txtBuscar"
-        txtBuscar.Size = New Size(341, 31)
-        txtBuscar.TabIndex = 4
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(4, 25)
-        Button1.Margin = New Padding(4, 5, 4, 5)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(107, 38)
-        Button1.TabIndex = 2
-        Button1.Text = "Button1"
-        Button1.UseVisualStyleBackColor = True
         ' 
         ' btnColumnas
         ' 
         btnColumnas.FlatAppearance.BorderSize = 0
         btnColumnas.FlatStyle = FlatStyle.Flat
         btnColumnas.Image = CType(resources.GetObject("btnColumnas.Image"), Image)
-        btnColumnas.Location = New Point(1442, 24)
+        btnColumnas.Location = New Point(1431, 33)
         btnColumnas.Name = "btnColumnas"
-        btnColumnas.Size = New Size(32, 32)
+        btnColumnas.Size = New Size(32, 28)
         btnColumnas.TabIndex = 5
         btnColumnas.UseVisualStyleBackColor = True
         ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(20, 33)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(60, 22)
+        Label2.TabIndex = 7
+        Label2.Text = "Pais:"
+        ' 
+        ' ComboBoxPais
+        ' 
+        ComboBoxPais.FormattingEnabled = True
+        ComboBoxPais.Location = New Point(95, 28)
+        ComboBoxPais.Name = "ComboBoxPais"
+        ComboBoxPais.Size = New Size(137, 30)
+        ComboBoxPais.TabIndex = 6
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(291, 33)
+        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(110, 22)
+        Label1.TabIndex = 5
+        Label1.Text = "Comitente:"
+        ' 
+        ' txtBuscar
+        ' 
+        txtBuscar.Location = New Point(409, 28)
+        txtBuscar.Margin = New Padding(4, 5, 4, 5)
+        txtBuscar.Name = "txtBuscar"
+        txtBuscar.Size = New Size(341, 29)
+        txtBuscar.TabIndex = 4
+        ' 
+        ' GridControl1
+        ' 
+        GridControl1.Location = New Point(0, 99)
+        GridControl1.Name = "GridControl1"
+        GridControl1.Size = New Size(988, 326)
+        GridControl1.SmartSizeBox = False
+        GridControl1.TabIndex = 5
+        GridControl1.Text = "GridControl1"
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonBackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonBorderColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonDisabledBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonDisabledBorderColor = Color.FromArgb(CByte(210), CByte(210), CByte(210))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonHoverBackColor = Color.FromArgb(CByte(114), CByte(114), CByte(114))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonHoverBorderColor = Color.FromArgb(CByte(94), CByte(94), CByte(94))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonPressedBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonPressedBorderColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ScrollBarBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ThumbBorderColor = Color.FromArgb(CByte(171), CByte(171), CByte(171))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ThumbColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ThumbDisabledBorderColor = Color.FromArgb(CByte(210), CByte(210), CByte(210))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ThumbDisabledColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ThumbHoverBorderColor = Color.FromArgb(CByte(171), CByte(171), CByte(171))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ThumbHoverColor = Color.FromArgb(CByte(197), CByte(197), CByte(197))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ThumbPressedBorderColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
+        GridControl1.ThemeStyle.HorizontalScrollBarStyle.ThumbPressedColor = Color.FromArgb(CByte(197), CByte(197), CByte(197))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ArrowButtonBackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ArrowButtonBorderColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ArrowButtonDisabledBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ArrowButtonDisabledBorderColor = Color.FromArgb(CByte(210), CByte(210), CByte(210))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ArrowButtonHoverBackColor = Color.FromArgb(CByte(114), CByte(114), CByte(114))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ArrowButtonHoverBorderColor = Color.FromArgb(CByte(94), CByte(94), CByte(94))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ArrowButtonPressedBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ArrowButtonPressedBorderColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ScrollBarBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ThumbBorderColor = Color.FromArgb(CByte(171), CByte(171), CByte(171))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ThumbColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ThumbDisabledBorderColor = Color.FromArgb(CByte(210), CByte(210), CByte(210))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ThumbDisabledColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ThumbHoverBorderColor = Color.FromArgb(CByte(171), CByte(171), CByte(171))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ThumbHoverColor = Color.FromArgb(CByte(197), CByte(197), CByte(197))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ThumbPressedBorderColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
+        GridControl1.ThemeStyle.VerticalScrollBarStyle.ThumbPressedColor = Color.FromArgb(CByte(197), CByte(197), CByte(197))
+        GridControl1.UseRightToLeftCompatibleTextBox = True
+        ' 
         ' frmComitentesAdm
         ' 
-        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
+        AutoScaleDimensions = New SizeF(10.0F, 22.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1558, 748)
+        ClientSize = New Size(1558, 658)
         Controls.Add(Panel1)
         Controls.Add(ToolStrip1)
+        Font = New Font("Consolas", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Margin = New Padding(4, 5, 4, 5)
         Name = "frmComitentesAdm"
         Text = "Form2"
@@ -224,6 +227,7 @@ Partial Class frmComitentesAdm
         ToolStrip1.PerformLayout()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        CType(GridControl1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -234,16 +238,13 @@ Partial Class frmComitentesAdm
     Friend WithEvents GuardarToolStripButton As ToolStripButton
     Friend WithEvents ImprimirToolStripButton As ToolStripButton
     Friend WithEvents toolStripSeparator As ToolStripSeparator
-    Friend WithEvents CortarToolStripButton As ToolStripButton
-    Friend WithEvents CopiarToolStripButton As ToolStripButton
-    Friend WithEvents PegarToolStripButton As ToolStripButton
     Friend WithEvents toolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents AyudaToolStripButton As ToolStripButton
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents txtBuscar As TextBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents ComboBoxPais As ComboBox
     Friend WithEvents btnColumnas As Button
+    Friend WithEvents SfToolTip1 As Syncfusion.Windows.Forms.SfToolTip
+    Friend WithEvents GridControl1 As Syncfusion.Windows.Forms.Grid.GridControl
 End Class

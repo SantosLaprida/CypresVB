@@ -17,25 +17,74 @@ Public Class frmComitentesAdm
         Cargar_Comitentes()
         PaisesLlenarCombo(ComboBoxPais, True)
     End Sub
+
     Private Sub InicializarGrid()
         grid.Dock = DockStyle.None
+        grid.Font = New Font("Segoe UI Semibold", 10)
+
+        ' Remove duplicate Add
+        If Not Me.Controls.Contains(grid) Then
+            Me.Controls.Add(grid)
+        End If
+
+        grid.ActivateCurrentCellBehavior = GridCellActivateAction.None
+
+        ' === Column Setup ===
+        grid.ColCount = 7
+        grid.ColWidths(1) = 0          ' ID (hidden)
+        grid.ColWidths(2) = 50         ' Sigla
+        grid.ColWidths(3) = 350        ' Comitente
+        grid.ColWidths(4) = 300        ' Direccion
+        grid.ColWidths(5) = 200        ' Localidad
+        grid.ColWidths(6) = 80         ' C.Postal
+        grid.ColWidths(7) = 200        ' Telefono
+
+        ' === Calculate Total Width with padding ===
+        Dim totalWidth As Integer = 0
+        For col As Integer = 1 To grid.ColCount
+            totalWidth += grid.ColWidths(col)
+        Next
+
+        ' Important: Add extra space for borders + possible vertical scrollbar
+        totalWidth += 25   ' Adjust this value (20-40 usually works well)
+
+        grid.Width = totalWidth
+        grid.Height = 400
+        grid.Top = Panel1.Bottom
+        grid.Left = 10     ' or 0, depending on your layout
+
+        ' Header
+        grid.RowHeights(0) = 35
+        grid(0, 2).Text = "Sigla"
+        grid(0, 3).Text = "Comitente"
+        grid(0, 4).Text = "Direccion"
+        grid(0, 5).Text = "Localidad"
+        grid(0, 6).Text = "C. Postal"
+        grid(0, 7).Text = "Telefono"
+
+        ' Optional: Make columns fill the grid if you prefer (but you want fixed width)
+        ' grid.AllowResizeToFit = True
+    End Sub
+    Private Sub InicializarGrid()
+        grid.Dock = DockStyle.None
+        grid.Font = New Font("Segoe UI Semibold", 10)
         Me.Controls.Add(grid)
         grid.ActivateCurrentCellBehavior = GridCellActivateAction.None
 
         'Tamaño y ubicacion de la grilla
-        grid.Top = 83
+        grid.Top = Panel1.Bottom
         grid.Height = 400
-        grid.Width = 1800
+        grid.Width = 1600
         grid.RowCount = 0
         grid.ColCount = 7
 
         grid.ColWidths(1) = 0 'ID
-        grid.ColWidths(2) = 80 'sigla
-        grid.ColWidths(3) = 300 'comitente
-        grid.ColWidths(4) = 315 'direccion
-        grid.ColWidths(5) = 300 'localidad
+        grid.ColWidths(2) = 50 'sigla
+        grid.ColWidths(3) = 350 'comitente
+        grid.ColWidths(4) = 300 'direccion
+        grid.ColWidths(5) = 200 'localidad
         grid.ColWidths(6) = 80 'c.postal
-        grid.ColWidths(7) = 300 'Telefono
+        grid.ColWidths(7) = 200 'Telefono
         Me.Controls.Add(grid)
 
         Dim totalWidth As Integer = 0
@@ -74,21 +123,17 @@ Public Class frmComitentesAdm
             End If
 
             grid.RowHeights(fila) = 25
+
+            For i As Integer = 1 To grid.ColCount
+                grid(fila, i).VerticalAlignment = GridVerticalAlignment.Middle
+                grid(fila, i).HorizontalAlignment = GridHorizontalAlignment.Center
+            Next
             grid(fila, 1).Text = c.Id.ToString()
-            grid(fila, 1).VerticalAlignment = GridVerticalAlignment.Middle
-            grid(fila, 2).HorizontalAlignment = GridHorizontalAlignment.Center
-            grid(fila, 2).VerticalAlignment = GridVerticalAlignment.Middle
             grid(fila, 2).Text = c.Sigla
             grid(fila, 3).Text = c.Nombre
-            grid(fila, 3).VerticalAlignment = GridVerticalAlignment.Middle
             grid(fila, 4).Text = c.Direccion
-            grid(fila, 4).VerticalAlignment = GridVerticalAlignment.Middle
             grid(fila, 5).Text = c.Localidad
-            grid(fila, 5).VerticalAlignment = GridVerticalAlignment.Middle
-            grid(fila, 6).VerticalAlignment = GridVerticalAlignment.Middle
-            grid(fila, 6).HorizontalAlignment = GridHorizontalAlignment.Center
             grid(fila, 6).Text = c.CPostal
-            grid(fila, 7).VerticalAlignment = GridVerticalAlignment.Middle
             grid(fila, 7).Text = c.telefono
             PintarFila(fila)
         Next
@@ -108,6 +153,8 @@ Public Class frmComitentesAdm
         Next
 
     End Sub
+
+
     Private Sub grid_DoubleClick(sender As Object, e As EventArgs)
 
         Dim row As Integer = grid.CurrentCell.RowIndex
@@ -164,6 +211,7 @@ Public Class frmComitentesAdm
         grid(row, 4).Text = c.Direccion
         grid(row, 4).VerticalAlignment = GridVerticalAlignment.Middle
         PintarFila(row)
+
 
     End Sub
     Private Sub ReubicarComitente(rowActual As Integer, c As Comitente)

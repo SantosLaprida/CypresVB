@@ -42,16 +42,18 @@ Partial Class frmComitente
         Label10 = New Label()
         rad_publico = New RadioButton()
         rad_privado = New RadioButton()
+        TableLayoutPanel1 = New TableLayoutPanel()
+        TableLayoutPanel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
-        Label2.Location = New Point(81, 24)
+        Label2.Location = New Point(5, 0)
         Label2.Margin = New Padding(5, 0, 5, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(35, 13)
+        Label2.Size = New Size(55, 23)
         Label2.TabIndex = 2
         Label2.Text = "Sigla:"
         Label2.TextAlign = ContentAlignment.MiddleRight
@@ -59,31 +61,31 @@ Partial Class frmComitente
         ' txtSigla
         ' 
         txtSigla.Font = New Font("Microsoft Sans Serif", 8.25F)
-        txtSigla.Location = New Point(146, 23)
+        txtSigla.Location = New Point(114, 5)
         txtSigla.Margin = New Padding(5)
         txtSigla.MaxLength = 10
         txtSigla.Name = "txtSigla"
-        txtSigla.Size = New Size(103, 20)
+        txtSigla.Size = New Size(197, 26)
         txtSigla.TabIndex = 3
         ' 
         ' txtComitente
         ' 
         txtComitente.Font = New Font("Microsoft Sans Serif", 8.25F)
-        txtComitente.Location = New Point(146, 54)
+        txtComitente.Location = New Point(114, 50)
         txtComitente.Margin = New Padding(5)
         txtComitente.MaxLength = 50
         txtComitente.Name = "txtComitente"
-        txtComitente.Size = New Size(394, 20)
+        txtComitente.Size = New Size(197, 26)
         txtComitente.TabIndex = 5
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
-        Label3.Location = New Point(52, 54)
+        Label3.Location = New Point(5, 45)
         Label3.Margin = New Padding(5, 0, 5, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(64, 13)
+        Label3.Size = New Size(99, 23)
         Label3.TabIndex = 4
         Label3.Text = "Comitente:"
         Label3.TextAlign = ContentAlignment.MiddleRight
@@ -91,21 +93,21 @@ Partial Class frmComitente
         ' txtDireccion
         ' 
         txtDireccion.Font = New Font("Microsoft Sans Serif", 8.25F)
-        txtDireccion.Location = New Point(147, 85)
+        txtDireccion.Location = New Point(114, 95)
         txtDireccion.Margin = New Padding(5)
         txtDireccion.MaxLength = 50
         txtDireccion.Name = "txtDireccion"
-        txtDireccion.Size = New Size(394, 20)
+        txtDireccion.Size = New Size(394, 26)
         txtDireccion.TabIndex = 7
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
-        Label4.Location = New Point(58, 88)
+        Label4.Location = New Point(5, 90)
         Label4.Margin = New Padding(5, 0, 5, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(58, 13)
+        Label4.Size = New Size(90, 23)
         Label4.TabIndex = 6
         Label4.Text = "Direccion:"
         Label4.TextAlign = ContentAlignment.MiddleRight
@@ -113,21 +115,21 @@ Partial Class frmComitente
         ' txtLocalidad
         ' 
         txtLocalidad.Font = New Font("Microsoft Sans Serif", 8.25F)
-        txtLocalidad.Location = New Point(146, 119)
+        txtLocalidad.Location = New Point(114, 140)
         txtLocalidad.Margin = New Padding(5)
         txtLocalidad.MaxLength = 50
         txtLocalidad.Name = "txtLocalidad"
-        txtLocalidad.Size = New Size(394, 20)
+        txtLocalidad.Size = New Size(394, 26)
         txtLocalidad.TabIndex = 9
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
-        Label5.Location = New Point(56, 120)
+        Label5.Location = New Point(5, 135)
         Label5.Margin = New Padding(5, 0, 5, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(60, 13)
+        Label5.Size = New Size(92, 23)
         Label5.TabIndex = 8
         Label5.Text = "Localidad:"
         Label5.TextAlign = ContentAlignment.MiddleRight
@@ -135,21 +137,21 @@ Partial Class frmComitente
         ' txtCPostal
         ' 
         txtCPostal.Font = New Font("Microsoft Sans Serif", 8.25F)
-        txtCPostal.Location = New Point(146, 151)
+        txtCPostal.Location = New Point(114, 185)
         txtCPostal.Margin = New Padding(5)
         txtCPostal.MaxLength = 15
         txtCPostal.Name = "txtCPostal"
-        txtCPostal.Size = New Size(110, 20)
+        txtCPostal.Size = New Size(197, 26)
         txtCPostal.TabIndex = 11
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
-        Label6.Location = New Point(61, 152)
+        Label6.Location = New Point(5, 180)
         Label6.Margin = New Padding(5, 0, 5, 0)
         Label6.Name = "Label6"
-        Label6.Size = New Size(55, 13)
+        Label6.Size = New Size(83, 23)
         Label6.TabIndex = 10
         Label6.Text = "C. Postal:"
         Label6.TextAlign = ContentAlignment.MiddleRight
@@ -163,10 +165,10 @@ Partial Class frmComitente
         btnGuardar.FlatStyle = FlatStyle.Flat
         btnGuardar.Font = New Font("Segoe UI", 8.25F)
         btnGuardar.ForeColor = Color.White
-        btnGuardar.Location = New Point(146, 321)
+        btnGuardar.Location = New Point(122, 546)
         btnGuardar.Margin = New Padding(5)
         btnGuardar.Name = "btnGuardar"
-        btnGuardar.Size = New Size(90, 27)
+        btnGuardar.Size = New Size(92, 35)
         btnGuardar.TabIndex = 12
         btnGuardar.Text = "Guardar"
         btnGuardar.UseVisualStyleBackColor = False
@@ -178,10 +180,10 @@ Partial Class frmComitente
         btnCancelar.FlatStyle = FlatStyle.Flat
         btnCancelar.Font = New Font("Segoe UI", 8.25F)
         btnCancelar.ForeColor = Color.White
-        btnCancelar.Location = New Point(277, 321)
+        btnCancelar.Location = New Point(253, 546)
         btnCancelar.Margin = New Padding(5)
         btnCancelar.Name = "btnCancelar"
-        btnCancelar.Size = New Size(90, 27)
+        btnCancelar.Size = New Size(96, 35)
         btnCancelar.TabIndex = 13
         btnCancelar.Text = "Cancelar"
         btnCancelar.UseVisualStyleBackColor = False
@@ -190,10 +192,10 @@ Partial Class frmComitente
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
-        Label8.Location = New Point(85, 247)
+        Label8.Location = New Point(5, 315)
         Label8.Margin = New Padding(5, 0, 5, 0)
         Label8.Name = "Label8"
-        Label8.Size = New Size(31, 13)
+        Label8.Size = New Size(46, 23)
         Label8.TabIndex = 17
         Label8.Text = "Pais:"
         Label8.TextAlign = ContentAlignment.MiddleRight
@@ -202,20 +204,20 @@ Partial Class frmComitente
         ' 
         ComboBoxPais.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(147, 245)
+        ComboBoxPais.Location = New Point(114, 320)
         ComboBoxPais.Margin = New Padding(5)
         ComboBoxPais.Name = "ComboBoxPais"
-        ComboBoxPais.Size = New Size(166, 21)
+        ComboBoxPais.Size = New Size(197, 31)
         ComboBoxPais.TabIndex = 18
         ' 
         ' txtTelefono
         ' 
         txtTelefono.Font = New Font("Microsoft Sans Serif", 8.25F)
-        txtTelefono.Location = New Point(146, 183)
+        txtTelefono.Location = New Point(114, 230)
         txtTelefono.Margin = New Padding(5)
         txtTelefono.MaxLength = 50
         txtTelefono.Name = "txtTelefono"
-        txtTelefono.Size = New Size(394, 20)
+        txtTelefono.Size = New Size(197, 26)
         txtTelefono.TabIndex = 20
         ' 
         ' Label9
@@ -223,10 +225,10 @@ Partial Class frmComitente
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
         Label9.ImageAlign = ContentAlignment.MiddleRight
-        Label9.Location = New Point(61, 184)
+        Label9.Location = New Point(5, 225)
         Label9.Margin = New Padding(5, 0, 5, 0)
         Label9.Name = "Label9"
-        Label9.Size = New Size(55, 13)
+        Label9.Size = New Size(83, 23)
         Label9.TabIndex = 19
         Label9.Text = "Telefono:"
         Label9.TextAlign = ContentAlignment.MiddleRight
@@ -234,11 +236,11 @@ Partial Class frmComitente
         ' txtMail
         ' 
         txtMail.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtMail.Location = New Point(146, 213)
+        txtMail.Location = New Point(114, 275)
         txtMail.Margin = New Padding(5)
         txtMail.MaxLength = 50
         txtMail.Name = "txtMail"
-        txtMail.Size = New Size(394, 22)
+        txtMail.Size = New Size(197, 29)
         txtMail.TabIndex = 22
         ' 
         ' Label10
@@ -246,10 +248,10 @@ Partial Class frmComitente
         Label10.AutoSize = True
         Label10.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold)
         Label10.ImageAlign = ContentAlignment.MiddleRight
-        Label10.Location = New Point(78, 219)
+        Label10.Location = New Point(5, 270)
         Label10.Margin = New Padding(5, 0, 5, 0)
         Label10.Name = "Label10"
-        Label10.Size = New Size(38, 13)
+        Label10.Size = New Size(59, 23)
         Label10.TabIndex = 21
         Label10.Text = "Email:"
         Label10.TextAlign = ContentAlignment.MiddleRight
@@ -258,9 +260,9 @@ Partial Class frmComitente
         ' 
         rad_publico.AutoSize = True
         rad_publico.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        rad_publico.Location = New Point(147, 274)
+        rad_publico.Location = New Point(122, 493)
         rad_publico.Name = "rad_publico"
-        rad_publico.Size = New Size(63, 17)
+        rad_publico.Size = New Size(91, 27)
         rad_publico.TabIndex = 23
         rad_publico.TabStop = True
         rad_publico.Text = "Publico"
@@ -270,47 +272,70 @@ Partial Class frmComitente
         ' 
         rad_privado.AutoSize = True
         rad_privado.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        rad_privado.Location = New Point(250, 274)
+        rad_privado.Location = New Point(225, 493)
         rad_privado.Name = "rad_privado"
-        rad_privado.Size = New Size(63, 17)
+        rad_privado.Size = New Size(92, 27)
         rad_privado.TabIndex = 24
         rad_privado.TabStop = True
         rad_privado.Text = "Privado"
         rad_privado.UseVisualStyleBackColor = True
         ' 
+        ' TableLayoutPanel1
+        ' 
+        TableLayoutPanel1.AutoSize = True
+        TableLayoutPanel1.ColumnCount = 2
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle())
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100.0F))
+        TableLayoutPanel1.Controls.Add(Label2, 0, 0)
+        TableLayoutPanel1.Controls.Add(Label3, 0, 1)
+        TableLayoutPanel1.Controls.Add(Label4, 0, 2)
+        TableLayoutPanel1.Controls.Add(ComboBoxPais, 1, 7)
+        TableLayoutPanel1.Controls.Add(txtMail, 1, 6)
+        TableLayoutPanel1.Controls.Add(Label5, 0, 3)
+        TableLayoutPanel1.Controls.Add(txtTelefono, 1, 5)
+        TableLayoutPanel1.Controls.Add(Label10, 0, 6)
+        TableLayoutPanel1.Controls.Add(Label6, 0, 4)
+        TableLayoutPanel1.Controls.Add(Label8, 0, 7)
+        TableLayoutPanel1.Controls.Add(Label9, 0, 5)
+        TableLayoutPanel1.Controls.Add(txtCPostal, 1, 4)
+        TableLayoutPanel1.Controls.Add(txtSigla, 1, 0)
+        TableLayoutPanel1.Controls.Add(txtLocalidad, 1, 3)
+        TableLayoutPanel1.Controls.Add(txtComitente, 1, 1)
+        TableLayoutPanel1.Controls.Add(txtDireccion, 1, 2)
+        TableLayoutPanel1.Location = New Point(93, 100)
+        TableLayoutPanel1.Name = "TableLayoutPanel1"
+        TableLayoutPanel1.RowCount = 8
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 45.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 45.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 45.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 45.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 45.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 45.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 45.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 45.0F))
+        TableLayoutPanel1.Size = New Size(676, 360)
+        TableLayoutPanel1.TabIndex = 25
+        ' 
         ' frmComitente
         ' 
-        AutoScaleDimensions = New SizeF(8F, 17F)
+        AutoScaleDimensions = New SizeF(12.0F, 28.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.InactiveCaption
-        ClientSize = New Size(1067, 413)
+        ClientSize = New Size(777, 661)
+        Controls.Add(TableLayoutPanel1)
         Controls.Add(rad_privado)
         Controls.Add(rad_publico)
-        Controls.Add(txtMail)
-        Controls.Add(Label10)
-        Controls.Add(txtTelefono)
-        Controls.Add(Label9)
-        Controls.Add(ComboBoxPais)
-        Controls.Add(Label8)
         Controls.Add(btnCancelar)
         Controls.Add(btnGuardar)
-        Controls.Add(txtCPostal)
-        Controls.Add(Label6)
-        Controls.Add(txtLocalidad)
-        Controls.Add(Label5)
-        Controls.Add(txtDireccion)
-        Controls.Add(Label4)
-        Controls.Add(txtComitente)
-        Controls.Add(Label3)
-        Controls.Add(txtSigla)
-        Controls.Add(Label2)
-        Font = New Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Font = New Font("Segoe UI", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         FormBorderStyle = FormBorderStyle.FixedSingle
         Margin = New Padding(5)
         MaximizeBox = False
         MinimizeBox = False
         Name = "frmComitente"
         Text = "Comitente - Editar"
+        TableLayoutPanel1.ResumeLayout(False)
+        TableLayoutPanel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -334,4 +359,5 @@ Partial Class frmComitente
     Friend WithEvents Label10 As Label
     Friend WithEvents rad_publico As RadioButton
     Friend WithEvents rad_privado As RadioButton
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class
