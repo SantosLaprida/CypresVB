@@ -37,8 +37,6 @@ Public Class ComitenteRepositorio
         Return lista
     End Function
 
-
-
     Public Function ObtenerComitentePorId(id As Integer) As Comitente
         Dim c As Comitente = Nothing
         Dim sql As String = "SELECT * FROM s_comitentes WHERE id_comitente = @id"

@@ -39,4 +39,8 @@ Public Class frm_Main
     Private Sub btnProyectoTipo_Click(sender As Object, e As EventArgs) Handles btnProyectoTipo.Click
         frmProyectoTipo.ShowDialog()
     End Sub
+
+    Private Sub btnLicitaciones_Click(sender As Object, e As EventArgs) Handles btnLicitaciones.Click
+        frmLicitaciones.ShowDialog()
+    End Sub
 End Class
