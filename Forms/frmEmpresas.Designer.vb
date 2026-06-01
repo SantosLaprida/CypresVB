@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmComitentesAdm
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmEmpresas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,11 @@ Partial Class frmComitentesAdm
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmComitentesAdm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEmpresas))
+        Dim GridCellInfo1 As Syncfusion.Windows.Forms.Grid.GridCellInfo = New Syncfusion.Windows.Forms.Grid.GridCellInfo()
         ToolStrip1 = New ToolStrip()
         NuevoToolStripButton = New ToolStripButton()
         AbrirToolStripButton = New ToolStripButton()
@@ -31,6 +32,8 @@ Partial Class frmComitentesAdm
         ImprimirToolStripButton = New ToolStripButton()
         toolStripSeparator = New ToolStripSeparator()
         toolStripSeparator1 = New ToolStripSeparator()
+        GridLayout1 = New Syncfusion.Windows.Forms.Tools.GridLayout(components)
+        Grid = New Syncfusion.Windows.Forms.Grid.GridControl()
         Panel1 = New Panel()
         GridControl1 = New Syncfusion.Windows.Forms.Grid.GridControl()
         btnColumnas = New Button()
@@ -38,8 +41,9 @@ Partial Class frmComitentesAdm
         ComboBoxPais = New ComboBox()
         Label1 = New Label()
         txtBuscar = New TextBox()
-        SfToolTip1 = New Syncfusion.Windows.Forms.SfToolTip(components)
         ToolStrip1.SuspendLayout()
+        CType(GridLayout1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(Grid, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         CType(GridControl1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -52,8 +56,8 @@ Partial Class frmComitentesAdm
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
         ToolStrip1.Padding = New Padding(0, 0, 3, 0)
-        ToolStrip1.Size = New Size(1370, 31)
-        ToolStrip1.TabIndex = 0
+        ToolStrip1.Size = New Size(800, 31)
+        ToolStrip1.TabIndex = 1
         ToolStrip1.Text = "ToolStrip1"
         ' 
         ' NuevoToolStripButton
@@ -106,6 +110,67 @@ Partial Class frmComitentesAdm
         toolStripSeparator1.Name = "toolStripSeparator1"
         toolStripSeparator1.Size = New Size(6, 31)
         ' 
+        ' GridLayout1
+        ' 
+        GridLayout1.Columns = 0
+        GridLayout1.Rows = 1
+        ' 
+        ' Grid
+        ' 
+        Grid.Font = New Font("Cambria", 8.25F)
+        GridCellInfo1.Col = -1
+        GridCellInfo1.Row = -1
+        GridCellInfo1.StyleInfo.Font.Bold = False
+        GridCellInfo1.StyleInfo.Font.Facename = "Cambria"
+        GridCellInfo1.StyleInfo.Font.Italic = False
+        GridCellInfo1.StyleInfo.Font.Size = 8.25F
+        GridCellInfo1.StyleInfo.Font.Strikeout = False
+        GridCellInfo1.StyleInfo.Font.Underline = False
+        GridCellInfo1.StyleInfo.Font.Unit = GraphicsUnit.Point
+        Grid.GridCells.AddRange(New Syncfusion.Windows.Forms.Grid.GridCellInfo() {GridCellInfo1})
+        Grid.Location = New Point(0, 92)
+        Grid.Name = "Grid"
+        Grid.SerializeCellsBehavior = Syncfusion.Windows.Forms.Grid.GridSerializeCellsBehavior.SerializeIntoCode
+        Grid.Size = New Size(788, 255)
+        Grid.SmartSizeBox = False
+        Grid.TabIndex = 2
+        Grid.Text = "GridControl1"
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonBackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonBorderColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonDisabledBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonDisabledBorderColor = Color.FromArgb(CByte(210), CByte(210), CByte(210))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonHoverBackColor = Color.FromArgb(CByte(114), CByte(114), CByte(114))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonHoverBorderColor = Color.FromArgb(CByte(94), CByte(94), CByte(94))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonPressedBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonPressedBorderColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ScrollBarBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ThumbBorderColor = Color.FromArgb(CByte(171), CByte(171), CByte(171))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ThumbColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ThumbDisabledBorderColor = Color.FromArgb(CByte(210), CByte(210), CByte(210))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ThumbDisabledColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ThumbHoverBorderColor = Color.FromArgb(CByte(171), CByte(171), CByte(171))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ThumbHoverColor = Color.FromArgb(CByte(197), CByte(197), CByte(197))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ThumbPressedBorderColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
+        Grid.ThemeStyle.HorizontalScrollBarStyle.ThumbPressedColor = Color.FromArgb(CByte(197), CByte(197), CByte(197))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ArrowButtonBackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ArrowButtonBorderColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ArrowButtonDisabledBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ArrowButtonDisabledBorderColor = Color.FromArgb(CByte(210), CByte(210), CByte(210))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ArrowButtonHoverBackColor = Color.FromArgb(CByte(114), CByte(114), CByte(114))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ArrowButtonHoverBorderColor = Color.FromArgb(CByte(94), CByte(94), CByte(94))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ArrowButtonPressedBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ArrowButtonPressedBorderColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ScrollBarBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ThumbBorderColor = Color.FromArgb(CByte(171), CByte(171), CByte(171))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ThumbColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ThumbDisabledBorderColor = Color.FromArgb(CByte(210), CByte(210), CByte(210))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ThumbDisabledColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ThumbHoverBorderColor = Color.FromArgb(CByte(171), CByte(171), CByte(171))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ThumbHoverColor = Color.FromArgb(CByte(197), CByte(197), CByte(197))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ThumbPressedBorderColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
+        Grid.ThemeStyle.VerticalScrollBarStyle.ThumbPressedColor = Color.FromArgb(CByte(197), CByte(197), CByte(197))
+        Grid.UseRightToLeftCompatibleTextBox = True
+        ' 
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.ActiveCaption
@@ -119,8 +184,8 @@ Partial Class frmComitentesAdm
         Panel1.Location = New Point(0, 31)
         Panel1.Margin = New Padding(4, 5, 4, 5)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1370, 64)
-        Panel1.TabIndex = 4
+        Panel1.Size = New Size(800, 53)
+        Panel1.TabIndex = 5
         ' 
         ' GridControl1
         ' 
@@ -181,51 +246,55 @@ Partial Class frmComitentesAdm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(20, 33)
+        Label2.Location = New Point(24, 20)
         Label2.Name = "Label2"
-        Label2.Size = New Size(42, 14)
+        Label2.Size = New Size(31, 15)
         Label2.TabIndex = 7
         Label2.Text = "Pais:"
         ' 
         ' ComboBoxPais
         ' 
+        ComboBoxPais.BackColor = SystemColors.MenuHighlight
+        ComboBoxPais.FlatStyle = FlatStyle.Flat
+        ComboBoxPais.Font = New Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(95, 28)
+        ComboBoxPais.Location = New Point(77, 15)
         ComboBoxPais.Name = "ComboBoxPais"
-        ComboBoxPais.Size = New Size(137, 22)
+        ComboBoxPais.Size = New Size(159, 21)
         ComboBoxPais.TabIndex = 6
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(291, 33)
+        Label1.Location = New Point(350, 20)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(77, 14)
+        Label1.Size = New Size(55, 15)
         Label1.TabIndex = 5
-        Label1.Text = "Comitente:"
+        Label1.Text = "Empresa:"
         ' 
         ' txtBuscar
         ' 
-        txtBuscar.Location = New Point(409, 28)
+        txtBuscar.Location = New Point(413, 15)
         txtBuscar.Margin = New Padding(4, 5, 4, 5)
         txtBuscar.Name = "txtBuscar"
-        txtBuscar.Size = New Size(341, 22)
+        txtBuscar.Size = New Size(341, 23)
         txtBuscar.TabIndex = 4
         ' 
-        ' frmComitentesAdm
+        ' frmEmpresas
         ' 
-        AutoScaleDimensions = New SizeF(7F, 14F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1370, 658)
+        ClientSize = New Size(800, 450)
         Controls.Add(Panel1)
+        Controls.Add(Grid)
         Controls.Add(ToolStrip1)
-        Font = New Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Margin = New Padding(4, 5, 4, 5)
-        Name = "frmComitentesAdm"
-        Text = "Form2"
+        Name = "frmEmpresas"
+        Text = "Empresas"
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
+        CType(GridLayout1, ComponentModel.ISupportInitialize).EndInit()
+        CType(Grid, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(GridControl1, ComponentModel.ISupportInitialize).EndInit()
@@ -240,12 +309,13 @@ Partial Class frmComitentesAdm
     Friend WithEvents ImprimirToolStripButton As ToolStripButton
     Friend WithEvents toolStripSeparator As ToolStripSeparator
     Friend WithEvents toolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents Grid As Syncfusion.Windows.Forms.Grid.GridControl
+    Friend WithEvents GridLayout1 As Syncfusion.Windows.Forms.Tools.GridLayout
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txtBuscar As TextBox
+    Friend WithEvents GridControl1 As Syncfusion.Windows.Forms.Grid.GridControl
+    Friend WithEvents btnColumnas As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents ComboBoxPais As ComboBox
-    Friend WithEvents btnColumnas As Button
-    Friend WithEvents SfToolTip1 As Syncfusion.Windows.Forms.SfToolTip
-    Friend WithEvents GridControl1 As Syncfusion.Windows.Forms.Grid.GridControl
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtBuscar As TextBox
 End Class

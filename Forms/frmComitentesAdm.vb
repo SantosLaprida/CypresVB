@@ -20,7 +20,7 @@ Public Class frmComitentesAdm
 
     Private Sub InicializarGrid()
         grid.Dock = DockStyle.None
-        grid.Font = New Font("Segoe UI Semibold", 10)
+        grid.Font = New Font("Segoe UI Semibold", 9)
 
         ' Remove duplicate Add
         If Not Me.Controls.Contains(grid) Then
@@ -32,7 +32,7 @@ Public Class frmComitentesAdm
         ' === Column Setup ===
         grid.ColCount = 7
         grid.ColWidths(1) = 0          ' ID (hidden)
-        grid.ColWidths(2) = 50         ' Sigla
+        grid.ColWidths(2) = 60         ' Sigla
         grid.ColWidths(3) = 350        ' Comitente
         grid.ColWidths(4) = 300        ' Direccion
         grid.ColWidths(5) = 200        ' Localidad
@@ -65,45 +65,45 @@ Public Class frmComitentesAdm
         ' Optional: Make columns fill the grid if you prefer (but you want fixed width)
         ' grid.AllowResizeToFit = True
     End Sub
-    Private Sub InicializarGrid()
-        grid.Dock = DockStyle.None
-        grid.Font = New Font("Segoe UI Semibold", 10)
-        Me.Controls.Add(grid)
-        grid.ActivateCurrentCellBehavior = GridCellActivateAction.None
+    'Private Sub InicializarGrid()
+    '    grid.Dock = DockStyle.None
+    '    grid.Font = New Font("Segoe UI Semibold", 10)
+    '    Me.Controls.Add(grid)
+    '    grid.ActivateCurrentCellBehavior = GridCellActivateAction.None
 
-        'Tamaño y ubicacion de la grilla
-        grid.Top = Panel1.Bottom
-        grid.Height = 400
-        grid.Width = 1600
-        grid.RowCount = 0
-        grid.ColCount = 7
+    '    'Tamaño y ubicacion de la grilla
+    '    grid.Top = Panel1.Bottom
+    '    grid.Height = 400
+    '    grid.Width = 1600
+    '    grid.RowCount = 0
+    '    grid.ColCount = 7
 
-        grid.ColWidths(1) = 0 'ID
-        grid.ColWidths(2) = 50 'sigla
-        grid.ColWidths(3) = 350 'comitente
-        grid.ColWidths(4) = 300 'direccion
-        grid.ColWidths(5) = 200 'localidad
-        grid.ColWidths(6) = 80 'c.postal
-        grid.ColWidths(7) = 200 'Telefono
-        Me.Controls.Add(grid)
+    '    grid.ColWidths(1) = 0 'ID
+    '    grid.ColWidths(2) = 50 'sigla
+    '    grid.ColWidths(3) = 350 'comitente
+    '    grid.ColWidths(4) = 300 'direccion
+    '    grid.ColWidths(5) = 200 'localidad
+    '    grid.ColWidths(6) = 80 'c.postal
+    '    grid.ColWidths(7) = 200 'Telefono
+    '    Me.Controls.Add(grid)
 
-        Dim totalWidth As Integer = 0
-        For col As Integer = 1 To grid.ColCount
-            totalWidth += grid.ColWidths(col)
+    '    Dim totalWidth As Integer = 0
+    '    For col As Integer = 1 To grid.ColCount
+    '        totalWidth += grid.ColWidths(col)
 
-        Next
-        grid.Width = totalWidth
+    '    Next
+    '    grid.Width = totalWidth
 
-        grid.RowHeights(0) = 35
-        grid(0, 2).Text = "Sigla"
-        grid(0, 3).Text = "Comitente"
-        grid(0, 4).Text = "Direccion"
-        grid(0, 5).Text = "Localidad"
-        grid(0, 6).Text = "C. Postal"
-        grid(0, 7).Text = "Telefono"
+    '    grid.RowHeights(0) = 35
+    '    grid(0, 2).Text = "Sigla"
+    '    grid(0, 3).Text = "Comitente"
+    '    grid(0, 4).Text = "Direccion"
+    '    grid(0, 5).Text = "Localidad"
+    '    grid(0, 6).Text = "C. Postal"
+    '    grid(0, 7).Text = "Telefono"
 
-        Me.ClientSize = New Size(grid.Width, Me.ClientSize.Height)
-    End Sub
+    '    Me.ClientSize = New Size(grid.Width, Me.ClientSize.Height)
+    'End Sub
     Private Sub Cargar_Comitentes(Optional idPais As Integer = 0)
 
         listaComitentes = comitenteRepositorio.ObtenerComitentes(idPais)
@@ -130,6 +130,7 @@ Public Class frmComitentesAdm
             Next
             grid(fila, 1).Text = c.Id.ToString()
             grid(fila, 2).Text = c.Sigla
+            grid(fila, 3).Font.Bold = True
             grid(fila, 3).Text = c.Nombre
             grid(fila, 4).Text = c.Direccion
             grid(fila, 5).Text = c.Localidad
@@ -202,14 +203,19 @@ Public Class frmComitentesAdm
     Private Sub CargarFilaComitente(row As Integer, c As Comitente)
 
         grid.RowHeights(row) = 30
-        grid(row, 1).Text = c.Id.ToString()
         grid(row, 1).VerticalAlignment = GridVerticalAlignment.Middle
-        grid(row, 2).Text = c.Sigla
+        grid(row, 1).HorizontalAlignment = GridHorizontalAlignment.Center
+        grid(row, 1).Text = c.Id.ToString()
         grid(row, 2).VerticalAlignment = GridVerticalAlignment.Middle
-        grid(row, 3).Text = c.Nombre
+        grid(row, 2).HorizontalAlignment = GridHorizontalAlignment.Center
+        grid(row, 2).Text = c.Sigla
         grid(row, 3).VerticalAlignment = GridVerticalAlignment.Middle
-        grid(row, 4).Text = c.Direccion
+        grid(row, 3).HorizontalAlignment = GridHorizontalAlignment.Center
+        grid(row, 3).Font.Bold = True
+        grid(row, 3).Text = c.Nombre
         grid(row, 4).VerticalAlignment = GridVerticalAlignment.Middle
+        grid(row, 4).HorizontalAlignment = GridHorizontalAlignment.Center
+        grid(row, 4).Text = c.Direccion
         PintarFila(row)
 
 
@@ -305,7 +311,7 @@ Public Class frmComitentesAdm
 
         Dim filtrada As List(Of Comitente) = listaComitentes.Where(Function(c)
                                                                        Return c.Sigla.ToLower().Contains(textoBuscado) OrElse
-               c.Nombre.ToLower().Contains(textoBuscado)
+         c.Nombre.ToLower().Contains(textoBuscado)
                                                                    End Function).ToList()
 
         CargarGrid(filtrada)
@@ -324,4 +330,7 @@ Public Class frmComitentesAdm
 
     End Sub
 
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
 End Class

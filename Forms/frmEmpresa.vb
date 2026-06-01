@@ -1,30 +1,33 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Drawing.Drawing2D
-Public Class frmComitente
-
-    Public IdComitente As Integer = 0
-    Public ComitenteEditado As Comitente
-    Public comitenteRepositiorio As New ComitenteRepositorio()
+Public Class frmEmpresa
+    Public Id As Integer = 0
+    Public EmpresaEditada As Empresas
+    Public EmpresasRepositorio As New EmpresasRepositorio()
     Public paisRepositorio As New PaisRepositorio()
 
-    Private Sub frmComitente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmEmpresa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         PaisesLlenarCombo(ComboBoxPais, True)
 
-        If IdComitente > 0 Then
-            Me.Text = "Editar Comitente"
-            Dim c As Comitente = comitenteRepositiorio.ObtenerComitentePorId(IdComitente)
-            CargarComitente(c)
-            CargarLogo(IdComitente)
+        If Id > 0 Then
+            Me.Text = "Editar Empresa"
+            Dim c As Empresas = EmpresasRepositorio.ObtenerEmpresaPorId(Id)
+            CargarEmpresa(c)
+
         Else
-            Me.Text = "Nuevo Comitente"
-            txtSigla.Focus()
+            Me.Text = "Nueva Empresa"
+            txtComitente.Focus()
 
         End If
-        RedondearBoton(btnGuardar, 10)
-        RedondearBoton(btnCancelar, 10)
+
+        CargarLogo(Id)
+
+        ' PictureBox1.Image = Image.FromFile("GoogleDrive\Cypres\Logos\basaa.png")
+        'RedondearBoton(btnGuardar, 10)
+        'RedondearBoton(btnCancelar, 20)
     End Sub
-    Private Sub CargarComitente(c As Comitente)
+    Private Sub CargarEmpresa(c As Empresas)
         '      Public Property Id As Integer
         'Public Property Sigla As String
         'Public Property Nombre As String
@@ -37,7 +40,6 @@ Public Class frmComitente
         If c Is Nothing Then Exit Sub
 
         'lbl_Id.Text = c.Id.ToString()
-        txtSigla.Text = c.Sigla
         txtComitente.Text = c.Nombre
         txtDireccion.Text = c.Direccion
         txtLocalidad.Text = c.Localidad
@@ -46,47 +48,32 @@ Public Class frmComitente
         If c.Pais > 0 Then
             ComboBoxPais.SelectedValue = c.Pais
         End If
-        If c.tipo = 1 Then
-            rad_publico.Checked = True
-        End If
-        If c.tipo = 2 Then
-            rad_privado.Checked = True
-        End If
-        txtMail.Text = c.Email
-
     End Sub
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs)
 
-        Dim c As New Comitente
+        Dim c As New Empresas
 
-        c.Id = IdComitente
-        c.Sigla = txtSigla.Text.Trim()
-        c.Nombre = txtComitente.Text.Trim()
-        c.Direccion = txtDireccion.Text.Trim()
-        c.Localidad = txtLocalidad.Text.Trim()
-        c.CPostal = txtCPostal.Text.Trim()
-        c.telefono = txtTelefono.Text.Trim()
+        c.Id = Id
+        c.Nombre = txtComitente.Text.Trim
+        c.Direccion = txtDireccion.Text.Trim
+        c.Localidad = txtLocalidad.Text.Trim
+        c.CPostal = txtCPostal.Text.Trim
+        c.telefono = txtTelefono.Text.Trim
 
         If ComboBoxPais.SelectedValue IsNot Nothing Then
             c.Pais = Convert.ToInt32(ComboBoxPais.SelectedValue)
         Else
             c.Pais = 0
         End If
-        If rad_publico.Checked = True Then
-            c.tipo = 1
-        End If
-        If rad_privado.Checked = True Then
-            c.tipo = 2
-        End If
         Try
 
-            comitenteRepositiorio.GuardarComitente(c)
+            EmpresasRepositorio.GuardarEmpresa(c)
 
-            ComitenteEditado = c
+            EmpresaEditada = c
 
-            Me.DialogResult = DialogResult.OK
-            Me.Close()
+            DialogResult = DialogResult.OK
+            Close()
 
         Catch ex As Exception
             MessageBox.Show("Error al guardar: " & ex.Message)
@@ -94,8 +81,8 @@ Public Class frmComitente
 
     End Sub
 
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        Me.Close()
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs)
+        Close()
     End Sub
     Private Sub RedondearBoton(btn As Button, radio As Integer)
 
@@ -112,11 +99,41 @@ Public Class frmComitente
 
     End Sub
 
-    Private Sub btnLogo_Click(sender As Object,
-                              e As EventArgs) _
-                              Handles btnLogo.Click
+    Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim c As New Empresas
 
-        If IdComitente = 0 Then
+        c.Id = Id
+        c.Nombre = txtComitente.Text.Trim()
+        c.Direccion = txtDireccion.Text.Trim()
+        c.Localidad = txtLocalidad.Text.Trim()
+        c.CPostal = txtCPostal.Text.Trim()
+        If ComboBoxPais.SelectedValue IsNot Nothing Then
+            c.Pais = Convert.ToInt32(ComboBoxPais.SelectedValue)
+        Else
+            c.Pais = 0
+        End If
+        c.telefono = txtTelefono.Text.Trim()
+
+        Try
+
+            EmpresasRepositorio.GuardarEmpresa(c)
+
+            EmpresaEditada = c
+
+            Me.DialogResult = DialogResult.OK
+            Me.Close()
+
+        Catch ex As Exception
+            MessageBox.Show("Error al guardar: " & ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub btnLogo_Click(sender As Object,
+                          e As EventArgs) _
+                          Handles btnLogo.Click
+
+        If Id = 0 Then
             MessageBox.Show("Primero debe guardar la empresa.")
             Exit Sub
         End If
@@ -131,16 +148,16 @@ Public Class frmComitente
             PictureBox1.Image = Image.FromFile(dlg.FileName)
             PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
 
-            Dim repo As New ComitenteRepositorio
-            repo.ComitenteGuardarLogo(IdComitente, dlg.FileName)
+            Dim repo As New EmpresasRepositorio
+            repo.EmpresaGuardarLogo(Id, dlg.FileName)
 
         End If
 
     End Sub
-    Private Sub CargarLogo(idComitente As Integer)
+    Private Sub CargarLogo(idEmpresa As Integer)
 
-        Dim repo As New ComitenteRepositorio
-        Dim bytes() As Byte = repo.ComitenteObtenerLogo(idComitente)
+        Dim repo As New EmpresasRepositorio
+        Dim bytes() As Byte = repo.EmpresaObtenerLogo(idEmpresa)
 
         If bytes Is Nothing Then
             PictureBox1.Image = Nothing

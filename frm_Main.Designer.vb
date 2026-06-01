@@ -28,6 +28,7 @@ Partial Class frm_Main
         btnRubros = New Button()
         btnProyectoTipo = New Button()
         btnLicitaciones = New Button()
+        btnEmpresas = New Button()
         SuspendLayout()
         ' 
         ' btnCcomitentes
@@ -107,11 +108,25 @@ Partial Class frm_Main
         btnLicitaciones.Text = "Licitaciones"
         btnLicitaciones.UseVisualStyleBackColor = False
         ' 
+        ' btnEmpresas
+        ' 
+        btnEmpresas.BackColor = SystemColors.HotTrack
+        btnEmpresas.FlatAppearance.BorderSize = 0
+        btnEmpresas.FlatStyle = FlatStyle.Flat
+        btnEmpresas.Location = New Point(311, 377)
+        btnEmpresas.Margin = New Padding(4, 5, 4, 5)
+        btnEmpresas.Name = "btnEmpresas"
+        btnEmpresas.Size = New Size(156, 32)
+        btnEmpresas.TabIndex = 5
+        btnEmpresas.Text = "Empresas"
+        btnEmpresas.UseVisualStyleBackColor = False
+        ' 
         ' frm_Main
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 449)
+        Controls.Add(btnEmpresas)
         Controls.Add(btnLicitaciones)
         Controls.Add(btnProyectoTipo)
         Controls.Add(btnProveedores)
@@ -131,4 +146,5 @@ Partial Class frm_Main
     Friend WithEvents btnRubros As Button
     Friend WithEvents btnProyectoTipo As Button
     Friend WithEvents btnLicitaciones As Button
+    Friend WithEvents btnEmpresas As Button
 End Class

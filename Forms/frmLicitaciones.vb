@@ -1,4 +1,5 @@
-﻿Imports Syncfusion.Windows.Forms.Grid
+﻿Imports Syncfusion
+Imports Syncfusion.Windows.Forms.Grid
 
 Public Class frmLicitaciones
     Private listaLicitaciones As List(Of Licitaciones)
@@ -12,6 +13,9 @@ Public Class frmLicitaciones
         InicializarGrid()
         PaisesLlenarCombo(ComboBoxPais, True)
         ComitentesLlenarCombo(ComboBoxComitente, True)
+        ProyectoTipoLlenarLlenarCombo(ComboTipoProyecto, True)
+        ObtenerEstados()
+        LicEstadosLlenarLlenarCombo(ComboEstado, True)
         Cargar_Licitaciones()
     End Sub
     Private Sub InicializarGrid()
@@ -33,7 +37,7 @@ Public Class frmLicitaciones
         Grid.ColWidths(5) = 100 'presupuesto oficial
         Grid.ColWidths(6) = 80 'Plazo
         Grid.ColWidths(7) = 80 'Pliego
-        Grid.ColWidths(8) = 150 'estado
+        Grid.ColWidths(8) = 200 'estado
         Me.Controls.Add(Grid)
 
         Dim totalWidth As Integer = 0
@@ -78,8 +82,8 @@ Public Class frmLicitaciones
             Grid(fila, 3).HorizontalAlignment = GridHorizontalAlignment.Center
             Grid(fila, 3).VerticalAlignment = GridVerticalAlignment.Middle
             Grid(fila, 3).Text = sigla
+            Grid(fila, 4).HorizontalAlignment = GridHorizontalAlignment.Center
             Grid(fila, 4).Text = c.Denominacion
-            Grid(fila, 4).VerticalAlignment = GridVerticalAlignment.Middle
             Grid(fila, 5).Format = "N2"
             Grid(fila, 5).CellValue = c.Pres_Oficial
             Grid(fila, 5).VerticalAlignment = GridVerticalAlignment.Middle
@@ -90,13 +94,27 @@ Public Class frmLicitaciones
             Grid(fila, 7).VerticalAlignment = GridVerticalAlignment.Middle
             Grid(fila, 7).HorizontalAlignment = GridHorizontalAlignment.Center
             Grid(fila, 7).Text = c.Pliego
-            'Grid(fila, 6).Text = c.CPostal
-            'Grid(fila, 7).VerticalAlignment = GridVerticalAlignment.Middle
-            'Grid(fila, 7).Text = c.telefono
+            Grid(fila, 8).VerticalAlignment = GridVerticalAlignment.Middle
+            Grid(fila, 8).HorizontalAlignment = GridHorizontalAlignment.Center
+            Grid(fila, 8).Text = ObtenerDescripcionEstado(c.Estado)
+
             'PintarFila(fila)
         Next
 
     End Sub
+
+
+    Private Sub NuevoToolStripButton_Click(sender As Object, e As EventArgs) Handles NuevoToolStripButton.Click
+        frmLicitacion.ShowDialog()
+    End Sub
+
+    Private Sub Cargar_Licitaciones(Optional IdComitente As Integer = 0)
+
+        listaLicitaciones = licitacionesRepositorio.ObtenerLicitaciones(IdComitente)
+
+        CargarGrid(listaLicitaciones)
+    End Sub
+
     Private Sub grid_DoubleClick(sender As Object, e As EventArgs)
 
         Dim row As Integer = Grid.CurrentCell.RowIndex
@@ -106,23 +124,16 @@ Public Class frmLicitaciones
 
         Dim id As Integer = Val(Grid(row, 1).Text)
 
-        Dim f As New frmComitente
-        f.IdComitente = id
+        Dim f As New frmLicitaciones
+        'f.id = id
 
         If f.ShowDialog() = DialogResult.OK Then
 
-            Dim c As Comitente = f.ComitenteEditado
+            'Dim c As Comitente = f.ComitenteEditado
 
             'ReubicarComitente(row, c)
-
+            '
         End If
 
-    End Sub
-
-    Private Sub Cargar_Licitaciones(Optional IdComitente As Integer = 0)
-
-        listaLicitaciones = LicitacionesRepositorio.ObtenerLicitaciones(IdComitente)
-
-        CargarGrid(listaLicitaciones)
     End Sub
 End Class

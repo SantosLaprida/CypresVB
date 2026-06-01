@@ -23,6 +23,7 @@ Partial Class frmLicitaciones
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim GridCellInfo1 As Syncfusion.Windows.Forms.Grid.GridCellInfo = New Syncfusion.Windows.Forms.Grid.GridCellInfo()
+        Dim GridCellInfo2 As Syncfusion.Windows.Forms.Grid.GridCellInfo = New Syncfusion.Windows.Forms.Grid.GridCellInfo()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLicitaciones))
         Grid = New Syncfusion.Windows.Forms.Grid.GridControl()
         ToolStrip1 = New ToolStrip()
@@ -37,6 +38,10 @@ Partial Class frmLicitaciones
         toolStripSeparator1 = New ToolStripSeparator()
         AyudaToolStripButton = New ToolStripButton()
         Panel1 = New Panel()
+        Label4 = New Label()
+        ComboEstado = New ComboBox()
+        ComboTipoProyecto = New ComboBox()
+        Label3 = New Label()
         ComboBoxComitente = New ComboBox()
         btnColumnas = New Button()
         Label2 = New Label()
@@ -59,11 +64,22 @@ Partial Class frmLicitaciones
         GridCellInfo1.StyleInfo.Font.Strikeout = False
         GridCellInfo1.StyleInfo.Font.Underline = False
         GridCellInfo1.StyleInfo.Font.Unit = GraphicsUnit.Point
-        Grid.GridCells.AddRange(New Syncfusion.Windows.Forms.Grid.GridCellInfo() {GridCellInfo1})
+        GridCellInfo2.Col = -1
+        GridCellInfo2.Row = -1
+        GridCellInfo2.StyleInfo.Font.Bold = False
+        GridCellInfo2.StyleInfo.Font.Facename = "Cambria"
+        GridCellInfo2.StyleInfo.Font.Italic = False
+        GridCellInfo2.StyleInfo.Font.Size = 8.25F
+        GridCellInfo2.StyleInfo.Font.Strikeout = False
+        GridCellInfo2.StyleInfo.Font.Underline = False
+        GridCellInfo2.StyleInfo.Font.Unit = GraphicsUnit.Point
+        Grid.GridCells.AddRange(New Syncfusion.Windows.Forms.Grid.GridCellInfo() {GridCellInfo1, GridCellInfo2})
         Grid.Location = New Point(0, 92)
         Grid.Name = "Grid"
+        Grid.Properties.RowHeaders = False
         Grid.SerializeCellsBehavior = Syncfusion.Windows.Forms.Grid.GridSerializeCellsBehavior.SerializeIntoCode
-        Grid.Size = New Size(739, 255)
+        Grid.ShowRowHeaders = False
+        Grid.Size = New Size(878, 255)
         Grid.SmartSizeBox = False
         Grid.TabIndex = 0
         Grid.Text = "GridControl1"
@@ -111,7 +127,7 @@ Partial Class frmLicitaciones
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
         ToolStrip1.Padding = New Padding(0, 0, 2, 0)
-        ToolStrip1.Size = New Size(800, 27)
+        ToolStrip1.Size = New Size(983, 27)
         ToolStrip1.TabIndex = 1
         ToolStrip1.Text = "ToolStrip1"
         ' 
@@ -200,6 +216,10 @@ Partial Class frmLicitaciones
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.ActiveCaption
+        Panel1.Controls.Add(Label4)
+        Panel1.Controls.Add(ComboEstado)
+        Panel1.Controls.Add(ComboTipoProyecto)
+        Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(ComboBoxComitente)
         Panel1.Controls.Add(btnColumnas)
         Panel1.Controls.Add(Label2)
@@ -210,6 +230,50 @@ Partial Class frmLicitaciones
         Panel1.Size = New Size(1400, 56)
         Panel1.TabIndex = 5
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(1006, 7)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(42, 15)
+        Label4.TabIndex = 12
+        Label4.Text = "Estado"
+        ' 
+        ' ComboEstado
+        ' 
+        ComboEstado.BackColor = SystemColors.HotTrack
+        ComboEstado.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboEstado.Font = New Font("Book Antiqua", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        ComboEstado.ForeColor = SystemColors.Window
+        ComboEstado.FormattingEnabled = True
+        ComboEstado.Location = New Point(1006, 22)
+        ComboEstado.Margin = New Padding(2)
+        ComboEstado.Name = "ComboEstado"
+        ComboEstado.Size = New Size(189, 23)
+        ComboEstado.TabIndex = 11
+        ' 
+        ' ComboTipoProyecto
+        ' 
+        ComboTipoProyecto.BackColor = SystemColors.HotTrack
+        ComboTipoProyecto.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboTipoProyecto.Font = New Font("Book Antiqua", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        ComboTipoProyecto.ForeColor = SystemColors.Window
+        ComboTipoProyecto.FormattingEnabled = True
+        ComboTipoProyecto.Location = New Point(780, 21)
+        ComboTipoProyecto.Margin = New Padding(2)
+        ComboTipoProyecto.Name = "ComboTipoProyecto"
+        ComboTipoProyecto.Size = New Size(189, 23)
+        ComboTipoProyecto.TabIndex = 10
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(779, 7)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(96, 15)
+        Label3.TabIndex = 9
+        Label3.Text = "Tipo de Proyecto"
+        ' 
         ' ComboBoxComitente
         ' 
         ComboBoxComitente.BackColor = SystemColors.HotTrack
@@ -217,7 +281,7 @@ Partial Class frmLicitaciones
         ComboBoxComitente.Font = New Font("Book Antiqua", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ComboBoxComitente.ForeColor = SystemColors.Window
         ComboBoxComitente.FormattingEnabled = True
-        ComboBoxComitente.Location = New Point(699, 16)
+        ComboBoxComitente.Location = New Point(494, 21)
         ComboBoxComitente.Margin = New Padding(2)
         ComboBoxComitente.Name = "ComboBoxComitente"
         ComboBoxComitente.Size = New Size(266, 24)
@@ -228,7 +292,7 @@ Partial Class frmLicitaciones
         btnColumnas.FlatAppearance.BorderSize = 0
         btnColumnas.FlatStyle = FlatStyle.Flat
         btnColumnas.Image = CType(resources.GetObject("btnColumnas.Image"), Image)
-        btnColumnas.Location = New Point(1009, 14)
+        btnColumnas.Location = New Point(1215, 16)
         btnColumnas.Margin = New Padding(2)
         btnColumnas.Name = "btnColumnas"
         btnColumnas.Size = New Size(22, 19)
@@ -238,12 +302,12 @@ Partial Class frmLicitaciones
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(320, 20)
+        Label2.Location = New Point(349, 3)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(31, 15)
+        Label2.Size = New Size(28, 15)
         Label2.TabIndex = 7
-        Label2.Text = "Pais:"
+        Label2.Text = "Pais"
         ' 
         ' ComboBoxPais
         ' 
@@ -252,7 +316,7 @@ Partial Class frmLicitaciones
         ComboBoxPais.Font = New Font("Book Antiqua", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ComboBoxPais.ForeColor = SystemColors.Window
         ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(354, 18)
+        ComboBoxPais.Location = New Point(349, 21)
         ComboBoxPais.Margin = New Padding(2)
         ComboBoxPais.Name = "ComboBoxPais"
         ComboBoxPais.Size = New Size(127, 23)
@@ -261,17 +325,17 @@ Partial Class frmLicitaciones
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(628, 19)
+        Label1.Location = New Point(494, 6)
         Label1.Name = "Label1"
-        Label1.Size = New Size(66, 15)
+        Label1.Size = New Size(63, 15)
         Label1.TabIndex = 5
-        Label1.Text = "Comitente:"
+        Label1.Text = "Comitente"
         ' 
         ' frmLicitaciones
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(983, 450)
         Controls.Add(Panel1)
         Controls.Add(ToolStrip1)
         Controls.Add(Grid)
@@ -304,4 +368,8 @@ Partial Class frmLicitaciones
     Friend WithEvents ComboBoxPais As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBoxComitente As ComboBox
+    Friend WithEvents ComboTipoProyecto As ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ComboEstado As ComboBox
 End Class

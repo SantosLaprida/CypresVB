@@ -141,4 +141,70 @@ Public Class ComitenteRepositorio
 
     End Sub
 
+    Public Sub ComitenteGuardarLogo(
+        idComitente As Integer,
+        rutaArchivo As String)
+
+        Dim bytesLogo() As Byte
+
+        bytesLogo =
+            IO.File.ReadAllBytes(rutaArchivo)
+
+        Dim extension As String
+
+        extension =
+            IO.Path.GetExtension(rutaArchivo)
+
+        Dim sql As String =
+            "REPLACE INTO s_comitentes_logos " &
+            "(id_comitente, logo, extension) " &
+            "VALUES " &
+            "(@id, @logo, @extension)"
+
+        Using cn As New MySqlConnection(Cadena)
+
+            Using cmd As New MySqlCommand(sql, cn)
+
+                cmd.Parameters.AddWithValue(
+                    "@id", idComitente)
+
+                cmd.Parameters.AddWithValue(
+                    "@logo", bytesLogo)
+
+                cmd.Parameters.AddWithValue(
+                    "@extension", extension)
+
+                cn.Open()
+
+                cmd.ExecuteNonQuery()
+
+            End Using
+
+        End Using
+
+    End Sub
+    Public Function ComitenteObtenerLogo(idComitente As Integer) As Byte()
+
+        Dim sql As String =
+            "SELECT logo FROM s_comitentes_logos WHERE id_comitente = @id"
+
+        Using cn As New MySqlConnection(_cadena)
+            Using cmd As New MySqlCommand(sql, cn)
+
+                cmd.Parameters.AddWithValue("@id", idComitente)
+                cn.Open()
+
+                Dim result As Object = cmd.ExecuteScalar()
+
+                If result Is Nothing OrElse IsDBNull(result) Then
+                    Return Nothing
+                End If
+
+                Return CType(result, Byte())
+
+            End Using
+        End Using
+
+    End Function
+
 End Class

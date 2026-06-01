@@ -29,4 +29,5 @@ Public Module mProyectoTipo
         iCombo.DataSource = dtProyectoTipo
         iCombo.SelectedIndex = 0
     End Sub
+
 End Module
