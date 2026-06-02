@@ -9,6 +9,8 @@ Public Class Licitaciones
     Public Property Numero As String
     Public Property Denominacion As String
     Public Property esUte As Integer
+
+    'Obra_tipo en la base de datos
     Public Property IdTipoProyecto As Integer
     Public Property idMoneda As Integer
     Public Property IdPais As Integer
@@ -23,6 +25,7 @@ Public Class Licitaciones
     Public Property LugarApertura As String
     Public Property FechaApertura As String
     Public Property HoraApertura As String
+    Public Property HoraPresentacion As String
     Public Property LugarConsulta As String
     Public Property FechaConsulta As Date
     Public Property HoraConsulta As TimeOnly

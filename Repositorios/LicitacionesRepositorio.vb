@@ -38,6 +38,40 @@ Public Class LicitacionesRepositorio
         End Using
         Return lista
     End Function
+
+    Public Function ObtenerLicitacionPorId(id As Integer) As Licitaciones
+        Dim c As Licitaciones = Nothing
+        Dim sql As String = "SELECT * FROM s_licitaciones WHERE id_lic = @id"
+        Using cn As New MySqlConnection(_cadena)
+            Using cmd As New MySqlCommand(sql, cn)
+                cmd.Parameters.AddWithValue("@id", id)
+                cn.Open()
+                Using dr As MySqlDataReader = cmd.ExecuteReader()
+                    If dr.Read() Then
+                        c = New Licitaciones
+                        c.Id_lic = Convert.ToInt32(dr("id_lic"))
+                        c.Id_Comitente = Convert.ToInt32(dr("id_comitente"))
+                        c.Numero = dr("Numero").ToString()
+                        c.Denominacion = dr("denominacion").ToString()
+                        c.FechaPresentacion = dr("fecha_presentacion").ToString()
+                        c.FechaApertura = dr("fecha_apertura").ToString()
+                        c.HoraApertura = dr("hora_apertura").ToString()
+                        c.HoraPresentacion = dr("hora_presentacion").ToString()
+                        c.Pres_Oficial = Convert.ToInt64(dr("pres_oficial"))
+                        c.Plazo = Convert.ToInt32(dr("Plazo"))
+                        c.Pliego = dr("pliego").ToString()
+                        c.Estado = Convert.ToInt32(dr("Estado"))
+                        c.IdPais = Convert.ToInt32(dr("id_pais"))
+                        c.IdTipoProyecto = Convert.ToInt32(dr("Obra_tipo"))
+                        c.LugarPresentacion = dr("lugar_presentacion").ToString()
+                        c.LugarApertura = dr("lugar_apertura").ToString()
+                    End If
+                End Using
+            End Using
+        End Using
+        Return c
+    End Function
+
 End Class
 
 

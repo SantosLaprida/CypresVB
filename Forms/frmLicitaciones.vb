@@ -71,6 +71,7 @@ Public Class frmLicitaciones
             End If
 
             Grid.RowHeights(fila) = 25
+            Grid(fila, 0).Text = c.Id_lic.ToString()
             Grid(fila, 1).Text = c.Numero.ToString()
             Grid(fila, 1).HorizontalAlignment = GridHorizontalAlignment.Center
             Grid(fila, 1).VerticalAlignment = GridVerticalAlignment.Middle
@@ -104,6 +105,19 @@ Public Class frmLicitaciones
     End Sub
 
 
+    Private Sub AplicarFiltros()
+        Dim idPais = ComboBoxPais.SelectedValue
+        Dim idComitente = ComboBoxComitente.SelectedValue
+        Dim idTipo = ComboTipoProyecto.SelectedValue
+
+        Dim filtrada = listaLicitaciones.Where(Function(l)
+                                                   Return (idPais = 0 OrElse l.IdPais = idPais) AndAlso
+               (idComitente = 0 OrElse l.Id_Comitente = idComitente) AndAlso
+               (idTipo = 0 OrElse l.IdTipoProyecto = idTipo)
+                                               End Function).ToList()
+
+        CargarGrid(filtrada)
+    End Sub
     Private Sub NuevoToolStripButton_Click(sender As Object, e As EventArgs) Handles NuevoToolStripButton.Click
         frmLicitacion.ShowDialog()
     End Sub
@@ -122,10 +136,10 @@ Public Class frmLicitaciones
 
         filaSeleccionada = row
 
-        Dim id As Integer = Val(Grid(row, 1).Text)
+        Dim id As Integer = Val(Grid(row, 0).Text)
 
         Dim f As New frmLicitacion
-        'f.id = id
+        f.idLicitacion = id
 
         If f.ShowDialog() = DialogResult.OK Then
 
@@ -136,4 +150,10 @@ Public Class frmLicitaciones
         End If
 
     End Sub
+
+    Private Sub ComboBoxPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPais.SelectedIndexChanged
+        If listaLicitaciones Is Nothing Then Exit Sub
+        AplicarFiltros()
+    End Sub
+
 End Class
