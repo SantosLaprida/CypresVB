@@ -124,7 +124,7 @@ Public Class frmLicitaciones
 
         Dim id As Integer = Val(Grid(row, 1).Text)
 
-        Dim f As New frmLicitaciones
+        Dim f As New frmLicitacion
         'f.id = id
 
         If f.ShowDialog() = DialogResult.OK Then
