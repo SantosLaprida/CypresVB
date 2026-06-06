@@ -29,7 +29,7 @@ Public Class LicitacionesRepositorio
                         c.Plazo = Convert.ToInt32(dr("Plazo"))
                         c.Pliego = dr("pliego").ToString()
                         c.Estado = Convert.ToInt32(dr("Estado"))
-                        'c.Pais = Convert.ToInt32(dr("id_pais"))
+                        c.IdPais = Convert.ToInt32(dr("id_pais"))
                         'c.tipo = Convert.ToInt32(dr("tipo"))
                         lista.Add(c)
                     End While

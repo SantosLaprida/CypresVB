@@ -13,7 +13,7 @@ Public Class frmLicitacion
         PaisesLlenarCombo(ComboBoxPais, True)
         ComitentesLlenarCombo(ComboBoxComitente, True)
         ProyectoTipoLlenarLlenarCombo(ComboTipoProyecto, True)
-        EmpresasLlenarLista(ListBoxOferentes, True)
+        EmpresasLlenarListaLicitacion(ListBoxOferentes, idLicitacion)
 
         If idLicitacion > 0 Then
             Me.Text = "Editar Licitación"
@@ -39,5 +39,20 @@ Public Class frmLicitacion
         datePresentacion.Value = Convert.ToDateTime(l.FechaPresentacion)
         timeApertura.Value = Convert.ToDateTime(l.HoraApertura)
         timePresentacion.Value = Convert.ToDateTime(l.HoraPresentacion)
+        EmpresasLlenarListaLicitacion(ListBoxOferentes, idLicitacion)
+    End Sub
+
+    Private Sub btnAgregarOferentes_click(sender As Object, e As EventArgs) Handles btnAgregarOferentes.Click
+        Dim f As New frmOferentes
+        f.idLicitacion = idLicitacion
+
+        If f.ShowDialog() = DialogResult.OK Then
+            ListBoxOferentes.Items.Clear()
+            For Each empresa As Empresas In f.EmpresasSeleccionadas
+                ListBoxOferentes.Items.Add(empresa)
+            Next
+        End If
+
+
     End Sub
 End Class

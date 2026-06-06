@@ -43,18 +43,19 @@ Partial Class frmLicitacion
         Label5 = New Label()
         datePresentacion = New DateTimePicker()
         txtPresentacion = New TextBox()
-        GroupBox3 = New GroupBox()
-        ListBoxOferentes = New ListBox()
         GroupBox4 = New GroupBox()
         Label7 = New Label()
         timeApertura = New DateTimePicker()
         Label8 = New Label()
         dateApertura = New DateTimePicker()
         txtApertura = New TextBox()
+        ListBoxOferentes = New ListBox()
+        GroupBox3 = New GroupBox()
+        btnAgregarOferentes = New Button()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
-        GroupBox3.SuspendLayout()
         GroupBox4.SuspendLayout()
+        GroupBox3.SuspendLayout()
         SuspendLayout()
         ' 
         ' ComboTipoProyecto
@@ -155,7 +156,7 @@ Partial Class frmLicitacion
         GroupBox1.Margin = New Padding(4, 5, 4, 5)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Padding = New Padding(4, 5, 4, 5)
-        GroupBox1.Size = New Size(220, 308)
+        GroupBox1.Size = New Size(223, 339)
         GroupBox1.TabIndex = 23
         GroupBox1.TabStop = False
         GroupBox1.Text = "Estado"
@@ -248,7 +249,7 @@ Partial Class frmLicitacion
         GroupBox2.Controls.Add(txtPresentacion)
         GroupBox2.FlatStyle = FlatStyle.Flat
         GroupBox2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox2.Location = New Point(17, 357)
+        GroupBox2.Location = New Point(36, 387)
         GroupBox2.Margin = New Padding(4, 5, 4, 5)
         GroupBox2.Name = "GroupBox2"
         GroupBox2.Padding = New Padding(4, 5, 4, 5)
@@ -305,31 +306,6 @@ Partial Class frmLicitacion
         txtPresentacion.Size = New Size(773, 31)
         txtPresentacion.TabIndex = 19
         ' 
-        ' GroupBox3
-        ' 
-        GroupBox3.BackColor = SystemColors.ActiveCaption
-        GroupBox3.Controls.Add(ListBoxOferentes)
-        GroupBox3.FlatStyle = FlatStyle.Flat
-        GroupBox3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox3.Location = New Point(1041, 38)
-        GroupBox3.Margin = New Padding(4, 5, 4, 5)
-        GroupBox3.Name = "GroupBox3"
-        GroupBox3.Padding = New Padding(4, 5, 4, 5)
-        GroupBox3.Size = New Size(321, 308)
-        GroupBox3.TabIndex = 25
-        GroupBox3.TabStop = False
-        GroupBox3.Text = "Oferentes"
-        ' 
-        ' ListBoxOferentes
-        ' 
-        ListBoxOferentes.BorderStyle = BorderStyle.None
-        ListBoxOferentes.FormattingEnabled = True
-        ListBoxOferentes.Location = New Point(9, 28)
-        ListBoxOferentes.Margin = New Padding(4, 5, 4, 5)
-        ListBoxOferentes.Name = "ListBoxOferentes"
-        ListBoxOferentes.Size = New Size(304, 250)
-        ListBoxOferentes.TabIndex = 0
-        ' 
         ' GroupBox4
         ' 
         GroupBox4.BackColor = SystemColors.ActiveCaption
@@ -340,7 +316,7 @@ Partial Class frmLicitacion
         GroupBox4.Controls.Add(txtApertura)
         GroupBox4.FlatStyle = FlatStyle.Flat
         GroupBox4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox4.Location = New Point(17, 468)
+        GroupBox4.Location = New Point(36, 498)
         GroupBox4.Margin = New Padding(4, 5, 4, 5)
         GroupBox4.Name = "GroupBox4"
         GroupBox4.Padding = New Padding(4, 5, 4, 5)
@@ -397,12 +373,48 @@ Partial Class frmLicitacion
         txtApertura.Size = New Size(773, 31)
         txtApertura.TabIndex = 19
         ' 
+        ' ListBoxOferentes
+        ' 
+        ListBoxOferentes.BorderStyle = BorderStyle.None
+        ListBoxOferentes.FormattingEnabled = True
+        ListBoxOferentes.Location = New Point(9, 28)
+        ListBoxOferentes.Margin = New Padding(4, 5, 4, 5)
+        ListBoxOferentes.Name = "ListBoxOferentes"
+        ListBoxOferentes.Size = New Size(304, 250)
+        ListBoxOferentes.TabIndex = 0
+        ' 
+        ' GroupBox3
+        ' 
+        GroupBox3.BackColor = SystemColors.ActiveCaption
+        GroupBox3.Controls.Add(btnAgregarOferentes)
+        GroupBox3.Controls.Add(ListBoxOferentes)
+        GroupBox3.FlatStyle = FlatStyle.Flat
+        GroupBox3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        GroupBox3.Location = New Point(1069, 39)
+        GroupBox3.Margin = New Padding(4, 5, 4, 5)
+        GroupBox3.Name = "GroupBox3"
+        GroupBox3.Padding = New Padding(4, 5, 4, 5)
+        GroupBox3.Size = New Size(337, 338)
+        GroupBox3.TabIndex = 25
+        GroupBox3.TabStop = False
+        GroupBox3.Text = "Oferentes"
+        ' 
+        ' btnAgregarOferentes
+        ' 
+        btnAgregarOferentes.BackColor = SystemColors.Info
+        btnAgregarOferentes.Location = New Point(9, 286)
+        btnAgregarOferentes.Name = "btnAgregarOferentes"
+        btnAgregarOferentes.Size = New Size(304, 44)
+        btnAgregarOferentes.TabIndex = 1
+        btnAgregarOferentes.Text = "Agregar Oferentes"
+        btnAgregarOferentes.UseVisualStyleBackColor = False
+        ' 
         ' frmLicitacion
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
-        ClientSize = New Size(1664, 750)
+        ClientSize = New Size(1472, 750)
         Controls.Add(GroupBox4)
         Controls.Add(GroupBox3)
         Controls.Add(GroupBox2)
@@ -422,9 +434,9 @@ Partial Class frmLicitacion
         GroupBox1.PerformLayout()
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
-        GroupBox3.ResumeLayout(False)
         GroupBox4.ResumeLayout(False)
         GroupBox4.PerformLayout()
+        GroupBox3.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -450,12 +462,13 @@ Partial Class frmLicitacion
     Friend WithEvents Label5 As Label
     Friend WithEvents timePresentacion As DateTimePicker
     Friend WithEvents Label6 As Label
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents ListBoxOferentes As ListBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents timeApertura As DateTimePicker
     Friend WithEvents Label8 As Label
     Friend WithEvents dateApertura As DateTimePicker
     Friend WithEvents txtApertura As TextBox
+    Friend WithEvents ListBoxOferentes As ListBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents btnAgregarOferentes As Button
 End Class

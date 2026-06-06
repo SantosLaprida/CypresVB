@@ -216,4 +216,37 @@ Public Class EmpresasRepositorio
 
     End Function
 
+    Public Function EmpresaObtenerPorLicitacion(idLicitacion As Integer) As List(Of Empresas)
+        Dim sql As String = "SELECT e.* FROM s_empresas e " &
+                        "INNER JOIN s_lic_empresa le ON e.id_empresa = le.id_empresa " &
+                        "WHERE le.id_lic = @id"
+
+        Dim lista As New List(Of Empresas)
+
+        Using cn As New MySqlConnection(_cadena)
+            Using cmd As New MySqlCommand(sql, cn)
+                cmd.Parameters.AddWithValue("@id", idLicitacion)
+                cn.Open()
+                Using dr As MySqlDataReader = cmd.ExecuteReader()
+                    While dr.Read()
+                        Dim empresa As New Empresas
+                        empresa.Id = dr("id_empresa")
+                        empresa.Nombre = dr("nombre")
+                        empresa.Direccion = dr("direccion")
+                        empresa.Localidad = dr("localidad")
+                        empresa.CPostal = dr("c_postal")
+                        empresa.Provincia = dr("provincia")
+                        empresa.Pais = dr("pais")
+                        empresa.telefono = dr("telefono")
+                        empresa.Celular = dr("celular")
+                        empresa.Email = dr("e_mail")
+                        lista.Add(empresa)
+                    End While
+                End Using
+            End Using
+        End Using
+
+        Return lista
+    End Function
+
 End Class
