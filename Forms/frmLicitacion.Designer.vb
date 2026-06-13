@@ -52,6 +52,10 @@ Partial Class frmLicitacion
         ListBoxOferentes = New ListBox()
         GroupBox3 = New GroupBox()
         btnAgregarOferentes = New Button()
+        btnGuardar = New Button()
+        btnCancelar = New Button()
+        txtBoxDenominacion = New TextBox()
+        lblDenominacion = New Label()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
         GroupBox4.SuspendLayout()
@@ -65,7 +69,7 @@ Partial Class frmLicitacion
         ComboTipoProyecto.Font = New Font("Book Antiqua", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ComboTipoProyecto.ForeColor = SystemColors.Window
         ComboTipoProyecto.FormattingEnabled = True
-        ComboTipoProyecto.Location = New Point(229, 152)
+        ComboTipoProyecto.Location = New Point(201, 214)
         ComboTipoProyecto.Name = "ComboTipoProyecto"
         ComboTipoProyecto.Size = New Size(268, 30)
         ComboTipoProyecto.TabIndex = 16
@@ -73,7 +77,7 @@ Partial Class frmLicitacion
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(73, 152)
+        Label3.Location = New Point(45, 214)
         Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(151, 25)
@@ -87,7 +91,7 @@ Partial Class frmLicitacion
         ComboBoxComitente.Font = New Font("Book Antiqua", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ComboBoxComitente.ForeColor = SystemColors.Window
         ComboBoxComitente.FormattingEnabled = True
-        ComboBoxComitente.Location = New Point(229, 38)
+        ComboBoxComitente.Location = New Point(201, 39)
         ComboBoxComitente.Name = "ComboBoxComitente"
         ComboBoxComitente.Size = New Size(533, 30)
         ComboBoxComitente.TabIndex = 14
@@ -95,7 +99,7 @@ Partial Class frmLicitacion
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(73, 210)
+        Label2.Location = New Point(45, 272)
         Label2.Name = "Label2"
         Label2.Size = New Size(46, 25)
         Label2.TabIndex = 13
@@ -108,7 +112,7 @@ Partial Class frmLicitacion
         ComboBoxPais.Font = New Font("Book Antiqua", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ComboBoxPais.ForeColor = SystemColors.Window
         ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(229, 205)
+        ComboBoxPais.Location = New Point(201, 267)
         ComboBoxPais.Name = "ComboBoxPais"
         ComboBoxPais.Size = New Size(180, 30)
         ComboBoxPais.TabIndex = 12
@@ -116,7 +120,7 @@ Partial Class frmLicitacion
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(73, 38)
+        Label1.Location = New Point(45, 39)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(98, 25)
@@ -126,7 +130,7 @@ Partial Class frmLicitacion
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(73, 97)
+        Label4.Location = New Point(45, 159)
         Label4.Margin = New Padding(4, 0, 4, 0)
         Label4.Name = "Label4"
         Label4.Size = New Size(81, 25)
@@ -135,7 +139,7 @@ Partial Class frmLicitacion
         ' 
         ' txtBoxNumero
         ' 
-        txtBoxNumero.Location = New Point(229, 97)
+        txtBoxNumero.Location = New Point(201, 159)
         txtBoxNumero.Margin = New Padding(4, 5, 4, 5)
         txtBoxNumero.Name = "txtBoxNumero"
         txtBoxNumero.Size = New Size(164, 31)
@@ -409,12 +413,68 @@ Partial Class frmLicitacion
         btnAgregarOferentes.Text = "Agregar Oferentes"
         btnAgregarOferentes.UseVisualStyleBackColor = False
         ' 
+        ' btnGuardar
+        ' 
+        btnGuardar.BackColor = SystemColors.HotTrack
+        btnGuardar.Cursor = Cursors.Hand
+        btnGuardar.FlatAppearance.BorderColor = Color.FromArgb(CByte(0), CByte(0), CByte(192))
+        btnGuardar.FlatAppearance.BorderSize = 0
+        btnGuardar.FlatStyle = FlatStyle.Flat
+        btnGuardar.Font = New Font("Segoe UI", 8.25F)
+        btnGuardar.ForeColor = Color.White
+        btnGuardar.Location = New Point(229, 647)
+        btnGuardar.Margin = New Padding(5)
+        btnGuardar.Name = "btnGuardar"
+        btnGuardar.Size = New Size(107, 38)
+        btnGuardar.TabIndex = 27
+        btnGuardar.Text = "Guardar"
+        btnGuardar.UseVisualStyleBackColor = False
+        ' 
+        ' btnCancelar
+        ' 
+        btnCancelar.BackColor = SystemColors.HotTrack
+        btnCancelar.Cursor = Cursors.Hand
+        btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(CByte(0), CByte(0), CByte(192))
+        btnCancelar.FlatAppearance.BorderSize = 0
+        btnCancelar.FlatStyle = FlatStyle.Flat
+        btnCancelar.Font = New Font("Segoe UI", 8.25F)
+        btnCancelar.ForeColor = Color.White
+        btnCancelar.Location = New Point(400, 647)
+        btnCancelar.Margin = New Padding(5)
+        btnCancelar.Name = "btnCancelar"
+        btnCancelar.Size = New Size(107, 38)
+        btnCancelar.TabIndex = 28
+        btnCancelar.Text = "Cancelar"
+        btnCancelar.UseVisualStyleBackColor = False
+        ' 
+        ' txtBoxDenominacion
+        ' 
+        txtBoxDenominacion.Location = New Point(201, 98)
+        txtBoxDenominacion.Margin = New Padding(4, 5, 4, 5)
+        txtBoxDenominacion.Name = "txtBoxDenominacion"
+        txtBoxDenominacion.Size = New Size(533, 31)
+        txtBoxDenominacion.TabIndex = 30
+        ' 
+        ' lblDenominacion
+        ' 
+        lblDenominacion.AutoSize = True
+        lblDenominacion.Location = New Point(45, 98)
+        lblDenominacion.Margin = New Padding(4, 0, 4, 0)
+        lblDenominacion.Name = "lblDenominacion"
+        lblDenominacion.Size = New Size(131, 25)
+        lblDenominacion.TabIndex = 29
+        lblDenominacion.Text = "Denominacion:"
+        ' 
         ' frmLicitacion
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
         ClientSize = New Size(1472, 750)
+        Controls.Add(txtBoxDenominacion)
+        Controls.Add(lblDenominacion)
+        Controls.Add(btnCancelar)
+        Controls.Add(btnGuardar)
         Controls.Add(GroupBox4)
         Controls.Add(GroupBox3)
         Controls.Add(GroupBox2)
@@ -471,4 +531,8 @@ Partial Class frmLicitacion
     Friend WithEvents ListBoxOferentes As ListBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents btnAgregarOferentes As Button
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents txtBoxDenominacion As TextBox
+    Friend WithEvents lblDenominacion As Label
 End Class

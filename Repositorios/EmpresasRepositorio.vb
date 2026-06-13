@@ -238,7 +238,7 @@ Public Class EmpresasRepositorio
                         empresa.Provincia = dr("provincia")
                         empresa.Pais = dr("pais")
                         empresa.telefono = dr("telefono")
-                        empresa.Celular = dr("celular")
+                        'empresa.Celular = dr("celular")
                         empresa.Email = dr("e_mail")
                         lista.Add(empresa)
                     End While
