@@ -56,7 +56,7 @@ Partial Class frmEmpresas
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
         ToolStrip1.Padding = New Padding(0, 0, 3, 0)
-        ToolStrip1.Size = New Size(800, 31)
+        ToolStrip1.Size = New Size(951, 31)
         ToolStrip1.TabIndex = 1
         ToolStrip1.Text = "ToolStrip1"
         ' 
@@ -130,8 +130,12 @@ Partial Class frmEmpresas
         Grid.GridCells.AddRange(New Syncfusion.Windows.Forms.Grid.GridCellInfo() {GridCellInfo1})
         Grid.Location = New Point(0, 92)
         Grid.Name = "Grid"
+        Grid.Properties.DisplayHorzLines = False
+        Grid.Properties.DisplayVertLines = False
+        Grid.Properties.RowHeaders = False
         Grid.SerializeCellsBehavior = Syncfusion.Windows.Forms.Grid.GridSerializeCellsBehavior.SerializeIntoCode
-        Grid.Size = New Size(788, 255)
+        Grid.ShowRowHeaders = False
+        Grid.Size = New Size(927, 255)
         Grid.SmartSizeBox = False
         Grid.TabIndex = 2
         Grid.Text = "GridControl1"
@@ -184,7 +188,7 @@ Partial Class frmEmpresas
         Panel1.Location = New Point(0, 31)
         Panel1.Margin = New Padding(4, 5, 4, 5)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(800, 53)
+        Panel1.Size = New Size(951, 53)
         Panel1.TabIndex = 5
         ' 
         ' GridControl1
@@ -285,7 +289,7 @@ Partial Class frmEmpresas
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(951, 450)
         Controls.Add(Panel1)
         Controls.Add(Grid)
         Controls.Add(ToolStrip1)
