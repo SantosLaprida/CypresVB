@@ -71,6 +71,7 @@ Public Class frmEmpresas
                 Grid(fila, i).VerticalAlignment = GridVerticalAlignment.Middle
                 Grid(fila, i).HorizontalAlignment = GridHorizontalAlignment.Center
             Next
+            Grid(fila, 0).Text = ""
             Grid(fila, 1).Text = c.Id.ToString()
             Grid(fila, 2).Font.Bold = True
             Grid(fila, 2).Text = c.Nombre
