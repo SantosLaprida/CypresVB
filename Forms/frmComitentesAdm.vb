@@ -8,7 +8,7 @@ Public Class frmComitentesAdm
     Private ReadOnly comitenteRepositorio As New ComitenteRepositorio()
     Private ReadOnly paisRepositorio As New PaisRepositorio()
 
-    Private grid As New GridControl()
+    'Private grid As New GridControl()
     Private filaSeleccionada As Integer = 0
 
     Private Sub frmComitentesAdm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -19,14 +19,10 @@ Public Class frmComitentesAdm
     End Sub
 
     Private Sub InicializarGrid()
-        grid.Dock = DockStyle.None
         grid.Font = New Font("Segoe UI Semibold", 9)
-
-        ' Remove duplicate Add
         If Not Me.Controls.Contains(grid) Then
             Me.Controls.Add(grid)
         End If
-
         grid.ActivateCurrentCellBehavior = GridCellActivateAction.None
 
         ' === Column Setup ===
@@ -39,21 +35,19 @@ Public Class frmComitentesAdm
         grid.ColWidths(6) = 80         ' C.Postal
         grid.ColWidths(7) = 200        ' Telefono
 
-        ' === Calculate Total Width with padding ===
+        ' === Calculate Total Width ===
         Dim totalWidth As Integer = 0
         For col As Integer = 1 To grid.ColCount
             totalWidth += grid.ColWidths(col)
         Next
 
-        ' Important: Add extra space for borders + possible vertical scrollbar
-        totalWidth += 25   ' Adjust this value (20-40 usually works well)
-
+        ' === Size and Position ===
         grid.Width = totalWidth
         grid.Height = 400
         grid.Top = Panel1.Bottom
-        grid.Left = 10     ' or 0, depending on your layout
+        grid.Left = 0
 
-        ' Header
+        ' === Header ===
         grid.RowHeights(0) = 35
         grid(0, 2).Text = "Sigla"
         grid(0, 3).Text = "Comitente"
@@ -62,48 +56,9 @@ Public Class frmComitentesAdm
         grid(0, 6).Text = "C. Postal"
         grid(0, 7).Text = "Telefono"
 
-        ' Optional: Make columns fill the grid if you prefer (but you want fixed width)
-        ' grid.AllowResizeToFit = True
+        ' === Resize form to match grid ===
+        Me.ClientSize = New Size(grid.Width, Me.ClientSize.Height)
     End Sub
-    'Private Sub InicializarGrid()
-    '    grid.Dock = DockStyle.None
-    '    grid.Font = New Font("Segoe UI Semibold", 10)
-    '    Me.Controls.Add(grid)
-    '    grid.ActivateCurrentCellBehavior = GridCellActivateAction.None
-
-    '    'Tamaño y ubicacion de la grilla
-    '    grid.Top = Panel1.Bottom
-    '    grid.Height = 400
-    '    grid.Width = 1600
-    '    grid.RowCount = 0
-    '    grid.ColCount = 7
-
-    '    grid.ColWidths(1) = 0 'ID
-    '    grid.ColWidths(2) = 50 'sigla
-    '    grid.ColWidths(3) = 350 'comitente
-    '    grid.ColWidths(4) = 300 'direccion
-    '    grid.ColWidths(5) = 200 'localidad
-    '    grid.ColWidths(6) = 80 'c.postal
-    '    grid.ColWidths(7) = 200 'Telefono
-    '    Me.Controls.Add(grid)
-
-    '    Dim totalWidth As Integer = 0
-    '    For col As Integer = 1 To grid.ColCount
-    '        totalWidth += grid.ColWidths(col)
-
-    '    Next
-    '    grid.Width = totalWidth
-
-    '    grid.RowHeights(0) = 35
-    '    grid(0, 2).Text = "Sigla"
-    '    grid(0, 3).Text = "Comitente"
-    '    grid(0, 4).Text = "Direccion"
-    '    grid(0, 5).Text = "Localidad"
-    '    grid(0, 6).Text = "C. Postal"
-    '    grid(0, 7).Text = "Telefono"
-
-    '    Me.ClientSize = New Size(grid.Width, Me.ClientSize.Height)
-    'End Sub
     Private Sub Cargar_Comitentes(Optional idPais As Integer = 0)
 
         listaComitentes = comitenteRepositorio.ObtenerComitentes(idPais)

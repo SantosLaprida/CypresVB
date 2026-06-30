@@ -21,33 +21,34 @@ Public Class frmLicitaciones
 
     End Sub
     Private Sub InicializarGrid()
-        Grid.Dock = DockStyle.None
-        Me.Controls.Add(Grid)
+        Grid.Font = New Font("Segoe UI Semibold", 9)
+        If Not Me.Controls.Contains(Grid) Then
+            Me.Controls.Add(Grid)
+        End If
         Grid.ActivateCurrentCellBehavior = GridCellActivateAction.None
 
-        'Tamaño y ubicacion de la grilla
-        Grid.Top = 83
-        Grid.Height = 400
-        Grid.Width = 1800
         Grid.RowCount = 0
         Grid.ColCount = 8
 
-        Grid.ColWidths(1) = 80 'Numero
-        Grid.ColWidths(2) = 80 'Fecha
-        Grid.ColWidths(3) = 80 'comitente
-        Grid.ColWidths(4) = 315 'Denominacion
-        Grid.ColWidths(5) = 100 'presupuesto oficial
-        Grid.ColWidths(6) = 80 'Plazo
-        Grid.ColWidths(7) = 80 'Pliego
-        Grid.ColWidths(8) = 200 'estado
-        Me.Controls.Add(Grid)
+        Grid.ColWidths(1) = 80
+        Grid.ColWidths(2) = 80
+        Grid.ColWidths(3) = 200
+        Grid.ColWidths(4) = 315
+        Grid.ColWidths(5) = 200
+        Grid.ColWidths(6) = 80
+        Grid.ColWidths(7) = 80
+        Grid.ColWidths(8) = 200
 
+        ' === Calculate Total Width ===
         Dim totalWidth As Integer = 0
         For col As Integer = 1 To Grid.ColCount
             totalWidth += Grid.ColWidths(col)
-
         Next
+
         Grid.Width = totalWidth
+        Grid.Height = 600
+        Grid.Top = Panel1.Bottom
+        Grid.Left = 0
 
         Grid.RowHeights(0) = 35
         Grid(0, 1).Text = "Numero"
@@ -58,55 +59,10 @@ Public Class frmLicitaciones
         Grid(0, 6).Text = "P.(Meses)"
         Grid(0, 7).Text = "Pliego"
         Grid(0, 8).Text = "Estado"
+
         Me.ClientSize = New Size(Grid.Width, Me.ClientSize.Height)
     End Sub
-    'Private Sub CargarGrid(lista As List(Of Licitaciones))
 
-    '    Grid.RowCount = 0
-    '    filaSeleccionada = 0
-    '    Dim fila As Integer = 0
-
-    '    For Each c As Licitaciones In lista
-    '        fila += 1
-    '        If fila > Grid.RowCount Then
-    '            Grid.RowCount = fila
-    '        End If
-
-    '        Grid.RowHeights(fila) = 25
-    '        Grid(fila, 0).Text = c.Id_lic.ToString()
-    '        Grid(fila, 1).Text = c.Numero.ToString()
-    '        Grid(fila, 1).HorizontalAlignment = GridHorizontalAlignment.Center
-    '        Grid(fila, 1).VerticalAlignment = GridVerticalAlignment.Middle
-    '        Grid(fila, 2).HorizontalAlignment = GridHorizontalAlignment.Center
-    '        Grid(fila, 2).VerticalAlignment = GridVerticalAlignment.Middle
-    '        Grid(fila, 2).Text = c.FechaPresentacion
-
-    '        Dim comitente As Comitente = comitenteRepositorio.ObtenerComitentePorId(c.Id_Comitente)
-    '        Dim sigla As String = comitente.Sigla
-
-    '        Grid(fila, 3).HorizontalAlignment = GridHorizontalAlignment.Center
-    '        Grid(fila, 3).VerticalAlignment = GridVerticalAlignment.Middle
-    '        Grid(fila, 3).Text = sigla
-    '        Grid(fila, 4).HorizontalAlignment = GridHorizontalAlignment.Center
-    '        Grid(fila, 4).Text = c.Denominacion
-    '        Grid(fila, 5).Format = "N2"
-    '        Grid(fila, 5).CellValue = c.Pres_Oficial
-    '        Grid(fila, 5).VerticalAlignment = GridVerticalAlignment.Middle
-    '        Grid(fila, 5).HorizontalAlignment = GridHorizontalAlignment.Right
-    '        Grid(fila, 6).Text = c.Plazo
-    '        Grid(fila, 6).VerticalAlignment = GridVerticalAlignment.Middle
-    '        Grid(fila, 6).HorizontalAlignment = GridHorizontalAlignment.Center
-    '        Grid(fila, 7).VerticalAlignment = GridVerticalAlignment.Middle
-    '        Grid(fila, 7).HorizontalAlignment = GridHorizontalAlignment.Center
-    '        Grid(fila, 7).Text = c.Pliego
-    '        Grid(fila, 8).VerticalAlignment = GridVerticalAlignment.Middle
-    '        Grid(fila, 8).HorizontalAlignment = GridHorizontalAlignment.Center
-    '        Grid(fila, 8).Text = ObtenerDescripcionEstado(c.Estado)
-
-    '        'PintarFila(fila)
-    '    Next
-
-    'End Sub
 
     Private Sub CargarGrid(lista As List(Of Licitaciones))
         Grid.RowCount = 0
@@ -123,37 +79,37 @@ Public Class frmLicitaciones
             fila += 1
             If fila > Grid.RowCount Then Grid.RowCount = fila
 
-            Grid.RowHeights(fila) = 25
+            Grid.RowHeights(fila) = 35
+
+            For col As Integer = 0 To Grid.ColCount
+                Grid(fila, col).HorizontalAlignment = GridHorizontalAlignment.Center
+                Grid(fila, col).VerticalAlignment = GridVerticalAlignment.Middle
+            Next
+
             Grid(fila, 0).Text = c.Id_lic.ToString()
             Grid(fila, 1).Text = c.Numero.ToString()
-            Grid(fila, 1).HorizontalAlignment = GridHorizontalAlignment.Center
-            Grid(fila, 1).VerticalAlignment = GridVerticalAlignment.Middle
-            Grid(fila, 2).HorizontalAlignment = GridHorizontalAlignment.Center
-            Grid(fila, 2).VerticalAlignment = GridVerticalAlignment.Middle
-            Grid(fila, 2).Text = c.FechaPresentacion
 
-            Dim sigla As String = ""
-            If comitentes.ContainsKey(c.Id_Comitente) Then
-                sigla = comitentes(c.Id_Comitente).Sigla
+            Dim fecha As Date
+            If Date.TryParse(c.FechaPresentacion, fecha) Then
+                Grid(fila, 2).Text = fecha.ToString("dd/MM/yyyy")
+            Else
+                Grid(fila, 2).Text = c.FechaPresentacion
             End If
 
-            Grid(fila, 3).HorizontalAlignment = GridHorizontalAlignment.Center
-            Grid(fila, 3).VerticalAlignment = GridVerticalAlignment.Middle
+            Dim sigla As String = ""
+            Dim value As Comitente = Nothing
+            If comitentes.TryGetValue(c.Id_Comitente, value) Then
+                sigla = value.Sigla
+            End If
             Grid(fila, 3).Text = sigla
-            Grid(fila, 4).HorizontalAlignment = GridHorizontalAlignment.Center
+
             Grid(fila, 4).Text = c.Denominacion
+
             Grid(fila, 5).Format = "N2"
             Grid(fila, 5).CellValue = c.Pres_Oficial
-            Grid(fila, 5).VerticalAlignment = GridVerticalAlignment.Middle
-            Grid(fila, 5).HorizontalAlignment = GridHorizontalAlignment.Right
+
             Grid(fila, 6).Text = c.Plazo
-            Grid(fila, 6).VerticalAlignment = GridVerticalAlignment.Middle
-            Grid(fila, 6).HorizontalAlignment = GridHorizontalAlignment.Center
-            Grid(fila, 7).VerticalAlignment = GridVerticalAlignment.Middle
-            Grid(fila, 7).HorizontalAlignment = GridHorizontalAlignment.Center
             Grid(fila, 7).Text = c.Pliego
-            Grid(fila, 8).VerticalAlignment = GridVerticalAlignment.Middle
-            Grid(fila, 8).HorizontalAlignment = GridHorizontalAlignment.Center
             Grid(fila, 8).Text = ObtenerDescripcionEstado(c.Estado)
         Next
 
@@ -187,9 +143,9 @@ Public Class frmLicitaciones
         CargarGrid(listaLicitaciones)
     End Sub
 
-    Private Sub grid_DoubleClick(sender As Object, e As EventArgs)
+    Private Sub grid_DoubleClick(sender As Object, e As EventArgs) Handles Grid.DoubleClick
 
-        Dim row As Integer = Grid.CurrentCell.RowIndex
+        Dim row = Grid.CurrentCell.RowIndex
         If row <= 0 Then Exit Sub
 
         filaSeleccionada = row
@@ -199,12 +155,12 @@ Public Class frmLicitaciones
         Dim f As New frmLicitacion
         f.idLicitacion = id
 
-        If f.ShowDialog() = DialogResult.OK Then
-
-            'Dim c As Comitente = f.ComitenteEditado
-
-            'ReubicarComitente(row, c)
-            '
+        If f.ShowDialog = DialogResult.OK Then
+            Dim index = listaLicitaciones.FindIndex(Function(c) c.Id_lic = id)
+            If index >= 0 Then
+                listaLicitaciones(index) = f.licitacionEditada
+                CargarGrid(listaLicitaciones)
+            End If
         End If
 
     End Sub
@@ -214,7 +170,7 @@ Public Class frmLicitaciones
         AplicarFiltros()
     End Sub
 
-    Private Sub ComboBoxComitente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxComitente.SelectedIndexChanged
+    Private Sub ComboBoxComitente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboTipoProyecto.SelectedIndexChanged
         If listaLicitaciones Is Nothing Then Exit Sub
         AplicarFiltros()
     End Sub
@@ -224,7 +180,7 @@ Public Class frmLicitaciones
         AplicarFiltros()
     End Sub
 
-    Private Sub ComboBoxTipoProyecto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboTipoProyecto.SelectedIndexChanged
+    Private Sub ComboBoxTipoProyecto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxComitente.SelectedIndexChanged
         If listaLicitaciones Is Nothing Then Exit Sub
         AplicarFiltros()
     End Sub

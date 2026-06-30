@@ -56,93 +56,114 @@ Partial Class frmLicitacion
         btnCancelar = New Button()
         txtBoxDenominacion = New TextBox()
         lblDenominacion = New Label()
+        TableLayoutPanel1 = New TableLayoutPanel()
+        txtBoxPlazo = New TextBox()
+        lblPresupuesto = New Label()
+        TxtBoxPliego = New TextBox()
+        txtBoxPresupuesto = New TextBox()
+        Label9 = New Label()
+        lblPliego = New Label()
+        Panel1 = New Panel()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
         GroupBox4.SuspendLayout()
         GroupBox3.SuspendLayout()
+        TableLayoutPanel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' ComboTipoProyecto
         ' 
+        ComboTipoProyecto.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         ComboTipoProyecto.BackColor = SystemColors.HotTrack
         ComboTipoProyecto.DropDownStyle = ComboBoxStyle.DropDownList
         ComboTipoProyecto.Font = New Font("Book Antiqua", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ComboTipoProyecto.ForeColor = SystemColors.Window
         ComboTipoProyecto.FormattingEnabled = True
-        ComboTipoProyecto.Location = New Point(201, 214)
+        ComboTipoProyecto.Location = New Point(190, 381)
         ComboTipoProyecto.Name = "ComboTipoProyecto"
-        ComboTipoProyecto.Size = New Size(268, 30)
+        ComboTipoProyecto.Size = New Size(557, 30)
         ComboTipoProyecto.TabIndex = 16
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label3.AutoSize = True
-        Label3.Location = New Point(45, 214)
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(4, 384)
         Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(151, 25)
+        Label3.Size = New Size(179, 25)
         Label3.TabIndex = 15
         Label3.Text = "Tipo de Proyecto:"
         ' 
         ' ComboBoxComitente
         ' 
+        ComboBoxComitente.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         ComboBoxComitente.BackColor = SystemColors.HotTrack
         ComboBoxComitente.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBoxComitente.Font = New Font("Book Antiqua", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ComboBoxComitente.ForeColor = SystemColors.Window
         ComboBoxComitente.FormattingEnabled = True
-        ComboBoxComitente.Location = New Point(201, 39)
+        ComboBoxComitente.Location = New Point(190, 76)
         ComboBoxComitente.Name = "ComboBoxComitente"
-        ComboBoxComitente.Size = New Size(533, 30)
+        ComboBoxComitente.Size = New Size(557, 30)
         ComboBoxComitente.TabIndex = 14
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label2.AutoSize = True
-        Label2.Location = New Point(45, 272)
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(3, 446)
         Label2.Name = "Label2"
-        Label2.Size = New Size(46, 25)
+        Label2.Size = New Size(181, 25)
         Label2.TabIndex = 13
         Label2.Text = "Pais:"
         ' 
         ' ComboBoxPais
         ' 
+        ComboBoxPais.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         ComboBoxPais.BackColor = SystemColors.HotTrack
         ComboBoxPais.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBoxPais.Font = New Font("Book Antiqua", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ComboBoxPais.ForeColor = SystemColors.Window
         ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(201, 267)
+        ComboBoxPais.Location = New Point(190, 444)
         ComboBoxPais.Name = "ComboBoxPais"
-        ComboBoxPais.Size = New Size(180, 30)
+        ComboBoxPais.Size = New Size(557, 30)
         ComboBoxPais.TabIndex = 12
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label1.AutoSize = True
-        Label1.Location = New Point(45, 39)
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(4, 79)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(98, 25)
+        Label1.Size = New Size(179, 25)
         Label1.TabIndex = 11
         Label1.Text = "Comitente:"
         ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label4.AutoSize = True
-        Label4.Location = New Point(45, 159)
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.Location = New Point(4, 18)
         Label4.Margin = New Padding(4, 0, 4, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(81, 25)
+        Label4.Size = New Size(179, 25)
         Label4.TabIndex = 17
         Label4.Text = "Numero:"
         ' 
         ' txtBoxNumero
         ' 
-        txtBoxNumero.Location = New Point(201, 159)
+        txtBoxNumero.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        txtBoxNumero.Location = New Point(191, 15)
         txtBoxNumero.Margin = New Padding(4, 5, 4, 5)
         txtBoxNumero.Name = "txtBoxNumero"
-        txtBoxNumero.Size = New Size(164, 31)
+        txtBoxNumero.Size = New Size(555, 31)
         txtBoxNumero.TabIndex = 18
         ' 
         ' GroupBox1
@@ -156,7 +177,7 @@ Partial Class frmLicitacion
         GroupBox1.Controls.Add(radEnAgenda)
         GroupBox1.FlatStyle = FlatStyle.Flat
         GroupBox1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox1.Location = New Point(791, 38)
+        GroupBox1.Location = New Point(828, 42)
         GroupBox1.Margin = New Padding(4, 5, 4, 5)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Padding = New Padding(4, 5, 4, 5)
@@ -253,7 +274,7 @@ Partial Class frmLicitacion
         GroupBox2.Controls.Add(txtPresentacion)
         GroupBox2.FlatStyle = FlatStyle.Flat
         GroupBox2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox2.Location = New Point(36, 387)
+        GroupBox2.Location = New Point(54, 615)
         GroupBox2.Margin = New Padding(4, 5, 4, 5)
         GroupBox2.Name = "GroupBox2"
         GroupBox2.Padding = New Padding(4, 5, 4, 5)
@@ -320,7 +341,7 @@ Partial Class frmLicitacion
         GroupBox4.Controls.Add(txtApertura)
         GroupBox4.FlatStyle = FlatStyle.Flat
         GroupBox4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox4.Location = New Point(36, 498)
+        GroupBox4.Location = New Point(54, 726)
         GroupBox4.Margin = New Padding(4, 5, 4, 5)
         GroupBox4.Name = "GroupBox4"
         GroupBox4.Padding = New Padding(4, 5, 4, 5)
@@ -394,7 +415,7 @@ Partial Class frmLicitacion
         GroupBox3.Controls.Add(ListBoxOferentes)
         GroupBox3.FlatStyle = FlatStyle.Flat
         GroupBox3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox3.Location = New Point(1069, 39)
+        GroupBox3.Location = New Point(1121, 42)
         GroupBox3.Margin = New Padding(4, 5, 4, 5)
         GroupBox3.Name = "GroupBox3"
         GroupBox3.Padding = New Padding(4, 5, 4, 5)
@@ -422,7 +443,7 @@ Partial Class frmLicitacion
         btnGuardar.FlatStyle = FlatStyle.Flat
         btnGuardar.Font = New Font("Segoe UI", 8.25F)
         btnGuardar.ForeColor = Color.White
-        btnGuardar.Location = New Point(229, 647)
+        btnGuardar.Location = New Point(247, 875)
         btnGuardar.Margin = New Padding(5)
         btnGuardar.Name = "btnGuardar"
         btnGuardar.Size = New Size(107, 38)
@@ -439,7 +460,7 @@ Partial Class frmLicitacion
         btnCancelar.FlatStyle = FlatStyle.Flat
         btnCancelar.Font = New Font("Segoe UI", 8.25F)
         btnCancelar.ForeColor = Color.White
-        btnCancelar.Location = New Point(400, 647)
+        btnCancelar.Location = New Point(418, 875)
         btnCancelar.Margin = New Padding(5)
         btnCancelar.Name = "btnCancelar"
         btnCancelar.Size = New Size(107, 38)
@@ -449,44 +470,142 @@ Partial Class frmLicitacion
         ' 
         ' txtBoxDenominacion
         ' 
-        txtBoxDenominacion.Location = New Point(201, 98)
+        txtBoxDenominacion.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        txtBoxDenominacion.Location = New Point(191, 137)
         txtBoxDenominacion.Margin = New Padding(4, 5, 4, 5)
         txtBoxDenominacion.Name = "txtBoxDenominacion"
-        txtBoxDenominacion.Size = New Size(533, 31)
+        txtBoxDenominacion.Size = New Size(555, 31)
         txtBoxDenominacion.TabIndex = 30
         ' 
         ' lblDenominacion
         ' 
+        lblDenominacion.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         lblDenominacion.AutoSize = True
-        lblDenominacion.Location = New Point(45, 98)
+        lblDenominacion.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblDenominacion.Location = New Point(4, 140)
         lblDenominacion.Margin = New Padding(4, 0, 4, 0)
         lblDenominacion.Name = "lblDenominacion"
-        lblDenominacion.Size = New Size(131, 25)
+        lblDenominacion.Size = New Size(179, 25)
         lblDenominacion.TabIndex = 29
         lblDenominacion.Text = "Denominacion:"
+        ' 
+        ' TableLayoutPanel1
+        ' 
+        TableLayoutPanel1.ColumnCount = 2
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 75F))
+        TableLayoutPanel1.Controls.Add(txtBoxPlazo, 1, 5)
+        TableLayoutPanel1.Controls.Add(Label1, 0, 1)
+        TableLayoutPanel1.Controls.Add(ComboBoxComitente, 1, 1)
+        TableLayoutPanel1.Controls.Add(Label4, 0, 0)
+        TableLayoutPanel1.Controls.Add(txtBoxNumero, 1, 0)
+        TableLayoutPanel1.Controls.Add(lblDenominacion, 0, 2)
+        TableLayoutPanel1.Controls.Add(txtBoxDenominacion, 1, 2)
+        TableLayoutPanel1.Controls.Add(lblPresupuesto, 0, 3)
+        TableLayoutPanel1.Controls.Add(TxtBoxPliego, 1, 4)
+        TableLayoutPanel1.Controls.Add(txtBoxPresupuesto, 1, 3)
+        TableLayoutPanel1.Controls.Add(Label9, 0, 5)
+        TableLayoutPanel1.Controls.Add(lblPliego, 0, 4)
+        TableLayoutPanel1.Controls.Add(Label2, 0, 7)
+        TableLayoutPanel1.Controls.Add(ComboBoxPais, 1, 7)
+        TableLayoutPanel1.Controls.Add(Label3, 0, 6)
+        TableLayoutPanel1.Controls.Add(ComboTipoProyecto, 1, 6)
+        TableLayoutPanel1.Location = New Point(54, 39)
+        TableLayoutPanel1.Name = "TableLayoutPanel1"
+        TableLayoutPanel1.RowCount = 8
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
+        TableLayoutPanel1.Size = New Size(750, 491)
+        TableLayoutPanel1.TabIndex = 31
+        ' 
+        ' txtBoxPlazo
+        ' 
+        txtBoxPlazo.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        txtBoxPlazo.Location = New Point(191, 320)
+        txtBoxPlazo.Margin = New Padding(4, 5, 4, 5)
+        txtBoxPlazo.Name = "txtBoxPlazo"
+        txtBoxPlazo.Size = New Size(555, 31)
+        txtBoxPlazo.TabIndex = 36
+        ' 
+        ' lblPresupuesto
+        ' 
+        lblPresupuesto.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblPresupuesto.AutoSize = True
+        lblPresupuesto.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPresupuesto.Location = New Point(3, 201)
+        lblPresupuesto.Name = "lblPresupuesto"
+        lblPresupuesto.Size = New Size(181, 25)
+        lblPresupuesto.TabIndex = 32
+        lblPresupuesto.Text = "Presupuesto Oficial"
+        ' 
+        ' TxtBoxPliego
+        ' 
+        TxtBoxPliego.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        TxtBoxPliego.Location = New Point(191, 259)
+        TxtBoxPliego.Margin = New Padding(4, 5, 4, 5)
+        TxtBoxPliego.Name = "TxtBoxPliego"
+        TxtBoxPliego.Size = New Size(555, 31)
+        TxtBoxPliego.TabIndex = 33
+        ' 
+        ' txtBoxPresupuesto
+        ' 
+        txtBoxPresupuesto.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        txtBoxPresupuesto.Location = New Point(191, 198)
+        txtBoxPresupuesto.Margin = New Padding(4, 5, 4, 5)
+        txtBoxPresupuesto.Name = "txtBoxPresupuesto"
+        txtBoxPresupuesto.Size = New Size(555, 31)
+        txtBoxPresupuesto.TabIndex = 34
+        ' 
+        ' Label9
+        ' 
+        Label9.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        Label9.AutoSize = True
+        Label9.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label9.Location = New Point(3, 323)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(181, 25)
+        Label9.TabIndex = 35
+        Label9.Text = "Plazo (Meses)"
+        ' 
+        ' lblPliego
+        ' 
+        lblPliego.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblPliego.AutoSize = True
+        lblPliego.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPliego.Location = New Point(3, 262)
+        lblPliego.Name = "lblPliego"
+        lblPliego.Size = New Size(181, 25)
+        lblPliego.TabIndex = 31
+        lblPliego.Text = "Pliego"
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = SystemColors.Info
+        Panel1.Location = New Point(57, 574)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1411, 10)
+        Panel1.TabIndex = 32
         ' 
         ' frmLicitacion
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
-        ClientSize = New Size(1472, 750)
-        Controls.Add(txtBoxDenominacion)
-        Controls.Add(lblDenominacion)
+        ClientSize = New Size(1520, 1064)
+        Controls.Add(Panel1)
+        Controls.Add(TableLayoutPanel1)
         Controls.Add(btnCancelar)
         Controls.Add(btnGuardar)
         Controls.Add(GroupBox4)
         Controls.Add(GroupBox3)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
-        Controls.Add(txtBoxNumero)
-        Controls.Add(Label4)
-        Controls.Add(ComboTipoProyecto)
-        Controls.Add(Label3)
-        Controls.Add(ComboBoxComitente)
-        Controls.Add(Label2)
-        Controls.Add(ComboBoxPais)
-        Controls.Add(Label1)
         Margin = New Padding(4, 5, 4, 5)
         Name = "frmLicitacion"
         Text = "Licitacion"
@@ -497,8 +616,9 @@ Partial Class frmLicitacion
         GroupBox4.ResumeLayout(False)
         GroupBox4.PerformLayout()
         GroupBox3.ResumeLayout(False)
+        TableLayoutPanel1.ResumeLayout(False)
+        TableLayoutPanel1.PerformLayout()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents ComboTipoProyecto As ComboBox
@@ -535,4 +655,12 @@ Partial Class frmLicitacion
     Friend WithEvents btnCancelar As Button
     Friend WithEvents txtBoxDenominacion As TextBox
     Friend WithEvents lblDenominacion As Label
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents lblPliego As Label
+    Friend WithEvents lblPresupuesto As Label
+    Friend WithEvents TxtBoxPliego As TextBox
+    Friend WithEvents txtBoxPresupuesto As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents txtBoxPlazo As TextBox
+    Friend WithEvents Label9 As Label
 End Class

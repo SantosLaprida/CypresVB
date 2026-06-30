@@ -63,6 +63,9 @@ Public Class frmLicitacion
         txtBoxNumero.Text = l.Numero.ToString()
         ComboBoxComitente.SelectedValue = l.Id_Comitente
         txtBoxDenominacion.Text = l.Denominacion
+        txtBoxPlazo.Text = l.Plazo.ToString()
+        txtBoxPresupuesto.Text = l.Pres_Oficial.ToString()
+        TxtBoxPliego.Text = l.Pliego
         ComboTipoProyecto.SelectedValue = l.IdTipoProyecto
         ComboBoxPais.SelectedValue = l.IdPais
         txtPresentacion.Text = l.LugarPresentacion
@@ -104,6 +107,24 @@ Public Class frmLicitacion
         If Convert.ToInt32(ComboBoxComitente.SelectedValue) = 0 Then
             errores.Add("- Comitente")
         End If
+
+        If String.IsNullOrEmpty(txtBoxPlazo.Text.Trim) Then
+            errores.Add("- Plazo")
+        End If
+
+        If String.IsNullOrEmpty(txtBoxPresupuesto.Text.Trim) Then
+            errores.Add("- Presupuesto oficial")
+        Else
+            Dim presupuesto As Decimal
+            If Not Decimal.TryParse(txtBoxPresupuesto.Text.Trim(), presupuesto) Then
+                errores.Add("- Presupuesto oficial debe ser un número válido")
+            End If
+        End If
+
+        If String.IsNullOrEmpty(TxtBoxPliego.Text.Trim) Then
+            errores.Add("- Pliego")
+        End If
+
         If Convert.ToInt32(ComboBoxPais.SelectedValue) = 0 Then
             errores.Add("- País")
         End If
@@ -130,6 +151,9 @@ Public Class frmLicitacion
         licitacionEditada.Numero = txtBoxNumero.Text.Trim()
         licitacionEditada.Id_Comitente = Convert.ToInt32(ComboBoxComitente.SelectedValue)
         licitacionEditada.Denominacion = txtBoxDenominacion.Text.Trim()
+        licitacionEditada.Plazo = txtBoxPlazo.Text.Trim()
+        licitacionEditada.Pres_Oficial = Convert.ToDecimal(txtBoxPresupuesto.Text.Trim())
+        licitacionEditada.Pliego = TxtBoxPliego.Text.Trim()
         licitacionEditada.IdPais = Convert.ToInt32(ComboBoxPais.SelectedValue)
         licitacionEditada.IdTipoProyecto = Convert.ToInt32(ComboTipoProyecto.SelectedValue)
         licitacionEditada.LugarPresentacion = txtPresentacion.Text.Trim()
@@ -153,6 +177,6 @@ Public Class frmLicitacion
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        Me.Close()
+        Me.DialogResult = DialogResult.Cancel
     End Sub
 End Class

@@ -1,6 +1,17 @@
 ﻿Imports System.Data
 Imports MySql.Data.MySqlClient
 
+
+
+'2021_009 Numero de la licitacion lo escribe el usuario
+'Obra_tipo referencia s_proyecto_tipo
+'Moneda
+'Pliego Condiciones del contrato, significa si hay que pagar por el pliego o no, 0 o un valor
+'pres_oficial, presupuesto oficial, con o sin iva 
+'plazo, plazo de ejecucion
+'responsable, s_lic_resp
+'id_empresa, ignorar
+'sdsdsds
 Public Class Licitaciones
     Public Const PUBLICO = 1
     Public Const PRIVADO = 2
