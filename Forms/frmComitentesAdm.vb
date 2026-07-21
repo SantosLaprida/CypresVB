@@ -288,4 +288,8 @@ Public Class frmComitentesAdm
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
+
+    Private Sub grid_CellClick(sender As Object, e As GridCellClickEventArgs) Handles grid.CellClick
+
+    End Sub
 End Class

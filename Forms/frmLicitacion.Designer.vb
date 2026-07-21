@@ -79,9 +79,10 @@ Partial Class frmLicitacion
         ComboTipoProyecto.Font = New Font("Book Antiqua", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ComboTipoProyecto.ForeColor = SystemColors.Window
         ComboTipoProyecto.FormattingEnabled = True
-        ComboTipoProyecto.Location = New Point(190, 381)
+        ComboTipoProyecto.Location = New Point(133, 222)
+        ComboTipoProyecto.Margin = New Padding(2, 2, 2, 2)
         ComboTipoProyecto.Name = "ComboTipoProyecto"
-        ComboTipoProyecto.Size = New Size(557, 30)
+        ComboTipoProyecto.Size = New Size(390, 23)
         ComboTipoProyecto.TabIndex = 16
         ' 
         ' Label3
@@ -89,10 +90,9 @@ Partial Class frmLicitacion
         Label3.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(4, 384)
-        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Location = New Point(3, 226)
         Label3.Name = "Label3"
-        Label3.Size = New Size(179, 25)
+        Label3.Size = New Size(125, 15)
         Label3.TabIndex = 15
         Label3.Text = "Tipo de Proyecto:"
         ' 
@@ -104,9 +104,10 @@ Partial Class frmLicitacion
         ComboBoxComitente.Font = New Font("Book Antiqua", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ComboBoxComitente.ForeColor = SystemColors.Window
         ComboBoxComitente.FormattingEnabled = True
-        ComboBoxComitente.Location = New Point(190, 76)
+        ComboBoxComitente.Location = New Point(133, 42)
+        ComboBoxComitente.Margin = New Padding(2, 2, 2, 2)
         ComboBoxComitente.Name = "ComboBoxComitente"
-        ComboBoxComitente.Size = New Size(557, 30)
+        ComboBoxComitente.Size = New Size(390, 24)
         ComboBoxComitente.TabIndex = 14
         ' 
         ' Label2
@@ -114,9 +115,10 @@ Partial Class frmLicitacion
         Label2.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(3, 446)
+        Label2.Location = New Point(2, 266)
+        Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(181, 25)
+        Label2.Size = New Size(127, 15)
         Label2.TabIndex = 13
         Label2.Text = "Pais:"
         ' 
@@ -128,9 +130,10 @@ Partial Class frmLicitacion
         ComboBoxPais.Font = New Font("Book Antiqua", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ComboBoxPais.ForeColor = SystemColors.Window
         ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(190, 444)
+        ComboBoxPais.Location = New Point(133, 262)
+        ComboBoxPais.Margin = New Padding(2, 2, 2, 2)
         ComboBoxPais.Name = "ComboBoxPais"
-        ComboBoxPais.Size = New Size(557, 30)
+        ComboBoxPais.Size = New Size(390, 23)
         ComboBoxPais.TabIndex = 12
         ' 
         ' Label1
@@ -138,10 +141,9 @@ Partial Class frmLicitacion
         Label1.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(4, 79)
-        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Location = New Point(3, 46)
         Label1.Name = "Label1"
-        Label1.Size = New Size(179, 25)
+        Label1.Size = New Size(125, 15)
         Label1.TabIndex = 11
         Label1.Text = "Comitente:"
         ' 
@@ -150,20 +152,18 @@ Partial Class frmLicitacion
         Label4.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(4, 18)
-        Label4.Margin = New Padding(4, 0, 4, 0)
+        Label4.Location = New Point(3, 10)
         Label4.Name = "Label4"
-        Label4.Size = New Size(179, 25)
+        Label4.Size = New Size(125, 15)
         Label4.TabIndex = 17
         Label4.Text = "Numero:"
         ' 
         ' txtBoxNumero
         ' 
         txtBoxNumero.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtBoxNumero.Location = New Point(191, 15)
-        txtBoxNumero.Margin = New Padding(4, 5, 4, 5)
+        txtBoxNumero.Location = New Point(134, 6)
         txtBoxNumero.Name = "txtBoxNumero"
-        txtBoxNumero.Size = New Size(555, 31)
+        txtBoxNumero.Size = New Size(388, 23)
         txtBoxNumero.TabIndex = 18
         ' 
         ' GroupBox1
@@ -177,11 +177,9 @@ Partial Class frmLicitacion
         GroupBox1.Controls.Add(radEnAgenda)
         GroupBox1.FlatStyle = FlatStyle.Flat
         GroupBox1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox1.Location = New Point(828, 42)
-        GroupBox1.Margin = New Padding(4, 5, 4, 5)
+        GroupBox1.Location = New Point(580, 25)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Padding = New Padding(4, 5, 4, 5)
-        GroupBox1.Size = New Size(223, 339)
+        GroupBox1.Size = New Size(156, 203)
         GroupBox1.TabIndex = 23
         GroupBox1.TabStop = False
         GroupBox1.Text = "Estado"
@@ -190,10 +188,9 @@ Partial Class frmLicitacion
         ' 
         radPresentada.AutoSize = True
         radPresentada.Font = New Font("Segoe UI", 9F)
-        radPresentada.Location = New Point(33, 245)
-        radPresentada.Margin = New Padding(4, 5, 4, 5)
+        radPresentada.Location = New Point(23, 147)
         radPresentada.Name = "radPresentada"
-        radPresentada.Size = New Size(124, 29)
+        radPresentada.Size = New Size(83, 19)
         radPresentada.TabIndex = 28
         radPresentada.TabStop = True
         radPresentada.Text = "Presentada"
@@ -203,10 +200,9 @@ Partial Class frmLicitacion
         ' 
         radDesestimada.AutoSize = True
         radDesestimada.Font = New Font("Segoe UI", 9F)
-        radDesestimada.Location = New Point(31, 203)
-        radDesestimada.Margin = New Padding(4, 5, 4, 5)
+        radDesestimada.Location = New Point(22, 122)
         radDesestimada.Name = "radDesestimada"
-        radDesestimada.Size = New Size(139, 29)
+        radDesestimada.Size = New Size(92, 19)
         radDesestimada.TabIndex = 27
         radDesestimada.TabStop = True
         radDesestimada.Text = "Desestimada"
@@ -216,10 +212,9 @@ Partial Class frmLicitacion
         ' 
         radSuspendida.AutoSize = True
         radSuspendida.Font = New Font("Segoe UI", 9F)
-        radSuspendida.Location = New Point(33, 162)
-        radSuspendida.Margin = New Padding(4, 5, 4, 5)
+        radSuspendida.Location = New Point(23, 97)
         radSuspendida.Name = "radSuspendida"
-        radSuspendida.Size = New Size(122, 29)
+        radSuspendida.Size = New Size(81, 19)
         radSuspendida.TabIndex = 26
         radSuspendida.TabStop = True
         radSuspendida.Text = "Supendida"
@@ -229,10 +224,9 @@ Partial Class frmLicitacion
         ' 
         radEnProceso.AutoSize = True
         radEnProceso.Font = New Font("Segoe UI", 9F)
-        radEnProceso.Location = New Point(30, 120)
-        radEnProceso.Margin = New Padding(4, 5, 4, 5)
+        radEnProceso.Location = New Point(21, 72)
         radEnProceso.Name = "radEnProceso"
-        radEnProceso.Size = New Size(124, 29)
+        radEnProceso.Size = New Size(83, 19)
         radEnProceso.TabIndex = 25
         radEnProceso.TabStop = True
         radEnProceso.Text = "En Proceso"
@@ -242,10 +236,9 @@ Partial Class frmLicitacion
         ' 
         radCalificacion.AutoSize = True
         radCalificacion.Font = New Font("Segoe UI", 9F)
-        radCalificacion.Location = New Point(30, 78)
-        radCalificacion.Margin = New Padding(4, 5, 4, 5)
+        radCalificacion.Location = New Point(21, 47)
         radCalificacion.Name = "radCalificacion"
-        radCalificacion.Size = New Size(149, 29)
+        radCalificacion.Size = New Size(103, 19)
         radCalificacion.TabIndex = 24
         radCalificacion.TabStop = True
         radCalificacion.Text = "En Calificacion"
@@ -255,10 +248,9 @@ Partial Class frmLicitacion
         ' 
         radEnAgenda.AutoSize = True
         radEnAgenda.Font = New Font("Segoe UI", 9F)
-        radEnAgenda.Location = New Point(30, 37)
-        radEnAgenda.Margin = New Padding(4, 5, 4, 5)
+        radEnAgenda.Location = New Point(21, 22)
         radEnAgenda.Name = "radEnAgenda"
-        radEnAgenda.Size = New Size(123, 29)
+        radEnAgenda.Size = New Size(82, 19)
         radEnAgenda.TabIndex = 23
         radEnAgenda.TabStop = True
         radEnAgenda.Text = "En Agenda"
@@ -274,11 +266,9 @@ Partial Class frmLicitacion
         GroupBox2.Controls.Add(txtPresentacion)
         GroupBox2.FlatStyle = FlatStyle.Flat
         GroupBox2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox2.Location = New Point(54, 615)
-        GroupBox2.Margin = New Padding(4, 5, 4, 5)
+        GroupBox2.Location = New Point(38, 369)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Padding = New Padding(4, 5, 4, 5)
-        GroupBox2.Size = New Size(1346, 102)
+        GroupBox2.Size = New Size(942, 61)
         GroupBox2.TabIndex = 24
         GroupBox2.TabStop = False
         GroupBox2.Text = "Presentacion"
@@ -286,10 +276,9 @@ Partial Class frmLicitacion
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(1089, 42)
-        Label6.Margin = New Padding(4, 0, 4, 0)
+        Label6.Location = New Point(762, 25)
         Label6.Name = "Label6"
-        Label6.Size = New Size(59, 25)
+        Label6.Size = New Size(37, 15)
         Label6.TabIndex = 23
         Label6.Text = "Hora:"
         ' 
@@ -297,19 +286,17 @@ Partial Class frmLicitacion
         ' 
         timePresentacion.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         timePresentacion.Format = DateTimePickerFormat.Time
-        timePresentacion.Location = New Point(1157, 42)
-        timePresentacion.Margin = New Padding(4, 5, 4, 5)
+        timePresentacion.Location = New Point(810, 25)
         timePresentacion.Name = "timePresentacion"
-        timePresentacion.Size = New Size(157, 31)
+        timePresentacion.Size = New Size(111, 23)
         timePresentacion.TabIndex = 22
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(810, 42)
-        Label5.Margin = New Padding(4, 0, 4, 0)
+        Label5.Location = New Point(567, 25)
         Label5.Name = "Label5"
-        Label5.Size = New Size(66, 25)
+        Label5.Size = New Size(42, 15)
         Label5.TabIndex = 21
         Label5.Text = "Fecha:"
         ' 
@@ -317,18 +304,16 @@ Partial Class frmLicitacion
         ' 
         datePresentacion.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         datePresentacion.Format = DateTimePickerFormat.Short
-        datePresentacion.Location = New Point(891, 42)
-        datePresentacion.Margin = New Padding(4, 5, 4, 5)
+        datePresentacion.Location = New Point(624, 25)
         datePresentacion.Name = "datePresentacion"
-        datePresentacion.Size = New Size(155, 31)
+        datePresentacion.Size = New Size(110, 23)
         datePresentacion.TabIndex = 20
         ' 
         ' txtPresentacion
         ' 
-        txtPresentacion.Location = New Point(9, 42)
-        txtPresentacion.Margin = New Padding(4, 5, 4, 5)
+        txtPresentacion.Location = New Point(6, 25)
         txtPresentacion.Name = "txtPresentacion"
-        txtPresentacion.Size = New Size(773, 31)
+        txtPresentacion.Size = New Size(542, 23)
         txtPresentacion.TabIndex = 19
         ' 
         ' GroupBox4
@@ -341,11 +326,9 @@ Partial Class frmLicitacion
         GroupBox4.Controls.Add(txtApertura)
         GroupBox4.FlatStyle = FlatStyle.Flat
         GroupBox4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox4.Location = New Point(54, 726)
-        GroupBox4.Margin = New Padding(4, 5, 4, 5)
+        GroupBox4.Location = New Point(38, 436)
         GroupBox4.Name = "GroupBox4"
-        GroupBox4.Padding = New Padding(4, 5, 4, 5)
-        GroupBox4.Size = New Size(1346, 102)
+        GroupBox4.Size = New Size(942, 61)
         GroupBox4.TabIndex = 26
         GroupBox4.TabStop = False
         GroupBox4.Text = "Apertura"
@@ -353,10 +336,9 @@ Partial Class frmLicitacion
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(1089, 42)
-        Label7.Margin = New Padding(4, 0, 4, 0)
+        Label7.Location = New Point(762, 25)
         Label7.Name = "Label7"
-        Label7.Size = New Size(59, 25)
+        Label7.Size = New Size(37, 15)
         Label7.TabIndex = 23
         Label7.Text = "Hora:"
         ' 
@@ -364,19 +346,17 @@ Partial Class frmLicitacion
         ' 
         timeApertura.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         timeApertura.Format = DateTimePickerFormat.Time
-        timeApertura.Location = New Point(1157, 42)
-        timeApertura.Margin = New Padding(4, 5, 4, 5)
+        timeApertura.Location = New Point(810, 25)
         timeApertura.Name = "timeApertura"
-        timeApertura.Size = New Size(157, 31)
+        timeApertura.Size = New Size(111, 23)
         timeApertura.TabIndex = 22
         ' 
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(810, 42)
-        Label8.Margin = New Padding(4, 0, 4, 0)
+        Label8.Location = New Point(567, 25)
         Label8.Name = "Label8"
-        Label8.Size = New Size(66, 25)
+        Label8.Size = New Size(42, 15)
         Label8.TabIndex = 21
         Label8.Text = "Fecha:"
         ' 
@@ -384,28 +364,25 @@ Partial Class frmLicitacion
         ' 
         dateApertura.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         dateApertura.Format = DateTimePickerFormat.Short
-        dateApertura.Location = New Point(891, 42)
-        dateApertura.Margin = New Padding(4, 5, 4, 5)
+        dateApertura.Location = New Point(624, 25)
         dateApertura.Name = "dateApertura"
-        dateApertura.Size = New Size(155, 31)
+        dateApertura.Size = New Size(110, 23)
         dateApertura.TabIndex = 20
         ' 
         ' txtApertura
         ' 
-        txtApertura.Location = New Point(9, 42)
-        txtApertura.Margin = New Padding(4, 5, 4, 5)
+        txtApertura.Location = New Point(6, 25)
         txtApertura.Name = "txtApertura"
-        txtApertura.Size = New Size(773, 31)
+        txtApertura.Size = New Size(542, 23)
         txtApertura.TabIndex = 19
         ' 
         ' ListBoxOferentes
         ' 
         ListBoxOferentes.BorderStyle = BorderStyle.None
         ListBoxOferentes.FormattingEnabled = True
-        ListBoxOferentes.Location = New Point(9, 28)
-        ListBoxOferentes.Margin = New Padding(4, 5, 4, 5)
+        ListBoxOferentes.Location = New Point(6, 17)
         ListBoxOferentes.Name = "ListBoxOferentes"
-        ListBoxOferentes.Size = New Size(304, 250)
+        ListBoxOferentes.Size = New Size(213, 150)
         ListBoxOferentes.TabIndex = 0
         ' 
         ' GroupBox3
@@ -415,11 +392,9 @@ Partial Class frmLicitacion
         GroupBox3.Controls.Add(ListBoxOferentes)
         GroupBox3.FlatStyle = FlatStyle.Flat
         GroupBox3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox3.Location = New Point(1121, 42)
-        GroupBox3.Margin = New Padding(4, 5, 4, 5)
+        GroupBox3.Location = New Point(785, 25)
         GroupBox3.Name = "GroupBox3"
-        GroupBox3.Padding = New Padding(4, 5, 4, 5)
-        GroupBox3.Size = New Size(337, 338)
+        GroupBox3.Size = New Size(236, 203)
         GroupBox3.TabIndex = 25
         GroupBox3.TabStop = False
         GroupBox3.Text = "Oferentes"
@@ -427,9 +402,10 @@ Partial Class frmLicitacion
         ' btnAgregarOferentes
         ' 
         btnAgregarOferentes.BackColor = SystemColors.Info
-        btnAgregarOferentes.Location = New Point(9, 286)
+        btnAgregarOferentes.Location = New Point(6, 172)
+        btnAgregarOferentes.Margin = New Padding(2, 2, 2, 2)
         btnAgregarOferentes.Name = "btnAgregarOferentes"
-        btnAgregarOferentes.Size = New Size(304, 44)
+        btnAgregarOferentes.Size = New Size(213, 26)
         btnAgregarOferentes.TabIndex = 1
         btnAgregarOferentes.Text = "Agregar Oferentes"
         btnAgregarOferentes.UseVisualStyleBackColor = False
@@ -443,10 +419,10 @@ Partial Class frmLicitacion
         btnGuardar.FlatStyle = FlatStyle.Flat
         btnGuardar.Font = New Font("Segoe UI", 8.25F)
         btnGuardar.ForeColor = Color.White
-        btnGuardar.Location = New Point(247, 875)
-        btnGuardar.Margin = New Padding(5)
+        btnGuardar.Location = New Point(800, 295)
+        btnGuardar.Margin = New Padding(4, 3, 4, 3)
         btnGuardar.Name = "btnGuardar"
-        btnGuardar.Size = New Size(107, 38)
+        btnGuardar.Size = New Size(75, 23)
         btnGuardar.TabIndex = 27
         btnGuardar.Text = "Guardar"
         btnGuardar.UseVisualStyleBackColor = False
@@ -460,10 +436,10 @@ Partial Class frmLicitacion
         btnCancelar.FlatStyle = FlatStyle.Flat
         btnCancelar.Font = New Font("Segoe UI", 8.25F)
         btnCancelar.ForeColor = Color.White
-        btnCancelar.Location = New Point(418, 875)
-        btnCancelar.Margin = New Padding(5)
+        btnCancelar.Location = New Point(905, 295)
+        btnCancelar.Margin = New Padding(4, 3, 4, 3)
         btnCancelar.Name = "btnCancelar"
-        btnCancelar.Size = New Size(107, 38)
+        btnCancelar.Size = New Size(75, 23)
         btnCancelar.TabIndex = 28
         btnCancelar.Text = "Cancelar"
         btnCancelar.UseVisualStyleBackColor = False
@@ -471,10 +447,9 @@ Partial Class frmLicitacion
         ' txtBoxDenominacion
         ' 
         txtBoxDenominacion.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtBoxDenominacion.Location = New Point(191, 137)
-        txtBoxDenominacion.Margin = New Padding(4, 5, 4, 5)
+        txtBoxDenominacion.Location = New Point(134, 78)
         txtBoxDenominacion.Name = "txtBoxDenominacion"
-        txtBoxDenominacion.Size = New Size(555, 31)
+        txtBoxDenominacion.Size = New Size(388, 23)
         txtBoxDenominacion.TabIndex = 30
         ' 
         ' lblDenominacion
@@ -482,10 +457,9 @@ Partial Class frmLicitacion
         lblDenominacion.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         lblDenominacion.AutoSize = True
         lblDenominacion.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblDenominacion.Location = New Point(4, 140)
-        lblDenominacion.Margin = New Padding(4, 0, 4, 0)
+        lblDenominacion.Location = New Point(3, 82)
         lblDenominacion.Name = "lblDenominacion"
-        lblDenominacion.Size = New Size(179, 25)
+        lblDenominacion.Size = New Size(125, 15)
         lblDenominacion.TabIndex = 29
         lblDenominacion.Text = "Denominacion:"
         ' 
@@ -510,7 +484,8 @@ Partial Class frmLicitacion
         TableLayoutPanel1.Controls.Add(ComboBoxPais, 1, 7)
         TableLayoutPanel1.Controls.Add(Label3, 0, 6)
         TableLayoutPanel1.Controls.Add(ComboTipoProyecto, 1, 6)
-        TableLayoutPanel1.Location = New Point(54, 39)
+        TableLayoutPanel1.Location = New Point(38, 23)
+        TableLayoutPanel1.Margin = New Padding(2, 2, 2, 2)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 8
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
@@ -521,16 +496,15 @@ Partial Class frmLicitacion
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
-        TableLayoutPanel1.Size = New Size(750, 491)
+        TableLayoutPanel1.Size = New Size(525, 295)
         TableLayoutPanel1.TabIndex = 31
         ' 
         ' txtBoxPlazo
         ' 
         txtBoxPlazo.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtBoxPlazo.Location = New Point(191, 320)
-        txtBoxPlazo.Margin = New Padding(4, 5, 4, 5)
+        txtBoxPlazo.Location = New Point(134, 186)
         txtBoxPlazo.Name = "txtBoxPlazo"
-        txtBoxPlazo.Size = New Size(555, 31)
+        txtBoxPlazo.Size = New Size(388, 23)
         txtBoxPlazo.TabIndex = 36
         ' 
         ' lblPresupuesto
@@ -538,28 +512,27 @@ Partial Class frmLicitacion
         lblPresupuesto.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         lblPresupuesto.AutoSize = True
         lblPresupuesto.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPresupuesto.Location = New Point(3, 201)
+        lblPresupuesto.Location = New Point(2, 118)
+        lblPresupuesto.Margin = New Padding(2, 0, 2, 0)
         lblPresupuesto.Name = "lblPresupuesto"
-        lblPresupuesto.Size = New Size(181, 25)
+        lblPresupuesto.Size = New Size(127, 15)
         lblPresupuesto.TabIndex = 32
         lblPresupuesto.Text = "Presupuesto Oficial"
         ' 
         ' TxtBoxPliego
         ' 
         TxtBoxPliego.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        TxtBoxPliego.Location = New Point(191, 259)
-        TxtBoxPliego.Margin = New Padding(4, 5, 4, 5)
+        TxtBoxPliego.Location = New Point(134, 150)
         TxtBoxPliego.Name = "TxtBoxPliego"
-        TxtBoxPliego.Size = New Size(555, 31)
+        TxtBoxPliego.Size = New Size(388, 23)
         TxtBoxPliego.TabIndex = 33
         ' 
         ' txtBoxPresupuesto
         ' 
         txtBoxPresupuesto.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtBoxPresupuesto.Location = New Point(191, 198)
-        txtBoxPresupuesto.Margin = New Padding(4, 5, 4, 5)
+        txtBoxPresupuesto.Location = New Point(134, 114)
         txtBoxPresupuesto.Name = "txtBoxPresupuesto"
-        txtBoxPresupuesto.Size = New Size(555, 31)
+        txtBoxPresupuesto.Size = New Size(388, 23)
         txtBoxPresupuesto.TabIndex = 34
         ' 
         ' Label9
@@ -567,9 +540,10 @@ Partial Class frmLicitacion
         Label9.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label9.Location = New Point(3, 323)
+        Label9.Location = New Point(2, 190)
+        Label9.Margin = New Padding(2, 0, 2, 0)
         Label9.Name = "Label9"
-        Label9.Size = New Size(181, 25)
+        Label9.Size = New Size(127, 15)
         Label9.TabIndex = 35
         Label9.Text = "Plazo (Meses)"
         ' 
@@ -578,26 +552,28 @@ Partial Class frmLicitacion
         lblPliego.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         lblPliego.AutoSize = True
         lblPliego.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPliego.Location = New Point(3, 262)
+        lblPliego.Location = New Point(2, 154)
+        lblPliego.Margin = New Padding(2, 0, 2, 0)
         lblPliego.Name = "lblPliego"
-        lblPliego.Size = New Size(181, 25)
+        lblPliego.Size = New Size(127, 15)
         lblPliego.TabIndex = 31
         lblPliego.Text = "Pliego"
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.Info
-        Panel1.Location = New Point(57, 574)
+        Panel1.Location = New Point(40, 344)
+        Panel1.Margin = New Padding(2, 2, 2, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1411, 10)
+        Panel1.Size = New Size(988, 6)
         Panel1.TabIndex = 32
         ' 
         ' frmLicitacion
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
-        ClientSize = New Size(1520, 1064)
+        ClientSize = New Size(1046, 532)
         Controls.Add(Panel1)
         Controls.Add(TableLayoutPanel1)
         Controls.Add(btnCancelar)
@@ -606,7 +582,6 @@ Partial Class frmLicitacion
         Controls.Add(GroupBox3)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
-        Margin = New Padding(4, 5, 4, 5)
         Name = "frmLicitacion"
         Text = "Licitacion"
         GroupBox1.ResumeLayout(False)

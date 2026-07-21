@@ -130,6 +130,8 @@ Public Class frmLicitaciones
                                                       (idEstado = 0 OrElse l.Estado = idEstado)
                                                End Function).ToList()
 
+        idPais = ComboBoxPais.SelectedValue
+        'ComitentesLlenarCombo(ComboBoxComitente, True, idPais)
         CargarGrid(filtrada)
     End Sub
     Private Sub NuevoToolStripButton_Click(sender As Object, e As EventArgs) Handles NuevoToolStripButton.Click
@@ -168,6 +170,7 @@ Public Class frmLicitaciones
     Private Sub ComboBoxPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPais.SelectedIndexChanged
         If listaLicitaciones Is Nothing Then Exit Sub
         AplicarFiltros()
+        ComitentesLlenarCombo(ComboBoxComitente, True, ComboBoxPais.SelectedValue)
     End Sub
 
     Private Sub ComboBoxComitente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboTipoProyecto.SelectedIndexChanged
@@ -185,4 +188,7 @@ Public Class frmLicitaciones
         AplicarFiltros()
     End Sub
 
+    Private Sub Grid_CellClick(sender As Object, e As GridCellClickEventArgs) Handles Grid.CellClick
+
+    End Sub
 End Class

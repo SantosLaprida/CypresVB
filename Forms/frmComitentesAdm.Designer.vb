@@ -56,7 +56,7 @@ Partial Class frmComitentesAdm
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
         ToolStrip1.Padding = New Padding(0, 0, 3, 0)
-        ToolStrip1.Size = New Size(1370, 33)
+        ToolStrip1.Size = New Size(1370, 31)
         ToolStrip1.TabIndex = 0
         ToolStrip1.Text = "ToolStrip1"
         ' 
@@ -103,12 +103,12 @@ Partial Class frmComitentesAdm
         ' toolStripSeparator
         ' 
         toolStripSeparator.Name = "toolStripSeparator"
-        toolStripSeparator.Size = New Size(6, 33)
+        toolStripSeparator.Size = New Size(6, 31)
         ' 
         ' toolStripSeparator1
         ' 
         toolStripSeparator1.Name = "toolStripSeparator1"
-        toolStripSeparator1.Size = New Size(6, 33)
+        toolStripSeparator1.Size = New Size(6, 31)
         ' 
         ' Panel1
         ' 
@@ -116,7 +116,7 @@ Partial Class frmComitentesAdm
         Panel1.Controls.Add(TableLayoutPanel1)
         Panel1.Controls.Add(GridControl1)
         Panel1.Dock = DockStyle.Top
-        Panel1.Location = New Point(0, 33)
+        Panel1.Location = New Point(0, 31)
         Panel1.Margin = New Padding(4, 5, 4, 5)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1370, 81)
@@ -125,11 +125,11 @@ Partial Class frmComitentesAdm
         ' TableLayoutPanel1
         ' 
         TableLayoutPanel1.ColumnCount = 5
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40.0F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
         TableLayoutPanel1.Controls.Add(Label2, 0, 0)
         TableLayoutPanel1.Controls.Add(btnColumnas, 4, 0)
         TableLayoutPanel1.Controls.Add(ComboBoxPais, 1, 0)
@@ -138,7 +138,7 @@ Partial Class frmComitentesAdm
         TableLayoutPanel1.Location = New Point(12, 3)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 1
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 100.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
         TableLayoutPanel1.Size = New Size(1355, 75)
         TableLayoutPanel1.TabIndex = 8
         ' 
@@ -146,7 +146,7 @@ Partial Class frmComitentesAdm
         ' 
         Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(3, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(129, 75)
@@ -170,29 +170,29 @@ Partial Class frmComitentesAdm
         ' 
         ComboBoxPais.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(138, 21)
+        ComboBoxPais.Location = New Point(138, 26)
         ComboBoxPais.Name = "ComboBoxPais"
-        ComboBoxPais.Size = New Size(265, 30)
+        ComboBoxPais.Size = New Size(265, 22)
         ComboBoxPais.TabIndex = 6
         ' 
         ' txtBuscar
         ' 
         txtBuscar.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtBuscar.Location = New Point(545, 23)
+        txtBuscar.Location = New Point(545, 26)
         txtBuscar.Margin = New Padding(4, 5, 4, 5)
         txtBuscar.Name = "txtBuscar"
-        txtBuscar.Size = New Size(263, 29)
+        txtBuscar.Size = New Size(263, 22)
         txtBuscar.TabIndex = 4
         ' 
         ' Label1
         ' 
         Label1.Anchor = AnchorStyles.None
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(421, 25)
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(439, 30)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(105, 25)
+        Label1.Size = New Size(69, 15)
         Label1.TabIndex = 5
         Label1.Text = "Comitente:"
         Label1.TextAlign = ContentAlignment.MiddleCenter
@@ -289,13 +289,13 @@ Partial Class frmComitentesAdm
         ' 
         ' frmComitentesAdm
         ' 
-        AutoScaleDimensions = New SizeF(10.0F, 22.0F)
+        AutoScaleDimensions = New SizeF(7F, 14F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1370, 658)
         Controls.Add(grid)
         Controls.Add(Panel1)
         Controls.Add(ToolStrip1)
-        Font = New Font("Consolas", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Font = New Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Margin = New Padding(4, 5, 4, 5)
         Name = "frmComitentesAdm"
         Text = "Form2"

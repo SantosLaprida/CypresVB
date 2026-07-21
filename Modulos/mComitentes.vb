@@ -18,10 +18,11 @@ Public Module mComitentes
         iList.DataSource = dtComitentes
         iList.SelectedIndex = 0
     End Sub
-    Public Sub ComitentesLlenarCombo(iCombo As Object, IncluirTodos As Boolean)
+    Public Sub ComitentesLlenarCombo(iCombo As Object, IncluirTodos As Boolean, Optional id As Integer = 0)
         Dim idPais As Integer
-        idPais = 0
-        Dim dtComitentes As List(Of Comitente) = ComitenteRepositorio.ObtenerComitentes(0)
+        idPais = id
+        Dim dtComitentes As List(Of Comitente) = ComitenteRepositorio.ObtenerComitentes(idPais)
+
         If IncluirTodos = True Then
             Dim placeholder As New Comitente
             placeholder.Id = 0

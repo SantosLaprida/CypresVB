@@ -23,6 +23,10 @@ Partial Class frmLicitaciones
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLicitaciones))
+        Dim GridCellInfo1 As Syncfusion.Windows.Forms.Grid.GridCellInfo = New Syncfusion.Windows.Forms.Grid.GridCellInfo()
+        Dim GridCellInfo2 As Syncfusion.Windows.Forms.Grid.GridCellInfo = New Syncfusion.Windows.Forms.Grid.GridCellInfo()
+        Dim GridCellInfo3 As Syncfusion.Windows.Forms.Grid.GridCellInfo = New Syncfusion.Windows.Forms.Grid.GridCellInfo()
+        Dim GridCellInfo4 As Syncfusion.Windows.Forms.Grid.GridCellInfo = New Syncfusion.Windows.Forms.Grid.GridCellInfo()
         ToolStrip1 = New ToolStrip()
         NuevoToolStripButton = New ToolStripButton()
         AbrirToolStripButton = New ToolStripButton()
@@ -58,8 +62,8 @@ Partial Class frmLicitaciones
         ToolStrip1.Items.AddRange(New ToolStripItem() {NuevoToolStripButton, AbrirToolStripButton, GuardarToolStripButton, ImprimirToolStripButton, toolStripSeparator, CortarToolStripButton, CopiarToolStripButton, PegarToolStripButton, toolStripSeparator1, AyudaToolStripButton})
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
-        ToolStrip1.Padding = New Padding(0, 0, 3, 0)
-        ToolStrip1.Size = New Size(1574, 29)
+        ToolStrip1.Padding = New Padding(0, 0, 2, 0)
+        ToolStrip1.Size = New Size(959, 27)
         ToolStrip1.TabIndex = 1
         ToolStrip1.Text = "ToolStrip1"
         ' 
@@ -69,7 +73,7 @@ Partial Class frmLicitaciones
         NuevoToolStripButton.Image = CType(resources.GetObject("NuevoToolStripButton.Image"), Image)
         NuevoToolStripButton.ImageTransparentColor = Color.Magenta
         NuevoToolStripButton.Name = "NuevoToolStripButton"
-        NuevoToolStripButton.Size = New Size(34, 24)
+        NuevoToolStripButton.Size = New Size(23, 24)
         NuevoToolStripButton.Text = "&Nuevo"
         ' 
         ' AbrirToolStripButton
@@ -78,7 +82,7 @@ Partial Class frmLicitaciones
         AbrirToolStripButton.Image = CType(resources.GetObject("AbrirToolStripButton.Image"), Image)
         AbrirToolStripButton.ImageTransparentColor = Color.Magenta
         AbrirToolStripButton.Name = "AbrirToolStripButton"
-        AbrirToolStripButton.Size = New Size(34, 24)
+        AbrirToolStripButton.Size = New Size(23, 24)
         AbrirToolStripButton.Text = "&Abrir"
         ' 
         ' GuardarToolStripButton
@@ -87,7 +91,7 @@ Partial Class frmLicitaciones
         GuardarToolStripButton.Image = CType(resources.GetObject("GuardarToolStripButton.Image"), Image)
         GuardarToolStripButton.ImageTransparentColor = Color.Magenta
         GuardarToolStripButton.Name = "GuardarToolStripButton"
-        GuardarToolStripButton.Size = New Size(34, 24)
+        GuardarToolStripButton.Size = New Size(23, 24)
         GuardarToolStripButton.Text = "&Guardar"
         ' 
         ' ImprimirToolStripButton
@@ -96,13 +100,13 @@ Partial Class frmLicitaciones
         ImprimirToolStripButton.Image = CType(resources.GetObject("ImprimirToolStripButton.Image"), Image)
         ImprimirToolStripButton.ImageTransparentColor = Color.Magenta
         ImprimirToolStripButton.Name = "ImprimirToolStripButton"
-        ImprimirToolStripButton.Size = New Size(34, 24)
+        ImprimirToolStripButton.Size = New Size(23, 24)
         ImprimirToolStripButton.Text = "&Imprimir"
         ' 
         ' toolStripSeparator
         ' 
         toolStripSeparator.Name = "toolStripSeparator"
-        toolStripSeparator.Size = New Size(6, 29)
+        toolStripSeparator.Size = New Size(6, 27)
         ' 
         ' CortarToolStripButton
         ' 
@@ -110,7 +114,7 @@ Partial Class frmLicitaciones
         CortarToolStripButton.Image = CType(resources.GetObject("CortarToolStripButton.Image"), Image)
         CortarToolStripButton.ImageTransparentColor = Color.Magenta
         CortarToolStripButton.Name = "CortarToolStripButton"
-        CortarToolStripButton.Size = New Size(34, 24)
+        CortarToolStripButton.Size = New Size(23, 24)
         CortarToolStripButton.Text = "&Cortar"
         ' 
         ' CopiarToolStripButton
@@ -119,7 +123,7 @@ Partial Class frmLicitaciones
         CopiarToolStripButton.Image = CType(resources.GetObject("CopiarToolStripButton.Image"), Image)
         CopiarToolStripButton.ImageTransparentColor = Color.Magenta
         CopiarToolStripButton.Name = "CopiarToolStripButton"
-        CopiarToolStripButton.Size = New Size(34, 24)
+        CopiarToolStripButton.Size = New Size(23, 24)
         CopiarToolStripButton.Text = "&Copiar"
         ' 
         ' PegarToolStripButton
@@ -128,13 +132,13 @@ Partial Class frmLicitaciones
         PegarToolStripButton.Image = CType(resources.GetObject("PegarToolStripButton.Image"), Image)
         PegarToolStripButton.ImageTransparentColor = Color.Magenta
         PegarToolStripButton.Name = "PegarToolStripButton"
-        PegarToolStripButton.Size = New Size(34, 24)
+        PegarToolStripButton.Size = New Size(23, 24)
         PegarToolStripButton.Text = "&Pegar"
         ' 
         ' toolStripSeparator1
         ' 
         toolStripSeparator1.Name = "toolStripSeparator1"
-        toolStripSeparator1.Size = New Size(6, 29)
+        toolStripSeparator1.Size = New Size(6, 27)
         ' 
         ' AyudaToolStripButton
         ' 
@@ -142,7 +146,7 @@ Partial Class frmLicitaciones
         AyudaToolStripButton.Image = CType(resources.GetObject("AyudaToolStripButton.Image"), Image)
         AyudaToolStripButton.ImageTransparentColor = Color.Magenta
         AyudaToolStripButton.Name = "AyudaToolStripButton"
-        AyudaToolStripButton.Size = New Size(34, 24)
+        AyudaToolStripButton.Size = New Size(23, 24)
         AyudaToolStripButton.Text = "&Ayuda"
         ' 
         ' Panel1
@@ -150,41 +154,44 @@ Partial Class frmLicitaciones
         Panel1.BackColor = Color.FromArgb(CByte(214), CByte(224), CByte(240))
         Panel1.Controls.Add(TableLayoutPanel1)
         Panel1.Dock = DockStyle.Top
-        Panel1.Location = New Point(0, 29)
+        Panel1.Location = New Point(0, 27)
+        Panel1.Margin = New Padding(2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1574, 120)
+        Panel1.Size = New Size(959, 72)
         Panel1.TabIndex = 2
         ' 
         ' TableLayoutPanel1
         ' 
         TableLayoutPanel1.ColumnCount = 4
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
         TableLayoutPanel1.Controls.Add(Label4, 3, 0)
-        TableLayoutPanel1.Controls.Add(Label3, 2, 0)
-        TableLayoutPanel1.Controls.Add(Label2, 1, 0)
         TableLayoutPanel1.Controls.Add(ComboTipoProyecto, 2, 1)
         TableLayoutPanel1.Controls.Add(ComboEstado, 3, 1)
         TableLayoutPanel1.Controls.Add(ComboBoxPais, 0, 1)
         TableLayoutPanel1.Controls.Add(ComboBoxComitente, 1, 1)
         TableLayoutPanel1.Controls.Add(Label1, 0, 0)
+        TableLayoutPanel1.Controls.Add(Label2, 2, 0)
+        TableLayoutPanel1.Controls.Add(Label3, 1, 0)
         TableLayoutPanel1.Location = New Point(0, 0)
+        TableLayoutPanel1.Margin = New Padding(2)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 2
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50.0F))
-        TableLayoutPanel1.Size = New Size(1574, 120)
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.Size = New Size(1102, 72)
         TableLayoutPanel1.TabIndex = 4
         ' 
         ' Label4
         ' 
         Label4.Anchor = AnchorStyles.None
         Label4.AutoSize = True
-        Label4.Location = New Point(1343, 17)
+        Label4.Location = New Point(942, 10)
+        Label4.Margin = New Padding(2, 0, 2, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(66, 25)
+        Label4.Size = New Size(42, 15)
         Label4.TabIndex = 7
         Label4.Text = "Estado"
         ' 
@@ -192,9 +199,10 @@ Partial Class frmLicitaciones
         ' 
         Label3.Anchor = AnchorStyles.None
         Label3.AutoSize = True
-        Label3.Location = New Point(935, 17)
+        Label3.Location = New Point(381, 10)
+        Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(94, 25)
+        Label3.Size = New Size(63, 15)
         Label3.TabIndex = 6
         Label3.Text = "Comitente"
         ' 
@@ -202,9 +210,10 @@ Partial Class frmLicitaciones
         ' 
         Label2.Anchor = AnchorStyles.None
         Label2.AutoSize = True
-        Label2.Location = New Point(516, 17)
+        Label2.Location = New Point(639, 10)
+        Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(147, 25)
+        Label2.Size = New Size(96, 15)
         Label2.TabIndex = 5
         Label2.Text = "Tipo de Proyecto"
         ' 
@@ -212,57 +221,104 @@ Partial Class frmLicitaciones
         ' 
         ComboTipoProyecto.Anchor = AnchorStyles.Top
         ComboTipoProyecto.FormattingEnabled = True
-        ComboTipoProyecto.Location = New Point(857, 63)
+        ComboTipoProyecto.Location = New Point(599, 38)
+        ComboTipoProyecto.Margin = New Padding(2)
         ComboTipoProyecto.Name = "ComboTipoProyecto"
-        ComboTipoProyecto.Size = New Size(251, 33)
+        ComboTipoProyecto.Size = New Size(177, 23)
         ComboTipoProyecto.TabIndex = 1
         ' 
         ' ComboEstado
         ' 
         ComboEstado.Anchor = AnchorStyles.Top
         ComboEstado.FormattingEnabled = True
-        ComboEstado.Location = New Point(1251, 63)
+        ComboEstado.Location = New Point(875, 38)
+        ComboEstado.Margin = New Padding(2)
         ComboEstado.Name = "ComboEstado"
-        ComboEstado.Size = New Size(251, 33)
+        ComboEstado.Size = New Size(177, 23)
         ComboEstado.TabIndex = 2
         ' 
         ' ComboBoxPais
         ' 
         ComboBoxPais.Anchor = AnchorStyles.Top
         ComboBoxPais.FormattingEnabled = True
-        ComboBoxPais.Location = New Point(71, 63)
+        ComboBoxPais.Location = New Point(49, 38)
+        ComboBoxPais.Margin = New Padding(2)
         ComboBoxPais.Name = "ComboBoxPais"
-        ComboBoxPais.Size = New Size(251, 33)
+        ComboBoxPais.Size = New Size(177, 23)
         ComboBoxPais.TabIndex = 0
         ' 
         ' ComboBoxComitente
         ' 
         ComboBoxComitente.Anchor = AnchorStyles.Top
         ComboBoxComitente.FormattingEnabled = True
-        ComboBoxComitente.Location = New Point(464, 63)
+        ComboBoxComitente.Location = New Point(324, 38)
+        ComboBoxComitente.Margin = New Padding(2)
         ComboBoxComitente.Name = "ComboBoxComitente"
-        ComboBoxComitente.Size = New Size(251, 33)
+        ComboBoxComitente.Size = New Size(177, 23)
         ComboBoxComitente.TabIndex = 3
         ' 
         ' Label1
         ' 
         Label1.Anchor = AnchorStyles.None
         Label1.AutoSize = True
-        Label1.Location = New Point(175, 17)
+        Label1.Location = New Point(123, 10)
+        Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(42, 25)
+        Label1.Size = New Size(28, 15)
         Label1.TabIndex = 4
         Label1.Text = "Pais"
         ' 
         ' Grid
         ' 
-        Grid.BorderStyle = BorderStyle.Fixed3D
-        Grid.Location = New Point(0, 231)
+        Grid.Font = New Font("Cambria", 8.25F)
+        GridCellInfo1.Col = -1
+        GridCellInfo1.Row = -1
+        GridCellInfo1.StyleInfo.Font.Bold = False
+        GridCellInfo1.StyleInfo.Font.Facename = "Cambria"
+        GridCellInfo1.StyleInfo.Font.Italic = False
+        GridCellInfo1.StyleInfo.Font.Size = 8.25F
+        GridCellInfo1.StyleInfo.Font.Strikeout = False
+        GridCellInfo1.StyleInfo.Font.Underline = False
+        GridCellInfo1.StyleInfo.Font.Unit = GraphicsUnit.Point
+        GridCellInfo2.Col = -1
+        GridCellInfo2.Row = -1
+        GridCellInfo2.StyleInfo.Font.Bold = False
+        GridCellInfo2.StyleInfo.Font.Facename = "Cambria"
+        GridCellInfo2.StyleInfo.Font.Italic = False
+        GridCellInfo2.StyleInfo.Font.Size = 8.25F
+        GridCellInfo2.StyleInfo.Font.Strikeout = False
+        GridCellInfo2.StyleInfo.Font.Underline = False
+        GridCellInfo2.StyleInfo.Font.Unit = GraphicsUnit.Point
+        GridCellInfo3.Col = -1
+        GridCellInfo3.Row = -1
+        GridCellInfo3.StyleInfo.Font.Bold = False
+        GridCellInfo3.StyleInfo.Font.Facename = "Cambria"
+        GridCellInfo3.StyleInfo.Font.Italic = False
+        GridCellInfo3.StyleInfo.Font.Size = 8.25F
+        GridCellInfo3.StyleInfo.Font.Strikeout = False
+        GridCellInfo3.StyleInfo.Font.Underline = False
+        GridCellInfo3.StyleInfo.Font.Unit = GraphicsUnit.Point
+        GridCellInfo4.Col = -1
+        GridCellInfo4.Row = -1
+        GridCellInfo4.StyleInfo.Font.Bold = False
+        GridCellInfo4.StyleInfo.Font.Facename = "Cambria"
+        GridCellInfo4.StyleInfo.Font.Italic = False
+        GridCellInfo4.StyleInfo.Font.Size = 8.25F
+        GridCellInfo4.StyleInfo.Font.Strikeout = False
+        GridCellInfo4.StyleInfo.Font.Underline = False
+        GridCellInfo4.StyleInfo.Font.Unit = GraphicsUnit.Point
+        Grid.GridCells.AddRange(New Syncfusion.Windows.Forms.Grid.GridCellInfo() {GridCellInfo1, GridCellInfo2, GridCellInfo3, GridCellInfo4})
+        Grid.Location = New Point(0, 104)
         Grid.Name = "Grid"
+        Grid.Properties.DisplayHorzLines = False
+        Grid.Properties.DisplayVertLines = False
+        Grid.Properties.RowHeaders = False
         Grid.SerializeCellsBehavior = Syncfusion.Windows.Forms.Grid.GridSerializeCellsBehavior.SerializeIntoCode
-        Grid.Size = New Size(1369, 519)
+        Grid.ShowRowHeaders = False
+        Grid.Size = New Size(927, 255)
         Grid.SmartSizeBox = False
         Grid.TabIndex = 3
+        Grid.Text = "GridControl1"
         Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonBackColor = Color.FromArgb(CByte(255), CByte(255), CByte(255))
         Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonBorderColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
         Grid.ThemeStyle.HorizontalScrollBarStyle.ArrowButtonDisabledBackColor = Color.FromArgb(CByte(225), CByte(225), CByte(225))
@@ -301,13 +357,12 @@ Partial Class frmLicitaciones
         ' 
         ' frmLicitaciones
         ' 
-        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1574, 750)
+        ClientSize = New Size(959, 449)
         Controls.Add(Grid)
         Controls.Add(Panel1)
         Controls.Add(ToolStrip1)
-        Margin = New Padding(4, 5, 4, 5)
         Name = "frmLicitaciones"
         Text = "Licitaciones"
         ToolStrip1.ResumeLayout(False)
