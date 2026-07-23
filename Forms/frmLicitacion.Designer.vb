@@ -80,7 +80,7 @@ Partial Class frmLicitacion
         ComboTipoProyecto.ForeColor = SystemColors.Window
         ComboTipoProyecto.FormattingEnabled = True
         ComboTipoProyecto.Location = New Point(133, 222)
-        ComboTipoProyecto.Margin = New Padding(2, 2, 2, 2)
+        ComboTipoProyecto.Margin = New Padding(2)
         ComboTipoProyecto.Name = "ComboTipoProyecto"
         ComboTipoProyecto.Size = New Size(390, 23)
         ComboTipoProyecto.TabIndex = 16
@@ -105,7 +105,7 @@ Partial Class frmLicitacion
         ComboBoxComitente.ForeColor = SystemColors.Window
         ComboBoxComitente.FormattingEnabled = True
         ComboBoxComitente.Location = New Point(133, 42)
-        ComboBoxComitente.Margin = New Padding(2, 2, 2, 2)
+        ComboBoxComitente.Margin = New Padding(2)
         ComboBoxComitente.Name = "ComboBoxComitente"
         ComboBoxComitente.Size = New Size(390, 24)
         ComboBoxComitente.TabIndex = 14
@@ -131,7 +131,7 @@ Partial Class frmLicitacion
         ComboBoxPais.ForeColor = SystemColors.Window
         ComboBoxPais.FormattingEnabled = True
         ComboBoxPais.Location = New Point(133, 262)
-        ComboBoxPais.Margin = New Padding(2, 2, 2, 2)
+        ComboBoxPais.Margin = New Padding(2)
         ComboBoxPais.Name = "ComboBoxPais"
         ComboBoxPais.Size = New Size(390, 23)
         ComboBoxPais.TabIndex = 12
@@ -403,7 +403,7 @@ Partial Class frmLicitacion
         ' 
         btnAgregarOferentes.BackColor = SystemColors.Info
         btnAgregarOferentes.Location = New Point(6, 172)
-        btnAgregarOferentes.Margin = New Padding(2, 2, 2, 2)
+        btnAgregarOferentes.Margin = New Padding(2)
         btnAgregarOferentes.Name = "btnAgregarOferentes"
         btnAgregarOferentes.Size = New Size(213, 26)
         btnAgregarOferentes.TabIndex = 1
@@ -419,7 +419,7 @@ Partial Class frmLicitacion
         btnGuardar.FlatStyle = FlatStyle.Flat
         btnGuardar.Font = New Font("Segoe UI", 8.25F)
         btnGuardar.ForeColor = Color.White
-        btnGuardar.Location = New Point(800, 295)
+        btnGuardar.Location = New Point(785, 295)
         btnGuardar.Margin = New Padding(4, 3, 4, 3)
         btnGuardar.Name = "btnGuardar"
         btnGuardar.Size = New Size(75, 23)
@@ -485,7 +485,7 @@ Partial Class frmLicitacion
         TableLayoutPanel1.Controls.Add(Label3, 0, 6)
         TableLayoutPanel1.Controls.Add(ComboTipoProyecto, 1, 6)
         TableLayoutPanel1.Location = New Point(38, 23)
-        TableLayoutPanel1.Margin = New Padding(2, 2, 2, 2)
+        TableLayoutPanel1.Margin = New Padding(2)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 8
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.5F))
@@ -563,7 +563,7 @@ Partial Class frmLicitacion
         ' 
         Panel1.BackColor = SystemColors.Info
         Panel1.Location = New Point(40, 344)
-        Panel1.Margin = New Padding(2, 2, 2, 2)
+        Panel1.Margin = New Padding(2)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(988, 6)
         Panel1.TabIndex = 32
