@@ -60,7 +60,7 @@ Partial Class frmProyectoTipo
         btnAgregar.FlatAppearance.BorderSize = 0
         btnAgregar.FlatStyle = FlatStyle.Flat
         btnAgregar.ForeColor = Color.White
-        btnAgregar.Location = New Point(23, 332)
+        'btnAgregar.Location = New Point(23, 332)
         btnAgregar.Name = "btnAgregar"
         btnAgregar.Size = New Size(69, 29)
         btnAgregar.TabIndex = 12

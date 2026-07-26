@@ -24,8 +24,6 @@ Public Class frmLicitacion
             radEnAgenda.Checked = True
         End If
 
-
-
     End Sub
 
     Private Function ObtenerEstadoSeleccionado() As Integer

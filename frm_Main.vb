@@ -123,13 +123,62 @@ Public Class frm_Main
 
         pnlMenu.Controls.Add(lblMenu)
 
-        Dim btnInicio As Button = CrearBotonMenu("Inicio", 70)
-        Dim btnLicitaciones As Button = CrearBotonMenu("Licitaciones", 120)
-        Dim btnComitentes As Button = CrearBotonMenu("Comitentes", 170)
-        Dim btnEmpresas As Button = CrearBotonMenu("Empresas", 220)
-        Dim btnRubros As Button = CrearBotonMenu("Rubros y subrubros", 270)
-        Dim btnEstados As Button = CrearBotonMenu("Estados", 320)
-        Dim btnSalir As Button = CrearBotonMenu("Salir", 390)
+        Dim btnInicio As Button =
+        CrearBotonMenu(
+        "Inicio",
+        70,
+        Image.FromFile(IO.Path.Combine(Application.StartupPath,
+                                       "Resources",
+                                       "Inicio.png"))
+    )
+        Dim btnLicitaciones As Button =
+        CrearBotonMenu(
+        "licitaciones",
+        120,
+        Image.FromFile(IO.Path.Combine(Application.StartupPath,
+                                       "Resources",
+                                       "licitaciones.png"))
+    )
+        Dim btnComitentes As Button =
+        CrearBotonMenu(
+        "Comitentes",
+        170,
+        Image.FromFile(IO.Path.Combine(Application.StartupPath,
+                                       "Resources",
+                                       "Comitentes.png"))
+    )
+
+        Dim btnEmpresas As Button =
+        CrearBotonMenu(
+        "Empresas",
+        220,
+        Image.FromFile(IO.Path.Combine(Application.StartupPath,
+                                       "Resources",
+                                       "Empresas.png"))
+    )
+        Dim btnPaises As Button =
+        CrearBotonMenu(
+        "Paises",
+        270,
+        Image.FromFile(IO.Path.Combine(Application.StartupPath,
+                                       "Resources",
+                                       "Paises.png"))
+    )
+
+        Dim btnSalir As Button =
+        CrearBotonMenu(
+        "Salir",
+        320,
+        Image.FromFile(IO.Path.Combine(Application.StartupPath,
+                                       "Resources",
+                                       "Salir.png"))
+    )
+        'Dim btnLicitaciones As Button = CrearBotonMenu("Licitaciones", 120)
+        'Dim btnComitentes As Button = CrearBotonMenu("Comitentes", 170)
+        'Dim btnEmpresas As Button = CrearBotonMenu("Empresas", 220)
+        'Dim btnRubros As Button = CrearBotonMenu("Rubros y subrubros", 270)
+        'Dim btnProveedores As Button = CrearBotonMenu("Proveedores", 320)
+        'Dim btnSalir As Button = CrearBotonMenu("Salir", 390)
 
         AddHandler btnSalir.Click,
             Sub()
@@ -140,8 +189,8 @@ Public Class frm_Main
         pnlMenu.Controls.Add(btnLicitaciones)
         pnlMenu.Controls.Add(btnComitentes)
         pnlMenu.Controls.Add(btnEmpresas)
-        pnlMenu.Controls.Add(btnRubros)
-        pnlMenu.Controls.Add(btnEstados)
+        pnlMenu.Controls.Add(btnPaises)
+        'pnlMenu.Controls.Add(btnProveedores)
         pnlMenu.Controls.Add(btnSalir)
 
         Me.Controls.Add(pnlMenu)
@@ -151,7 +200,8 @@ Public Class frm_Main
         AddHandler btnLicitaciones.Click, AddressOf AbrirLicitaciones
         AddHandler btnComitentes.Click, AddressOf AbrirComitentes
         AddHandler btnEmpresas.Click, AddressOf AbrirEmpresas
-        AddHandler btnRubros.Click, AddressOf AbrirRubros
+        AddHandler btnPaises.Click, AddressOf AbrirPaises
+        'AddHandler btnProveedores.Click, AddressOf AbrirRubros
         pnlMenu.Controls.Add(btnLicitaciones)
 
     End Sub
@@ -161,9 +211,9 @@ Public Class frm_Main
         f.ShowDialog(Me)
 
     End Sub
-    Private Sub AbrirRubros(sender As Object, e As EventArgs)
+    Private Sub AbrirPaises(sender As Object, e As EventArgs)
 
-        Dim f As New frmRubros
+        Dim f As New frmPaises
         f.ShowDialog(Me)
 
     End Sub
@@ -182,25 +232,32 @@ Public Class frm_Main
     End Sub
     Private Function CrearBotonMenu(
     texto As String,
-    posicionY As Integer
+    posicionY As Integer,
+    Optional imagen As Image = Nothing
 ) As Button
 
-        Dim boton As New Button With {
-            .Text = texto,
-            .Size = New Size(190, 40),
-            .Location = New Point(15, posicionY),
-            .BackColor = Color.FromArgb(28, 55, 78),
-            .ForeColor = Color.White,
-            .FlatStyle = FlatStyle.Flat,
-            .Font = New Font("Segoe UI", 10),
-            .TextAlign = ContentAlignment.MiddleLeft,
-            .Padding = New Padding(15, 0, 0, 0),
-            .Cursor = Cursors.Hand
-        }
+        Dim boton As New Button
 
-        boton.FlatAppearance.BorderSize = 0
-        boton.FlatAppearance.MouseOverBackColor =
-            Color.FromArgb(38, 75, 100)
+        With boton
+
+            .Text = "    " & texto
+            .Size = New Size(190, 50)
+            .Location = New Point(15, posicionY)
+            .BackColor = Color.FromArgb(28, 55, 78)
+            .ForeColor = Color.White
+            .FlatStyle = FlatStyle.Flat
+
+        End With
+
+        If imagen IsNot Nothing Then
+            boton.Image = New Bitmap(imagen, New Size(24, 24))
+            boton.ImageAlign = ContentAlignment.MiddleLeft
+            boton.TextImageRelation = TextImageRelation.ImageBeforeText
+            boton.TextAlign = ContentAlignment.MiddleLeft
+            boton.Padding = New Padding(18, 0, 0, 0)
+            boton.FlatAppearance.BorderSize = 0
+            boton.FlatAppearance.MouseOverBackColor = Color.FromArgb(45, 75, 105)
+        End If
 
         Return boton
 
