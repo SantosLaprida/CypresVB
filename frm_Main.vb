@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing
 Imports System.Windows.Forms
+Imports Syncfusion.Licensing
 
 Public Class frm_Main
     '=========================
@@ -39,7 +40,7 @@ Public Class frm_Main
         sender As Object,
         e As EventArgs
     ) Handles MyBase.Load
-
+        SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JHaF5cWWdCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdlWXpeeHRURWdZUUVwXUVWYEo=")
         ConfigurarFormulario()
 
     End Sub

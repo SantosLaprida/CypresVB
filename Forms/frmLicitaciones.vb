@@ -9,7 +9,6 @@ Public Class frmLicitaciones
     'Private grid As New GridControl()
     Private filaSeleccionada As Integer = 0
     Private Sub frmLicitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AddHandler Grid.DoubleClick, AddressOf grid_DoubleClick
         InicializarGrid()
         PaisesLlenarCombo(ComboBoxPais, True)
         ComitentesLlenarCombo(ComboBoxComitente, True)
