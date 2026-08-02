@@ -15,27 +15,11 @@ Public Class frm_Main
     Private lblTitulo As Label
     Private lblFecha As Label
     Private lblHora As Label
+    Private ReadOnly colorPrimario As Color = Color.FromArgb(28, 55, 78)
 
     Private WithEvents tmrHora As New Timer
 
-    Public Class frm_Main
 
-
-        ' Declaraciones
-        Private pnlEncabezado As Panel
-        Private pnlMenu As Panel
-        Private pnlContenido As Panel
-        Private pnlPie As Panel
-
-        Private lblTitulo As Label
-        Private lblFecha As Label
-        Private lblHora As Label
-
-        Private WithEvents tmrHora As New Timer
-
-        ' ... resto de los procedimientos ...
-
-    End Class
     Private Sub frm_Main_Load(
         sender As Object,
         e As EventArgs
@@ -47,7 +31,13 @@ Public Class frm_Main
     Private Sub ConfigurarFormulario()
 
         Me.Text = "Cypres - Módulo Licitaciones"
-        Me.WindowState = FormWindowState.Maximized
+        Dim workArea = Screen.PrimaryScreen.WorkingArea
+        Me.WindowState = FormWindowState.Normal
+        Me.Size = New Size(
+            CInt(workArea.Width * 0.85),
+            CInt(workArea.Height * 0.85))
+        Me.StartPosition = FormStartPosition.CenterScreen
+        Me.MinimumSize = New Size(1000, 650)
         Me.BackColor = Color.White
         Me.StartPosition = FormStartPosition.CenterScreen
 
@@ -59,12 +49,21 @@ Public Class frm_Main
         IniciarReloj()
 
     End Sub
+
+
+    Private Sub PosicionarReloj(sender As Object, e As EventArgs)
+        lblHora.Left = pnlEncabezado.ClientSize.Width - lblHora.Width - 20
+        lblHora.Top = 10
+
+        lblFecha.Left = pnlEncabezado.ClientSize.Width - lblFecha.Width - 20
+        lblFecha.Top = 38
+    End Sub
     Private Sub CrearEncabezado()
 
         pnlEncabezado = New Panel With {
             .Dock = DockStyle.Top,
             .Height = 70,
-            .BackColor = Color.FromArgb(17, 42, 65)
+            .BackColor = colorPrimario
         }
 
         lblTitulo = New Label With {
@@ -91,16 +90,7 @@ Public Class frm_Main
         pnlEncabezado.Controls.Add(lblFecha)
         pnlEncabezado.Controls.Add(lblHora)
 
-        AddHandler pnlEncabezado.Resize,
-            Sub()
-
-                lblHora.Left = pnlEncabezado.ClientSize.Width - lblHora.Width - 20
-                lblHora.Top = 10
-
-                lblFecha.Left = pnlEncabezado.ClientSize.Width - lblFecha.Width - 20
-                lblFecha.Top = 38
-
-            End Sub
+        AddHandler pnlEncabezado.Resize, AddressOf PosicionarReloj
 
         Me.Controls.Add(pnlEncabezado)
 
@@ -110,7 +100,7 @@ Public Class frm_Main
         pnlMenu = New Panel With {
             .Dock = DockStyle.Left,
             .Width = 220,
-            .BackColor = Color.FromArgb(28, 55, 78)
+            .BackColor = colorPrimario
         }
 
         Dim lblMenu As New Label With {
@@ -243,7 +233,7 @@ Public Class frm_Main
             .Text = "    " & texto
             .Size = New Size(190, 50)
             .Location = New Point(15, posicionY)
-            .BackColor = Color.FromArgb(28, 55, 78)
+            .BackColor = colorPrimario
             .ForeColor = Color.White
             .FlatStyle = FlatStyle.Flat
 
@@ -453,7 +443,7 @@ Public Class frm_Main
         pnlPie = New Panel With {
             .Dock = DockStyle.Bottom,
             .Height = 38,
-            .BackColor = Color.FromArgb(17, 42, 65)
+            .BackColor = colorPrimario
         }
 
         Dim lblSistema As New Label With {
@@ -486,15 +476,13 @@ Public Class frm_Main
 
     End Sub
     Private Sub IniciarReloj()
-
         lblFecha.Text = Date.Today.ToLongDateString()
-
         lblHora.Text = DateTime.Now.ToString("HH:mm:ss")
 
+        PosicionarReloj(Nothing, EventArgs.Empty)
+
         tmrHora.Interval = 1000
-
         tmrHora.Start()
-
     End Sub
 
     Private Sub tmrHora_Tick(sender As Object, e As EventArgs) Handles tmrHora.Tick

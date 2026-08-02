@@ -127,4 +127,24 @@ Public Class PaisRepositorio
         End Using
 
     End Sub
+
+    Public Sub EliminarPais(id As Integer)
+        Using cn As New MySqlConnection(Cadena)
+            cn.Open()
+            Using tran = cn.BeginTransaction()
+                Try
+                    Dim sqlDelete As String = "DELETE FROM s_paises WHERE id_pais = @id"
+                    Using cmd As New MySqlCommand(sqlDelete, cn, tran)
+                        cmd.Parameters.AddWithValue("@id", id)
+                        cmd.ExecuteNonQuery()
+                    End Using
+                    tran.Commit()
+                Catch
+                    tran.Rollback()
+                    Throw
+                End Try
+            End Using
+        End Using
+    End Sub
+
 End Class
